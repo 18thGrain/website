@@ -1,0 +1,856 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>18th Grain — Made for the course.</title>
+<meta name="description" content="Tee markers, yardage markers, plaques, and course signs — made for your course. A Vancouver studio led by Benjamin McLaughlin.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ground: #1a1410;
+    --ground-2: #1f1813;
+    --ground-deep: #130e0a;
+    --wine: #4a1013;
+    --wine-deep: #2d0709;
+    --cream: #ebe0c4;
+    --cream-strong: #f3e9cd;
+    --cream-dim: rgba(235, 224, 196, 0.62);
+    --cream-faint: rgba(235, 224, 196, 0.38);
+    --rule: rgba(235, 224, 196, 0.14);
+    --rule-soft: rgba(235, 224, 196, 0.08);
+    --accent: #c7a96b;
+
+    --serif: "Fraunces", Georgia, "Times New Roman", serif;
+    --sans: "Inter", system-ui, -apple-system, sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--ground);
+    color: var(--cream);
+    font-family: var(--sans);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  img { max-width: 100%; display: block; }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 200ms ease;
+  }
+  a:hover, a:focus { color: var(--accent); }
+
+  ::selection { background: var(--cream); color: var(--ground); }
+
+  .container {
+    width: 100%;
+    max-width: 1480px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+  @media (max-width: 800px) { .container { padding: 0 24px; } }
+
+  /* ---------- Typography primitives ---------- */
+
+  .serif {
+    font-family: var(--serif);
+    font-variation-settings: "opsz" 144, "SOFT" 0, "WONK" 0;
+    font-weight: 400;
+  }
+
+  h1, h2, h3 { margin: 0; font-family: var(--serif); font-weight: 400; }
+
+  h1.display, h2.display {
+    font-family: var(--serif);
+    font-variation-settings: "opsz" 144, "SOFT" 0, "WONK" 0;
+    font-weight: 400;
+    letter-spacing: -0.015em;
+    line-height: 1.02;
+    color: var(--cream);
+  }
+  h1.display { font-size: clamp(34px, 4.4vw, 64px); }
+  h2.display { font-size: clamp(30px, 3.6vw, 52px); }
+
+  /* ---------- Header — centered nav with rules, emblems at edges ---------- */
+
+  .site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    padding: 28px 0;
+    background: transparent;
+    transition: background 300ms ease, border-color 300ms ease;
+  }
+  .site-header.is-scrolled {
+    background: rgba(26, 20, 16, 0.92);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+  .site-header .inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  nav.primary {
+    display: flex;
+    gap: 40px;
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--cream);
+  }
+
+  @media (max-width: 800px) {
+    nav.primary { gap: 18px; font-size: 10px; }
+  }
+  @media (max-width: 560px) {
+    nav.primary { gap: 14px; }
+  }
+
+  main { padding-top: 0; }
+
+  /* ---------- Hero — full-bleed image, dark overlay, wordmark centered over ---------- */
+
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    isolation: isolate;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    z-index: 0;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(10, 6, 4, 0.72) 0%,
+      rgba(10, 6, 4, 0.55) 40%,
+      rgba(10, 6, 4, 0.78) 100%
+    );
+    z-index: 1;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 140px 0 48px;
+  }
+
+  .hero-intro {
+    max-width: 58ch;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--cream-dim);
+    padding: 0 40px;
+  }
+  .hero-intro strong { color: var(--cream); font-weight: 500; }
+
+  .hero-wordmark {
+    margin-top: auto;
+    padding: 0 24px;
+    width: 100%;
+    text-align: center;
+    pointer-events: none;
+  }
+  .hero-wordmark-inner {
+    font-family: var(--serif);
+    font-variation-settings: "opsz" 144, "SOFT" 0;
+    font-weight: 400;
+    font-size: clamp(80px, 20vw, 320px);
+    line-height: 0.82;
+    letter-spacing: -0.03em;
+    color: var(--cream);
+    text-align: center;
+    display: inline-block;
+    margin: 0;
+  }
+  .hero-wordmark-inner .line-1,
+  .hero-wordmark-inner .line-2 {
+    display: block;
+    white-space: nowrap;
+  }
+  .hero-wordmark-inner .line-1 .th {
+    font-style: italic;
+    font-size: 0.36em;
+    vertical-align: 0.95em;
+    letter-spacing: 0;
+    padding-left: 0.04em;
+    font-feature-settings: "ordn" on;
+  }
+  .hero-wordmark-inner .line-2 {
+    padding-left: 0.55em;
+    margin-top: -0.08em;
+  }
+
+  @media (max-width: 800px) {
+    .hero { min-height: 90vh; }
+    .hero-content { padding: 120px 0 40px; }
+    .hero-intro { padding: 0 24px; }
+  }
+
+  /* ---------- Credibility band ---------- */
+
+  .cred-band {
+    padding: 56px 0;
+    background: var(--ground);
+    border-bottom: 1px solid var(--rule);
+  }
+  .fact-row {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .fact-row li {
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--cream);
+    text-align: center;
+    padding: 0 24px;
+    border-left: 1px solid var(--rule);
+    line-height: 1.5;
+  }
+  .fact-row li:first-child { border-left: none; }
+  @media (max-width: 800px) {
+    .cred-band { padding: 40px 0; }
+    .fact-row { grid-template-columns: 1fr; row-gap: 24px; }
+    .fact-row li { border-left: none; padding: 0 16px; }
+    .fact-row li:not(:first-child) { border-top: 1px solid var(--rule); padding-top: 24px; }
+  }
+
+  /* ---------- CTA ---------- */
+
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 28px;
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--cream);
+    background: transparent;
+    border: 1px solid var(--cream-dim);
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background 220ms ease, color 220ms ease, border-color 220ms ease;
+    white-space: nowrap;
+  }
+  .cta .arrow { transition: transform 220ms ease; display: inline-block; }
+  .cta:hover, .cta:focus {
+    background: var(--cream);
+    color: var(--ground);
+    border-color: var(--cream);
+  }
+  .cta:hover .arrow, .cta:focus .arrow { transform: translateX(4px); }
+
+  /* ---------- Section scaffolding ---------- */
+
+  section.block {
+    padding: 140px 0;
+    border-top: 1px solid var(--rule);
+    background: var(--ground);
+  }
+  section.block.alt { background: var(--ground-2); }
+  @media (max-width: 800px) { section.block { padding: 88px 0; } }
+
+  .eyebrow {
+    display: inline-block;
+    font-family: var(--sans);
+    font-size: 10px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    color: var(--cream-dim);
+    margin: 0 0 40px;
+  }
+  .eyebrow::before {
+    content: "(01) \00a0";
+    color: var(--cream-faint);
+  }
+  .eyebrow.n02::before { content: "(02) \00a0"; }
+  .eyebrow.n03::before { content: "(03) \00a0"; }
+  .eyebrow.n04::before { content: "(04) \00a0"; }
+  .eyebrow.n05::before { content: "(05) \00a0"; }
+
+  .section-head {
+    max-width: 30ch;
+    margin-bottom: 72px;
+  }
+  @media (max-width: 800px) { .section-head { margin-bottom: 48px; } }
+
+  /* ---------- Numbered list ---------- */
+
+  .numbered-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid var(--rule);
+  }
+  .numbered-list li {
+    display: grid;
+    grid-template-columns: 80px 1fr 1fr;
+    gap: 40px;
+    align-items: baseline;
+    padding: 36px 0;
+    border-bottom: 1px solid var(--rule);
+    transition: padding 300ms ease, background 300ms ease;
+  }
+  .numbered-list li:hover { padding-left: 16px; background: var(--ground-2); }
+  .numbered-list .num {
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--cream-faint);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+  .numbered-list .label {
+    font-family: var(--serif);
+    font-variation-settings: "opsz" 144;
+    font-weight: 400;
+    font-size: clamp(22px, 2.2vw, 30px);
+    letter-spacing: -0.01em;
+    line-height: 1.15;
+    color: var(--cream);
+  }
+  .numbered-list .note {
+    font-family: var(--sans);
+    font-size: 13px;
+    line-height: 1.65;
+    color: var(--cream-dim);
+    max-width: 42ch;
+    justify-self: end;
+  }
+  @media (max-width: 900px) {
+    .numbered-list li {
+      grid-template-columns: 56px 1fr;
+      gap: 20px;
+      padding: 28px 0;
+    }
+    .numbered-list .note {
+      grid-column: 2 / -1;
+      justify-self: start;
+      margin-top: 10px;
+    }
+  }
+
+  /* ---------- Work block ---------- */
+
+  .work-head {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 32px;
+    align-items: end;
+    margin-bottom: 80px;
+  }
+  .work-head h2 { max-width: 24ch; margin: 0; }
+  .section-note {
+    font-family: var(--sans);
+    font-size: 12px;
+    color: var(--cream-faint);
+    margin: 14px 0 0;
+    letter-spacing: 0.02em;
+    font-style: italic;
+  }
+  @media (max-width: 800px) {
+    .work-head { grid-template-columns: 1fr; gap: 24px; margin-bottom: 48px; }
+  }
+
+  .work-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 40px;
+  }
+  .work-tile-a { grid-column: 1 / span 7; }
+  .work-tile-b {
+    grid-column: 8 / span 5;
+    margin-top: 120px;
+  }
+  .work-tile figure { margin: 0; }
+  .work-tile img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    object-position: center top;
+    background: var(--ground-2);
+  }
+  .work-tile-b img { aspect-ratio: 4 / 5; }
+  .work-tile figcaption {
+    margin-top: 22px;
+    font-family: var(--sans);
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--cream-dim);
+    max-width: 46ch;
+  }
+  @media (max-width: 900px) {
+    .work-grid { grid-template-columns: 1fr; gap: 56px; }
+    .work-tile-a, .work-tile-b { grid-column: 1 / -1; }
+    .work-tile-b { margin-top: 0; }
+  }
+
+  .work-tail { margin-top: 80px; }
+
+  /* ---------- About block ---------- */
+
+  .about-block .body-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 40px;
+  }
+  .about-block .col-a { grid-column: 1 / span 5; }
+  .about-block .col-b { grid-column: 7 / span 6; }
+  .about-block p {
+    font-family: var(--sans);
+    font-size: 15px;
+    line-height: 1.75;
+    margin: 0 0 22px;
+    color: var(--cream);
+  }
+  .about-block .col-a p:last-child,
+  .about-block .col-b p:last-child { margin-bottom: 0; }
+  .about-block .about-tail { margin-top: 56px; }
+  @media (max-width: 900px) {
+    .about-block .col-a, .about-block .col-b { grid-column: 1 / -1; }
+    .about-block .col-a { margin-bottom: 40px; }
+  }
+
+  .maker-meta {
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid var(--rule);
+  }
+  .maker-meta > div {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 24px;
+    padding: 22px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .maker-meta dt {
+    font-family: var(--sans);
+    font-size: 10px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--cream-faint);
+    margin: 0;
+    padding-top: 2px;
+  }
+  .maker-meta dd {
+    margin: 0;
+    font-family: var(--sans);
+    font-size: 13px;
+    line-height: 1.55;
+    color: var(--cream);
+  }
+
+  /* ---------- Closing — echo the hero wordmark treatment ---------- */
+
+  .closing {
+    padding: 180px 0 0;
+    border-top: 1px solid var(--rule);
+    background: var(--wine);
+    text-align: center;
+    overflow: hidden;
+  }
+  .closing .eyebrow { display: inline-block; }
+  .closing-statement {
+    font-family: var(--serif);
+    font-variation-settings: "opsz" 144;
+    font-weight: 400;
+    font-size: clamp(42px, 7vw, 128px);
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    color: var(--cream);
+    margin: 0 auto 56px;
+    max-width: 20ch;
+  }
+  .closing .sub {
+    font-family: var(--sans);
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--cream-dim);
+    max-width: 54ch;
+    margin: 0 auto 56px;
+  }
+  .closing .cta-row { margin-bottom: 120px; }
+
+  .closing-wordmark {
+    width: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    padding-bottom: 40px;
+  }
+  .closing-wordmark-inner {
+    font-family: var(--serif);
+    font-variation-settings: "opsz" 144, "SOFT" 0;
+    font-weight: 400;
+    font-size: clamp(90px, 22vw, 360px);
+    line-height: 0.82;
+    letter-spacing: -0.035em;
+    color: var(--cream);
+    text-align: center;
+    display: inline-block;
+  }
+  .closing-wordmark-inner .line-1,
+  .closing-wordmark-inner .line-2 {
+    display: block;
+    white-space: nowrap;
+  }
+  .closing-wordmark-inner .line-1 .th {
+    font-style: italic;
+    font-size: 0.36em;
+    vertical-align: 0.95em;
+    letter-spacing: 0;
+    padding-left: 0.04em;
+    font-feature-settings: "ordn" on;
+  }
+  .closing-wordmark-inner .line-2 {
+    padding-left: 0.55em;
+    margin-top: -0.08em;
+  }
+
+  @media (max-width: 800px) {
+    .closing { padding: 120px 0 0; }
+    .closing .cta-row { margin-bottom: 80px; }
+  }
+
+  /* ---------- Footer ---------- */
+
+  footer.site-footer {
+    background: var(--ground-deep);
+    color: var(--cream-dim);
+    padding: 80px 0 48px;
+    border-top: 1px solid var(--rule);
+  }
+  footer.site-footer a { color: var(--cream); }
+  footer.site-footer a:hover { color: var(--accent); }
+
+  footer.site-footer .row {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 32px;
+    align-items: start;
+  }
+  footer.site-footer .foot-mark {
+    grid-column: 1 / span 5;
+  }
+  footer.site-footer .foot-mark .foot-wordmark {
+    font-family: var(--serif);
+    font-variation-settings: "opsz" 144;
+    font-size: 34px;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    color: var(--cream);
+    display: block;
+    margin-bottom: 18px;
+    line-height: 1;
+  }
+  footer.site-footer .foot-mark .foot-tag {
+    font-size: 12px;
+    line-height: 1.65;
+    color: var(--cream-dim);
+    max-width: 34ch;
+  }
+  footer.site-footer nav.foot-nav {
+    grid-column: 6 / span 3;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-weight: 500;
+  }
+  footer.site-footer .foot-contact {
+    grid-column: 9 / span 4;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    font-size: 12px;
+  }
+  footer.site-footer .copyright {
+    grid-column: 1 / -1;
+    margin-top: 64px;
+    padding-top: 28px;
+    border-top: 1px solid var(--rule);
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--cream-faint);
+  }
+  @media (max-width: 900px) {
+    footer.site-footer .foot-mark,
+    footer.site-footer nav.foot-nav,
+    footer.site-footer .foot-contact { grid-column: 1 / -1; }
+    footer.site-footer nav.foot-nav { margin-top: 28px; }
+    footer.site-footer .foot-contact { margin-top: 20px; }
+  }
+
+  /* ---------- Scroll-reveal ---------- */
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 900ms ease, transform 900ms ease;
+  }
+  .reveal.is-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-delay-1 { transition-delay: 100ms; }
+  .reveal-delay-2 { transition-delay: 200ms; }
+  .reveal-delay-3 { transition-delay: 300ms; }
+</style>
+</head>
+<body>
+
+<header class="site-header" id="siteHeader">
+  <div class="container inner">
+    <nav class="primary" aria-label="Primary">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero">
+    <img
+      class="hero-bg"
+      src="prototype-assets/tee-marker-cropped.jpg"
+      alt="A rendering of a dark walnut tee marker with a white inlaid stripe, sitting on fairway turf.">
+    <div class="hero-overlay" aria-hidden="true"></div>
+    <div class="hero-content">
+      <div class="container">
+        <p class="hero-intro reveal">Designed for one course. Built to live on it.</p>
+      </div>
+      <div class="hero-wordmark reveal reveal-delay-2">
+        <h1 class="hero-wordmark-inner">
+          <span class="line-1">18<span class="th">th</span></span>
+          <span class="line-2">Grain</span>
+        </h1>
+      </div>
+    </div>
+  </section>
+
+  <section class="cred-band" aria-label="At a glance">
+    <div class="container">
+      <ul class="fact-row">
+        <li>Vancouver studio</li>
+        <li>Award-winning designer</li>
+        <li>One course at a time</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="block alt" id="what-we-make">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">What we make</span>
+        <h2 class="display">Not a catalogue.</h2>
+      </div>
+      <ul class="numbered-list">
+        <li>
+          <span class="num">01 / 04</span>
+          <span class="label">Tee markers</span>
+          <span class="note">Hardwood and steel.</span>
+        </li>
+        <li>
+          <span class="num">02 / 04</span>
+          <span class="label">Yardage markers</span>
+          <span class="note">Fairway and tee-side.</span>
+        </li>
+        <li>
+          <span class="num">03 / 04</span>
+          <span class="label">Plaques</span>
+          <span class="note">Commemorative and hole-in-one.</span>
+        </li>
+        <li>
+          <span class="num">04 / 04</span>
+          <span class="label">Course signs</span>
+          <span class="note">Wayfinding and information.</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="block" id="work">
+    <div class="container">
+      <div class="work-head">
+        <div>
+          <span class="eyebrow n02">Selected work</span>
+          <h2 class="display">Recent and in progress.</h2>
+          <p class="section-note">Shown as renderings.</p>
+        </div>
+      </div>
+      <div class="work-grid">
+        <div class="work-tile work-tile-a">
+          <figure>
+            <img
+              src="prototype-assets/fairmont-plaque-cropped.jpg"
+              alt="A rendering of a custom hole-in-one plaque in live-edge walnut, with a teal epoxy river inlay running through the face and a golf ball mounted on a gold tee.">
+            <figcaption>Hole-in-one plaque. Live-edge walnut, teal epoxy inlay. In progress for a Fairmont property.</figcaption>
+          </figure>
+        </div>
+        <div class="work-tile work-tile-b">
+          <figure>
+            <img
+              src="prototype-assets/sea-cliff-plaque-cropped.jpg"
+              alt="A rendering of a hole-in-one commemorative plaque in dark walnut, with a topographic line engraving and a golf ball mounted on a gold tee.">
+            <figcaption>Hole-in-one plaque. Dark walnut, topographic engraving.</figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="work-tail">
+        <a href="#work" class="cta">See all work <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="block alt about-block" id="about">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow n03">The maker</span>
+        <h2 class="display">One studio. Over 15 years of experience.</h2>
+      </div>
+      <div class="body-grid">
+        <div class="col-a">
+          <p>Benjamin McLaughlin has spent more than a decade designing and building custom pieces from his Vancouver studio.</p>
+        </div>
+        <div class="col-b">
+          <dl class="maker-meta">
+            <div>
+              <dt>Training</dt>
+              <dd>Bachelor of Industrial Design, Emily Carr University of Art + Design, Vancouver. Milwaukee Institute of Art &amp; Design.</dd>
+            </div>
+            <div>
+              <dt>Studio</dt>
+              <dd>Vancouver, British Columbia.</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="closing" id="contact">
+    <div class="container">
+      <span class="eyebrow n04">Start a project</span>
+      <h2 class="closing-statement">Made for the course.</h2>
+      <p class="sub">Tell us about the course, the piece, and when you'd want it in place.</p>
+      <div class="cta-row">
+        <a href="mailto:{{KAT_EMAIL}}" class="cta">Start a project <span class="arrow">→</span></a>
+      </div>
+    </div>
+    <div class="closing-wordmark">
+      <div class="closing-wordmark-inner">
+        <span class="line-1">18<span class="th">th</span></span>
+        <span class="line-2">Grain</span>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="row">
+      <div class="foot-mark">
+        <span class="foot-wordmark">18<span style="font-style: italic;">th</span>&nbsp;Grain</span>
+        <span class="foot-tag">Made for the course. Vancouver-made tee markers, yardage markers, plaques, and course signs.</span>
+      </div>
+      <nav class="foot-nav" aria-label="Footer">
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="foot-contact">
+        <a href="mailto:{{KAT_EMAIL}}">{{KAT_EMAIL}}</a>
+        <a href="#">{{INSTAGRAM_HANDLE}} on Instagram</a>
+      </div>
+      <div class="copyright">© 2026 18th Grain · Vancouver, British Columbia</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Sticky header background on scroll
+  (function () {
+    var header = document.getElementById('siteHeader');
+    function updateHeader() {
+      if (window.scrollY > 20) header.classList.add('is-scrolled');
+      else header.classList.remove('is-scrolled');
+    }
+    window.addEventListener('scroll', updateHeader, { passive: true });
+    updateHeader();
+  })();
+
+  // Scroll-reveal fade-in
+  (function () {
+    if (!('IntersectionObserver' in window)) {
+      document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('is-in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+
+    document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+    document.querySelectorAll('h2.display, .numbered-list li, .work-tile').forEach(function (el) {
+      el.classList.add('reveal');
+      io.observe(el);
+    });
+  })();
+</script>
+
+</body>
+</html>
