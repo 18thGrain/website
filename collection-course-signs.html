@@ -1,0 +1,640 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>18th Grain — Course signs</title>
+<meta name="description" content="Wayfinding and course identity, designed for your property.">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="18th Grain">
+<meta property="og:url" content="https://www.18thgrain.com/collection-course-signs.html">
+<meta property="og:title" content="18th Grain — Course Signs">
+<meta property="og:description" content="Wayfinding and course identity, designed for your property.">
+<meta property="og:image" content="https://www.18thgrain.com/images/fairmont-whistler-golf-course-signage-01.JPG">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="18th Grain — Course Signs">
+<meta name="twitter:description" content="Wayfinding and course identity, designed for your property.">
+<meta name="twitter:image" content="https://www.18thgrain.com/images/fairmont-whistler-golf-course-signage-01.JPG">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ================================================================
+   DESIGN TOKENS
+   ================================================================ */
+:root {
+  --ground: #171719;
+  --ground-2: #1c1c1f;
+  --ground-deep: #111113;
+  --wine: #4a1013;
+  --wine-deep: #2d0709;
+  --cream: #ebe0c4;
+  --cream-strong: #f3e9cd;
+  --cream-dim: rgba(235, 224, 196, 0.62);
+  --cream-faint: rgba(235, 224, 196, 0.38);
+  --rule: rgba(235, 224, 196, 0.14);
+  --rule-soft: rgba(235, 224, 196, 0.08);
+  --accent: #c7a96b;
+
+  --serif: "Fraunces", Georgia, "Times New Roman", serif;
+  --sans: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+/* ================================================================
+   RESET & GLOBALS
+   ================================================================ */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--ground);
+  color: var(--cream);
+  font-family: var(--sans);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.028;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+::selection { background: var(--cream); color: var(--ground); }
+
+.container {
+  width: 100%;
+  max-width: 1480px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+@media (max-width: 800px) { .container { padding: 0 24px; } }
+
+h1, h2, h3 { margin: 0; font-family: var(--serif); font-weight: 400; }
+
+h1.display {
+  font-family: var(--serif);
+  font-variation-settings: "opsz" 144, "SOFT" 0, "WONK" 0;
+  font-weight: 400;
+  font-size: clamp(34px, 4.4vw, 64px);
+  letter-spacing: -0.015em;
+  line-height: 1.02;
+  color: var(--cream);
+}
+
+/* ================================================================
+   FIXED NAVIGATION
+   ================================================================ */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 24px 0;
+  background: transparent;
+  transition: background 400ms ease, backdrop-filter 400ms ease, padding 400ms ease;
+}
+.site-header.is-scrolled {
+  background: rgba(23, 23, 25, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 18px 0;
+}
+.site-header .inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-wordmark {
+  font-family: var(--serif);
+  font-variation-settings: "opsz" 144, "SOFT" 0, "WONK" 0;
+  font-weight: 400;
+  font-size: 20px;
+  letter-spacing: -0.01em;
+  color: var(--cream);
+  line-height: 1;
+}
+.nav-wordmark .th { font-style: italic; }
+
+nav.primary {
+  display: flex;
+  gap: 40px;
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--cream);
+}
+nav.primary a {
+  position: relative;
+  padding-bottom: 2px;
+  transition: color 300ms ease;
+}
+nav.primary a::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 400ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+nav.primary a:hover { color: var(--cream); }
+nav.primary a:hover::after { transform: scaleX(1); }
+
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  width: 44px;
+  height: 44px;
+  position: relative;
+  z-index: 200;
+}
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background: var(--cream);
+  margin: 0 auto;
+  transition: transform 300ms ease, opacity 200ms ease;
+}
+.hamburger span:nth-child(1) { margin-bottom: 6px; }
+.hamburger span:nth-child(3) { margin-top: 6px; }
+.hamburger.is-open span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+.hamburger.is-open span:nth-child(2) { opacity: 0; }
+.hamburger.is-open span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  background: var(--ground);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 400ms ease;
+}
+.mobile-menu.is-open { opacity: 1; pointer-events: auto; }
+.mobile-menu a {
+  font-family: var(--serif);
+  font-variation-settings: "opsz" 144;
+  font-size: 36px;
+  font-weight: 400;
+  color: var(--cream);
+  transition: color 300ms ease;
+}
+.mobile-menu a:hover { color: var(--accent); }
+
+@media (max-width: 800px) {
+  nav.primary { display: none; }
+  .hamburger { display: flex; flex-direction: column; justify-content: center; }
+}
+
+/* ================================================================
+   EYEBROW & CTA
+   ================================================================ */
+.eyebrow {
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--cream-dim);
+  margin: 0 0 40px;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 32px;
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--cream);
+  background: transparent;
+  border: 1px solid var(--cream-dim);
+  border-radius: 999px;
+  cursor: pointer;
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+  transition: color 350ms ease, border-color 350ms ease;
+  z-index: 1;
+}
+.cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--cream);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 450ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  z-index: -1;
+  border-radius: 999px;
+}
+.cta .arrow { transition: transform 300ms ease; display: inline-block; }
+.cta:hover, .cta:focus { color: var(--ground); border-color: var(--cream); }
+.cta:hover::before, .cta:focus::before { transform: scaleX(1); }
+.cta:hover .arrow, .cta:focus .arrow { transform: translateX(5px); }
+
+/* ================================================================
+   PAGE HERO
+   ================================================================ */
+.page-hero {
+  padding: 180px 0 100px;
+  background: var(--ground);
+}
+.page-hero .eyebrow {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 600ms ease, transform 600ms ease;
+}
+.page-hero .eyebrow.is-in { opacity: 1; transform: translateY(0); }
+.page-hero h1.display {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 700ms cubic-bezier(0.16, 1, 0.3, 1) 100ms, transform 700ms cubic-bezier(0.16, 1, 0.3, 1) 100ms;
+}
+.page-hero h1.display.is-in { opacity: 1; transform: translateY(0); }
+.page-hero .subline {
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--cream-dim);
+  max-width: 48ch;
+  margin: 28px 0 0;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 600ms ease 200ms, transform 600ms ease 200ms;
+}
+.page-hero .subline.is-in { opacity: 1; transform: translateY(0); }
+
+@media (max-width: 800px) {
+  .page-hero { padding: 140px 0 72px; }
+}
+
+/* ================================================================
+   IMAGE SECTION
+   ================================================================ */
+.image-section {
+  padding: 0 0 80px;
+  background: var(--ground);
+}
+.image-mat {
+  opacity: 0;
+  transform: scale(0.97);
+  transition: opacity 900ms ease, transform 900ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.image-mat.is-in {
+  opacity: 1;
+  transform: scale(1);
+}
+.image-mat img {
+  width: 100%;
+  object-fit: cover;
+  background: var(--ground-2);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.4);
+  filter: brightness(0.95) saturate(0.9);
+  transition: filter 0.4s ease;
+}
+.image-mat img:hover {
+  filter: brightness(1) saturate(1);
+}
+.image-caption {
+  margin-top: 22px;
+  font-family: var(--sans);
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--cream-dim);
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 600ms ease 200ms, transform 600ms ease 200ms;
+}
+.image-caption.is-in { opacity: 1; transform: translateY(0); }
+
+.image-secondary {
+  margin-top: 40px;
+  opacity: 0;
+  transform: scale(0.97);
+  transition: opacity 900ms ease 150ms, transform 900ms cubic-bezier(0.16, 1, 0.3, 1) 150ms;
+}
+.image-secondary.is-in { opacity: 1; transform: scale(1); }
+.image-secondary img {
+  width: 100%;
+  object-fit: cover;
+  background: var(--ground-2);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.4);
+  filter: brightness(0.95) saturate(0.9);
+  transition: filter 0.4s ease;
+}
+.image-secondary img:hover { filter: brightness(1) saturate(1); }
+.image-secondary .image-caption {
+  margin-top: 22px;
+  font-family: var(--sans);
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--cream-dim);
+}
+
+/* ================================================================
+   DESCRIPTION SECTION
+   ================================================================ */
+.desc-section {
+  padding: 80px 0 140px;
+  background: var(--ground);
+  border-top: 1px solid var(--rule);
+}
+.desc-text {
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--cream);
+  max-width: 60ch;
+  margin: 0 0 56px;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 700ms ease, transform 700ms ease;
+}
+.desc-text.is-in { opacity: 1; transform: translateY(0); }
+
+.desc-cta {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 600ms ease 150ms, transform 600ms ease 150ms;
+}
+.desc-cta.is-in { opacity: 1; transform: translateY(0); }
+
+.back-link {
+  display: inline-block;
+  margin-top: 40px;
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--cream-faint);
+  letter-spacing: 0.04em;
+  transition: color 300ms ease;
+}
+.back-link:hover { color: var(--accent); }
+
+/* ================================================================
+   FOOTER
+   ================================================================ */
+footer.site-footer {
+  background: var(--ground-deep);
+  color: var(--cream-dim);
+  padding: 80px 0 48px;
+  border-top: 1px solid var(--rule);
+}
+footer.site-footer .row {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 32px;
+  align-items: start;
+}
+footer.site-footer .foot-mark { grid-column: 1 / span 5; }
+footer.site-footer .foot-wordmark {
+  font-family: var(--serif);
+  font-variation-settings: "opsz" 144;
+  font-size: 34px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: var(--cream);
+  display: block;
+  margin-bottom: 18px;
+  line-height: 1;
+}
+footer.site-footer .foot-tag {
+  font-size: 12px;
+  line-height: 1.65;
+  color: var(--cream-dim);
+  max-width: 38ch;
+  display: block;
+}
+footer.site-footer nav.foot-nav {
+  grid-column: 6 / span 3;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-weight: 500;
+}
+footer.site-footer nav.foot-nav a { color: var(--cream); transition: color 300ms ease; }
+footer.site-footer nav.foot-nav a:hover { color: var(--accent); }
+footer.site-footer .foot-contact {
+  grid-column: 9 / span 4;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  font-size: 12px;
+}
+footer.site-footer .foot-contact a { color: var(--cream); transition: color 300ms ease; }
+footer.site-footer .foot-contact a:hover { color: var(--accent); }
+footer.site-footer .copyright {
+  grid-column: 1 / -1;
+  margin-top: 64px;
+  padding-top: 28px;
+  border-top: 1px solid var(--rule);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cream-faint);
+}
+@media (max-width: 900px) {
+  footer.site-footer .foot-mark,
+  footer.site-footer nav.foot-nav,
+  footer.site-footer .foot-contact { grid-column: 1 / -1; }
+  footer.site-footer nav.foot-nav { margin-top: 28px; }
+  footer.site-footer .foot-contact { margin-top: 20px; }
+}
+</style>
+</head>
+<body>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
+  <a href="index.html#work">Work</a>
+  <a href="collections.html">Collections</a>
+  <a href="index.html#about">About</a>
+  <a href="index.html#contact">Contact</a>
+</div>
+
+<!-- FIXED HEADER -->
+<header class="site-header" id="siteHeader">
+  <div class="container inner">
+    <a href="index.html" class="nav-wordmark">18<span class="th">th</span>&nbsp;Grain</a>
+    <nav class="primary" aria-label="Primary">
+      <a href="index.html#work">Work</a>
+      <a href="collections.html">Collections</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+    <button class="hamburger" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<!-- MAIN -->
+<main>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow" id="heroEyebrow">(01) Collections</span>
+      <h1 class="display" id="heroHeading">Course signs</h1>
+      <p class="subline" id="heroSubline">Wayfinding and course identity, designed for your property.</p>
+    </div>
+  </section>
+
+  <!-- IMAGES -->
+  <section class="image-section">
+    <div class="container">
+      <div class="image-mat" id="imageMain">
+        <img
+          src="images/fairmont-whistler-golf-course-signage-01.JPG"
+          alt="Handcrafted wooden starter station sign with Chateau Whistler 1993 logo, flanked by two smaller A-frame yardage signs."
+          loading="eager">
+      </div>
+      <p class="image-caption" id="imageCaption">Starter station and course signage -- Fairmont Chateau Whistler. Handcrafted timber construction with engraved course branding.</p>
+
+      <div class="image-secondary" id="imageSecondary">
+        <img
+          src="images/fairmont-whistler-golf-course-signage-02.JPG"
+          alt="A-frame yardage marker on the fairway at Fairmont Chateau Whistler with mountain backdrop."
+          loading="lazy">
+        <p class="image-caption">A-frame yardage marker on the fairway. Colour-coded distance indicators with mountain backdrop.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DESCRIPTION -->
+  <section class="desc-section">
+    <div class="container">
+      <p class="desc-text" id="descText">Course signage designed and built as part of a complete course commission. Our starter stations, wayfinding signs, hole identification markers, and course entry pieces are handcrafted in timber with engraved branding -- each designed to reflect the character of your property.</p>
+      <div class="desc-cta" id="descCta">
+        <a href="index.html#contact" class="cta">Begin a commission <span class="arrow">&rarr;</span></a>
+      </div>
+      <a href="collections.html" class="back-link">&larr; Back to collections</a>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="row">
+      <div class="foot-mark">
+        <span class="foot-wordmark">18<span style="font-style: italic;">th</span>&nbsp;Grain</span>
+        <span class="foot-tag">Commissioned for the course. Canadian-made tee markers, yardage markers, plaques and golf course signs.</span>
+      </div>
+      <nav class="foot-nav" aria-label="Footer">
+        <a href="index.html#work">Work</a>
+        <a href="collections.html">Collections</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+      <div class="foot-contact">
+        <a href="mailto:info@18thgrain.com">info@18thgrain.com</a>
+        <a href="https://www.instagram.com/18thgrain" target="_blank" rel="noopener">Instagram</a>
+      </div>
+      <div class="copyright">&copy; 2026 18th Grain &middot; Vancouver, British Columbia</div>
+    </div>
+  </div>
+</footer>
+
+<!-- JAVASCRIPT -->
+<script>
+(function () {
+  'use strict';
+
+  var header = document.getElementById('siteHeader');
+  function updateHeader() {
+    if (window.scrollY > 40) {
+      header.classList.add('is-scrolled');
+    } else {
+      header.classList.remove('is-scrolled');
+    }
+  }
+  window.addEventListener('scroll', updateHeader, { passive: true });
+  updateHeader();
+
+  var hamburger = document.getElementById('hamburgerBtn');
+  var mobileMenu = document.getElementById('mobileMenu');
+  if (hamburger && mobileMenu) {
+    hamburger.addEventListener('click', function () {
+      var isOpen = hamburger.classList.toggle('is-open');
+      mobileMenu.classList.toggle('is-open');
+      hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+    mobileMenu.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        hamburger.classList.remove('is-open');
+        mobileMenu.classList.remove('is-open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
+    });
+  }
+
+  if ('IntersectionObserver' in window) {
+    var revealObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-in');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+
+    ['heroEyebrow', 'heroHeading', 'heroSubline', 'imageMain', 'imageCaption', 'imageSecondary', 'descText', 'descCta'].forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el) revealObserver.observe(el);
+    });
+  } else {
+    document.querySelectorAll('.eyebrow, h1.display, .subline, .image-mat, .image-caption, .image-secondary, .desc-text, .desc-cta').forEach(function (el) {
+      el.classList.add('is-in');
+    });
+  }
+})();
+</script>
+
+</body>
+</html>
