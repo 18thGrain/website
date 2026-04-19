@@ -14,10 +14,19 @@ export default async function handler(req, res) {
   const notionTasksDbId = process.env.NOTION_TASKS_DATABASE_ID;
   const resendKey = process.env.RESEND_API_KEY;
 
+  console.log('ENV CHECK:', {
+    hasNotionKey: !!notionKey,
+    notionKeyPrefix: notionKey ? notionKey.substring(0, 6) : 'MISSING',
+    hasNotionDbId: !!notionDbId,
+    notionDbId: notionDbId || 'MISSING',
+    hasTasksDbId: !!notionTasksDbId,
+    hasResendKey: !!resendKey,
+  });
+
   // 1. Write to Notion Website Inquiries database (non-blocking)
   if (notionKey && notionDbId) {
     try {
-      await fetch('https://api.notion.com/v1/pages', {
+      const notionRes = await fetch('https://api.notion.com/v1/pages', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${notionKey}`,
@@ -36,6 +45,8 @@ export default async function handler(req, res) {
           },
         }),
       });
+      const notionBody = await notionRes.text();
+      console.log('Notion response:', notionRes.status, notionBody);
     } catch (e) {
       console.error('Notion error:', e);
     }
