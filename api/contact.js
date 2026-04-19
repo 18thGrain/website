@@ -15,7 +15,7 @@ export default async function handler(req, res) {
   // 1. Forward to CRM (creates a Website Inquiry record)
   if (crmWebhookSecret) {
     try {
-      await fetch('https://18thgrain-crm.vercel.app/api/webhooks/contact-form', {
+      await fetch('https://crm.18thgrain.com/api/webhooks/contact-form', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
