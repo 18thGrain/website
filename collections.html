@@ -404,6 +404,8 @@ nav.primary a:hover::after { transform: scaleX(1); }
 .collection-tile:nth-child(2) { transition-delay: 100ms; }
 .collection-tile:nth-child(3) { transition-delay: 200ms; }
 .collection-tile:nth-child(4) { transition-delay: 300ms; }
+.collection-tile:nth-child(5) { transition-delay: 400ms; }
+.collection-tile:last-child:nth-child(odd) { grid-column: 1 / -1; }
 
 .collection-tile:hover {
   background: rgba(28, 28, 31, 0.7);
@@ -599,7 +601,7 @@ footer.site-footer .copyright {
   "@type": "ItemList",
   "name": "18th Grain Collections",
   "description": "Handcrafted golf course products made from locally sourced hardwoods in Vancouver, BC. Each piece commissioned for a specific golf course.",
-  "numberOfItems": 4,
+  "numberOfItems": 5,
   "itemListElement": [
     {
       "@type": "ListItem",
@@ -622,8 +624,14 @@ footer.site-footer .copyright {
     {
       "@type": "ListItem",
       "position": 4,
-      "name": "Golf Course Signs",
+      "name": "Golf Course Signage",
       "url": "https://www.18thgrain.com/collection-course-signs.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "name": "Course Accessories",
+      "url": "https://www.18thgrain.com/collection-course-accessories.html"
     }
   ]
 }
@@ -716,8 +724,20 @@ footer.site-footer .copyright {
           </div>
           <div class="tile-text">
             <span class="tile-num">04</span>
-            <span class="tile-name">Course signs</span>
+            <span class="tile-name">Course signage</span>
             <span class="tile-desc">Wayfinding and course identity.</span>
+            <span class="tile-link">View collection &rarr;</span>
+          </div>
+        </a>
+
+        <a href="collection-course-accessories.html" class="collection-tile">
+          <div class="tile-image-wrap">
+            <img src="images/golf-range-ball-basket-01.JPG" alt="Custom wooden range ball basket with engraved club logo, filled with golf balls on a driving range." loading="lazy" style="object-position: center 40%;">
+          </div>
+          <div class="tile-text">
+            <span class="tile-num">05</span>
+            <span class="tile-name">Course accessories</span>
+            <span class="tile-desc">Range baskets, furnishings, and custom pieces.</span>
             <span class="tile-link">View collection &rarr;</span>
           </div>
         </a>

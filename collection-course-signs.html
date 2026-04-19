@@ -370,6 +370,69 @@ nav.primary a:hover::after { transform: scaleX(1); }
 }
 
 /* ================================================================
+   WORK GRID (additional images)
+   ================================================================ */
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 40px;
+}
+.work-tile-a { grid-column: 1 / span 7; }
+.work-tile-b {
+  grid-column: 8 / span 5;
+  margin-top: 120px;
+}
+.work-tile figure { margin: 0; }
+.work-tile img {
+  width: 100%;
+  object-fit: cover;
+  background: var(--ground-2);
+  filter: brightness(0.95) saturate(0.9);
+  transition: filter 0.4s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.4);
+}
+.work-tile img:hover {
+  filter: brightness(1) saturate(1);
+  transform: scale(1.01);
+  box-shadow: 0 32px 100px rgba(0, 0, 0, 0.5);
+}
+.work-tile-full { grid-column: 1 / -1; }
+.work-tile-full img {
+  width: 100%;
+  object-fit: cover;
+  background: var(--ground-2);
+  filter: brightness(0.95) saturate(0.9);
+  transition: filter 0.4s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.4);
+}
+.work-tile-full img:hover {
+  filter: brightness(1) saturate(1);
+  transform: scale(1.01);
+  box-shadow: 0 32px 100px rgba(0, 0, 0, 0.5);
+}
+.work-tile figcaption {
+  margin-top: 22px;
+  font-family: var(--sans);
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--cream-dim);
+  max-width: 46ch;
+}
+.work-tile {
+  opacity: 0;
+  transform: scale(0.96);
+  transition: opacity 900ms ease, transform 900ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.work-tile.is-in { opacity: 1; transform: scale(1); }
+.work-tile-b { transition-delay: 200ms; }
+
+@media (max-width: 900px) {
+  .work-grid { grid-template-columns: 1fr; gap: 56px; }
+  .work-tile-a, .work-tile-b { grid-column: 1 / -1; }
+  .work-tile-b { margin-top: 0; transition-delay: 0ms; }
+}
+
+/* ================================================================
    DESCRIPTION SECTION
    ================================================================ */
 .desc-section {
@@ -545,7 +608,7 @@ footer.site-footer .copyright {
   <section class="page-hero">
     <div class="container">
       <span class="eyebrow" id="heroEyebrow">(01) Collections</span>
-      <h1 class="display" id="heroHeading">Course signs</h1>
+      <h1 class="display" id="heroHeading">Course signage</h1>
       <p class="subline" id="heroSubline">Wayfinding and course identity, designed for your property.</p>
     </div>
   </section>
@@ -567,6 +630,38 @@ footer.site-footer .copyright {
           alt="A-frame yardage marker on the fairway at Fairmont Chateau Whistler with mountain backdrop."
           loading="lazy">
         <p class="image-caption">A-frame yardage marker on the fairway. Colour-coded distance indicators with mountain backdrop.</p>
+      </div>
+
+      <div class="work-grid" style="margin-top: 56px;">
+        <div class="work-tile work-tile-a">
+          <figure>
+            <img
+              src="images/course-sign-etiquette-01.JPG"
+              alt="Wooden course etiquette sign with engraved rules and club logo for Vancouver Golf Club, mounted on a single post with greenery behind."
+              loading="lazy">
+            <figcaption>Course etiquette sign -- engraved rules with club branding.</figcaption>
+          </figure>
+        </div>
+        <div class="work-tile work-tile-b">
+          <figure>
+            <img
+              src="images/course-sign-cart-directional-01.JPG"
+              alt="Walnut directional cart sign with engraved golf cart graphic and arrow for Waterview Golf Club, on steel legs on the fairway."
+              loading="lazy">
+            <figcaption>Cart directional sign -- walnut with engraved wayfinding graphics.</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="work-tile work-tile-full" style="margin-top: 56px;">
+        <figure>
+          <img
+            src="images/course-sign-wayfinding-01.JPG"
+            alt="Walnut restroom wayfinding sign with engraved pictograms and directional arrow for Cedarview Golf Club, on steel legs beside a cart path."
+            loading="lazy"
+            style="aspect-ratio: 3 / 4; object-position: center;">
+          <figcaption>Restroom wayfinding sign -- walnut with engraved pictograms and club branding.</figcaption>
+        </figure>
       </div>
     </div>
   </section>
@@ -657,8 +752,11 @@ footer.site-footer .copyright {
       var el = document.getElementById(id);
       if (el) revealObserver.observe(el);
     });
+    document.querySelectorAll('.work-tile').forEach(function (el) {
+      revealObserver.observe(el);
+    });
   } else {
-    document.querySelectorAll('.eyebrow, h1.display, .subline, .image-mat, .image-caption, .image-secondary, .desc-text, .desc-cta').forEach(function (el) {
+    document.querySelectorAll('.eyebrow, h1.display, .subline, .image-mat, .image-caption, .image-secondary, .work-tile, .desc-text, .desc-cta').forEach(function (el) {
       el.classList.add('is-in');
     });
   }

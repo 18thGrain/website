@@ -3,19 +3,19 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Custom Golf Course Plaques — Hole-in-One & Commemorative | 18th Grain — Vancouver, BC</title>
-<meta name="description" content="Handcrafted commemorative and hole-in-one plaques for golf courses. Each piece is a unique commission made from locally sourced hardwoods with options for epoxy inlay and mixed-media finishes. Designed and built in Vancouver, BC by 18th Grain.">
-<link rel="canonical" href="https://www.18thgrain.com/collection-plaques.html">
+<title>Custom Golf Course Accessories — Range Baskets & Course Furnishings | 18th Grain — Vancouver, BC</title>
+<meta name="description" content="Custom golf course accessories handcrafted from locally sourced hardwoods. Range baskets, ball crates, and course furnishings designed for your property. Made in Vancouver, BC by 18th Grain.">
+<link rel="canonical" href="https://www.18thgrain.com/collection-course-accessories.html">
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="18th Grain">
-<meta property="og:url" content="https://www.18thgrain.com/collection-plaques.html">
-<meta property="og:title" content="Custom Golf Course Plaques — Hole-in-One & Commemorative | 18th Grain">
-<meta property="og:description" content="Handcrafted commemorative and hole-in-one plaques for golf courses. Each piece is a unique commission made from locally sourced hardwoods with mixed-media finishes.">
+<meta property="og:url" content="https://www.18thgrain.com/collection-course-accessories.html">
+<meta property="og:title" content="Custom Golf Course Accessories — Range Baskets & Course Furnishings | 18th Grain">
+<meta property="og:description" content="Custom golf course accessories handcrafted from locally sourced hardwoods. Range baskets, ball crates, and course furnishings designed for your property. Made in Vancouver, BC by 18th Grain.">
 <meta property="og:image" content="https://www.18thgrain.com/images/og-image.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Custom Golf Course Plaques — Hole-in-One & Commemorative | 18th Grain">
-<meta name="twitter:description" content="Handcrafted commemorative and hole-in-one plaques for golf courses. Each piece is a unique commission made from locally sourced hardwoods with mixed-media finishes.">
+<meta name="twitter:title" content="Custom Golf Course Accessories — Range Baskets & Course Furnishings | 18th Grain">
+<meta name="twitter:description" content="Custom golf course accessories handcrafted from locally sourced hardwoods. Range baskets, ball crates, and course furnishings designed for your property. Made in Vancouver, BC by 18th Grain.">
 <meta name="twitter:image" content="https://www.18thgrain.com/images/og-image.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -307,87 +307,43 @@ nav.primary a:hover::after { transform: scaleX(1); }
 }
 
 /* ================================================================
-   WORK GRID (asymmetric offset — matches main site)
+   IMAGE SECTION
    ================================================================ */
 .image-section {
-  padding: 0 0 40px;
+  padding: 0 0 80px;
   background: var(--ground);
 }
-
-.work-grid {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 40px;
+.image-mat {
+  opacity: 0;
+  transform: scale(0.97);
+  transition: opacity 900ms ease, transform 900ms cubic-bezier(0.16, 1, 0.3, 1);
 }
-.work-tile-a { grid-column: 1 / span 7; }
-.work-tile-b {
-  grid-column: 8 / span 5;
-  margin-top: 120px;
+.image-mat.is-in {
+  opacity: 1;
+  transform: scale(1);
 }
-.work-tile figure { margin: 0; }
-.work-tile img {
+.image-mat img {
   width: 100%;
   object-fit: cover;
   background: var(--ground-2);
-  filter: brightness(0.95) saturate(0.9);
-  transition: filter 0.4s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
   box-shadow: 0 24px 80px rgba(0, 0, 0, 0.4);
-}
-.work-tile img:hover {
-  filter: brightness(1) saturate(1);
-  transform: scale(1.01);
-  box-shadow: 0 32px 100px rgba(0, 0, 0, 0.5);
-}
-.work-tile-full { grid-column: 1 / -1; }
-.work-tile-full img {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  background: var(--ground-2);
   filter: brightness(0.95) saturate(0.9);
-  transition: filter 0.4s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
-  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.4);
+  transition: filter 0.4s ease;
 }
-.work-tile-full img:hover {
+.image-mat img:hover {
   filter: brightness(1) saturate(1);
-  transform: scale(1.01);
-  box-shadow: 0 32px 100px rgba(0, 0, 0, 0.5);
 }
-.work-tile figcaption {
+.image-caption {
   margin-top: 22px;
   font-family: var(--sans);
   font-size: 13px;
   line-height: 1.6;
   color: var(--cream-dim);
-  max-width: 46ch;
-}
-
-.work-tile {
-  opacity: 0;
-  transform: scale(0.96);
-  transition: opacity 900ms ease, transform 900ms cubic-bezier(0.16, 1, 0.3, 1);
-}
-.work-tile.is-in { opacity: 1; transform: scale(1); }
-.work-tile-b { transition-delay: 200ms; }
-
-.section-note {
-  font-family: var(--sans);
-  font-size: 12px;
-  color: var(--cream-faint);
-  margin: 28px 0 0;
-  letter-spacing: 0.02em;
-  font-style: italic;
   opacity: 0;
   transform: translateY(8px);
-  transition: opacity 600ms ease 300ms, transform 600ms ease 300ms;
+  transition: opacity 600ms ease 200ms, transform 600ms ease 200ms;
 }
-.section-note.is-in { opacity: 1; transform: translateY(0); }
-
-@media (max-width: 900px) {
-  .work-grid { grid-template-columns: 1fr; gap: 56px; }
-  .work-tile-a, .work-tile-b { grid-column: 1 / -1; }
-  .work-tile-b { margin-top: 0; transition-delay: 0ms; }
-}
+.image-caption.is-in { opacity: 1; transform: translateY(0); }
 
 /* ================================================================
    DESCRIPTION SECTION
@@ -507,8 +463,8 @@ footer.site-footer .copyright {
 {
   "@context": "https://schema.org",
   "@type": "Product",
-  "name": "Custom Golf Course Plaques",
-  "description": "Handcrafted commemorative and hole-in-one plaques for golf courses. Each piece is a unique commission made from locally sourced hardwoods with options for epoxy inlay and mixed-media finishes. Designed and built at the 18th Grain studio in Vancouver, BC.",
+  "name": "Custom Golf Course Accessories",
+  "description": "Custom golf course accessories handcrafted from locally sourced hardwoods. Range baskets, ball crates, and course furnishings designed for your property. Made in Vancouver, BC by 18th Grain.",
   "brand": {
     "@type": "Organization",
     "@id": "https://www.18thgrain.com/#organization",
@@ -520,13 +476,13 @@ footer.site-footer .copyright {
     "name": "18th Grain"
   },
   "category": "Golf Course Equipment",
-  "material": "Locally sourced hardwoods with epoxy inlay and mixed-media options",
+  "material": "Locally sourced hardwoods with mixed-media options",
   "countryOfOrigin": {
     "@type": "Country",
     "name": "Canada"
   },
-  "url": "https://www.18thgrain.com/collection-plaques.html",
-  "image": "https://www.18thgrain.com/images/hole-in-one-plaque-sean.JPG"
+  "url": "https://www.18thgrain.com/collection-course-accessories.html",
+  "image": "https://www.18thgrain.com/images/golf-range-ball-basket-01.JPG"
 }
 </script>
 </head>
@@ -565,85 +521,28 @@ footer.site-footer .copyright {
   <section class="page-hero">
     <div class="container">
       <span class="eyebrow" id="heroEyebrow">(01) Collections</span>
-      <h1 class="display" id="heroHeading">Plaques</h1>
-      <p class="subline" id="heroSubline">Commemorative and hole-in-one pieces. Each one unique.</p>
+      <h1 class="display" id="heroHeading">Course accessories</h1>
+      <p class="subline" id="heroSubline">Range baskets, ball crates, and course furnishings — designed for your property.</p>
     </div>
   </section>
 
-  <!-- IMAGES — asymmetric offset grid -->
+  <!-- IMAGES -->
   <section class="image-section">
     <div class="container">
-      <div class="work-grid">
-        <div class="work-tile work-tile-a" id="workTileA">
-          <figure>
-            <img
-              src="images/hole-in-one-wall-plaque-01.JPG"
-              alt="Walnut hole-in-one plaque with engraved topographic contour lines, golf ball on gold tee, mounted on a dark wall beside a bonsai tree."
-              loading="eager">
-            <figcaption>Hole-in-one plaque -- walnut with engraved topographic contour lines.</figcaption>
-          </figure>
-        </div>
-        <div class="work-tile work-tile-b" id="workTileB">
-          <figure>
-            <img
-              src="images/hole-in-one-wall-plaque-03.JPG"
-              alt="Walnut hole-in-one plaque with blue epoxy resin detail, golf ball on gold tee, mounted in a study setting."
-              loading="eager">
-            <figcaption>Hole-in-one plaque -- walnut with blue epoxy resin detail.</figcaption>
-          </figure>
-        </div>
+      <div class="image-mat" id="imageMain">
+        <img
+          src="images/golf-range-ball-basket-01.JPG"
+          alt="Custom wooden range ball basket with engraved club logo, filled with golf balls on a driving range."
+          loading="eager">
       </div>
-
-      <!-- Full-width course map plaques -->
-      <div class="work-tile work-tile-full" id="workTileFull" style="margin-top: 56px;">
-        <figure>
-          <img
-            src="images/wall-plaques-01.JPG"
-            alt="Four course map plaques mounted on a wall, including Augusta National, engraved on raw and figured wood."
-            loading="lazy"
-            style="aspect-ratio: 16 / 9; object-position: center;">
-          <figcaption>Course map plaques -- engraved on figured wood.</figcaption>
-        </figure>
-      </div>
-
-      <div class="work-grid" style="margin-top: 56px;">
-        <div class="work-tile work-tile-a" id="workTileC">
-          <figure>
-            <img
-              src="images/hole-in-one-wall-plaque-04.JPG"
-              alt="Close-up of a walnut hole-in-one plaque with engraved topographic contour lines, golf ball on gold tee, light background."
-              loading="lazy">
-            <figcaption>Hole-in-one plaque -- walnut with engraved topographic contour lines.</figcaption>
-          </figure>
-        </div>
-        <div class="work-tile work-tile-b" id="workTileD">
-          <figure>
-            <img
-              src="images/hole-in-one-plaque-sean.JPG"
-              alt="Walnut hole-in-one plaque for Sean Parrinder, Furry Creek, with engraved topographic contour lines, golf ball on gold tee."
-              loading="lazy">
-            <figcaption>Hole-in-one plaque -- walnut with topographic engraving.</figcaption>
-          </figure>
-        </div>
-      </div>
-
-      <div class="work-tile work-tile-full" style="margin-top: 56px;">
-        <figure>
-          <img
-            src="images/hole-in-one-plaque-shane-lowry.JPG"
-            alt="Burl wood and black epoxy resin hole-in-one plaque for Shane Lowry, Augusta National Golf Club, with engraved topographic hole map, golf ball mounted on steel pin."
-            loading="lazy"
-            style="aspect-ratio: 3 / 4; object-position: center;">
-          <figcaption>Hole-in-one plaque -- burl wood with black epoxy resin, engraved hole topography and steel-mounted ball.</figcaption>
-        </figure>
-      </div>
+      <p class="image-caption" id="imageCaption">Range ball basket — locally sourced hardwood with engraved club branding.</p>
     </div>
   </section>
 
   <!-- DESCRIPTION -->
   <section class="desc-section">
     <div class="container">
-      <p class="desc-text" id="descText">Commemorative plaques and hole-in-one pieces designed to mark significant moments on your course. Each plaque is a one-of-a-kind commission — the materials, engraving, and presentation are designed specifically for the occasion and the course.</p>
+      <p class="desc-text" id="descText">Course accessories designed and built to complement your property's identity. From range ball baskets and starter station furnishings to custom storage and display pieces — each accessory is commissioned to match the materials and aesthetic of your course.</p>
       <div class="desc-cta" id="descCta">
         <a href="index.html#contact" class="cta">Begin a commission <span class="arrow">&rarr;</span></a>
       </div>
@@ -722,12 +621,12 @@ footer.site-footer .copyright {
       });
     }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
 
-    ['heroEyebrow', 'heroHeading', 'heroSubline', 'workTileA', 'workTileB', 'workTileFull', 'workTileC', 'workTileD', 'descText', 'descCta'].forEach(function (id) {
+    ['heroEyebrow', 'heroHeading', 'heroSubline', 'imageMain', 'imageCaption', 'descText', 'descCta'].forEach(function (id) {
       var el = document.getElementById(id);
       if (el) revealObserver.observe(el);
     });
   } else {
-    document.querySelectorAll('.eyebrow, h1.display, .subline, .work-tile, .desc-text, .desc-cta').forEach(function (el) {
+    document.querySelectorAll('.eyebrow, h1.display, .subline, .image-mat, .image-caption, .desc-text, .desc-cta').forEach(function (el) {
       el.classList.add('is-in');
     });
   }
