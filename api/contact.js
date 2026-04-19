@@ -9,21 +9,34 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: 'Name, email, and message are required.' });
   }
 
-  const googleScriptUrl = process.env.GOOGLE_SCRIPT_URL;
+  const notionKey = process.env.NOTION_API_KEY;
+  const notionDbId = process.env.NOTION_DATABASE_ID;
   const resendKey = process.env.RESEND_API_KEY;
 
-  // 1. Write to Google Sheets via Apps Script (non-blocking)
-  if (googleScriptUrl) {
+  // 1. Write to Notion Website Inquiries database (non-blocking)
+  if (notionKey && notionDbId) {
     try {
-      await fetch(googleScriptUrl, {
+      await fetch('https://api.notion.com/v1/pages', {
         method: 'POST',
-        headers: { 'Content-Type': 'text/plain' },
-        body: JSON.stringify({ name, email, course, message }),
-        redirect: 'follow',
+        headers: {
+          'Authorization': `Bearer ${notionKey}`,
+          'Content-Type': 'application/json',
+          'Notion-Version': '2022-06-28',
+        },
+        body: JSON.stringify({
+          parent: { database_id: notionDbId },
+          properties: {
+            'Inquiry': { title: [{ text: { content: `Inquiry from ${name}` } }] },
+            'Name': { rich_text: [{ text: { content: name } }] },
+            'Email': { email: email },
+            'Course / Organization': { rich_text: [{ text: { content: course || '' } }] },
+            'Message': { rich_text: [{ text: { content: message } }] },
+            'Status': { select: { name: 'New' } },
+          },
+        }),
       });
     } catch (e) {
-      // Log but don't block — email notification is the fallback
-      console.error('Google Sheets error:', e);
+      console.error('Notion error:', e);
     }
   }
 
