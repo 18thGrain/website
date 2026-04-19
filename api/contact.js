@@ -15,7 +15,7 @@ export default async function handler(req, res) {
   // 1. Forward to CRM (creates a Website Inquiry record)
   if (crmWebhookSecret) {
     try {
-      await fetch('https://crm.18thgrain.com/api/webhooks/contact-form', {
+      const crmRes = await fetch('https://crm.18thgrain.com/api/webhooks/contact-form', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -28,9 +28,12 @@ export default async function handler(req, res) {
           message,
         }),
       });
+      console.log('CRM webhook status:', crmRes.status, await crmRes.text());
     } catch (e) {
       console.error('CRM webhook error:', e);
     }
+  } else {
+    console.error('CRM webhook skipped: WEBHOOK_SECRET not set');
   }
 
   // 2. Send email notification via Resend
