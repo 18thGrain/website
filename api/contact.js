@@ -9,70 +9,31 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: 'Name, email, and message are required.' });
   }
 
-  const notionKey = process.env.NOTION_API_KEY;
-  const notionDbId = process.env.NOTION_DATABASE_ID;
-  const notionTasksDbId = process.env.NOTION_TASKS_DATABASE_ID;
+  const crmWebhookSecret = process.env.CRM_WEBHOOK_SECRET;
   const resendKey = process.env.RESEND_API_KEY;
 
-  // 1. Write to Notion Website Inquiries database (non-blocking)
-  if (notionKey && notionDbId) {
+  // 1. Forward to CRM (creates a Website Inquiry record)
+  if (crmWebhookSecret) {
     try {
-      await fetch('https://api.notion.com/v1/pages', {
+      await fetch('https://crm.18thgrain.com/api/webhooks/contact-form', {
         method: 'POST',
         headers: {
-          'Authorization': `Bearer ${notionKey}`,
           'Content-Type': 'application/json',
-          'Notion-Version': '2022-06-28',
+          'x-webhook-secret': crmWebhookSecret,
         },
         body: JSON.stringify({
-          parent: { database_id: notionDbId },
-          properties: {
-            'Inquiry': { title: [{ text: { content: `Inquiry from ${name}` } }] },
-            'Name': { rich_text: [{ text: { content: name } }] },
-            'Email': { email: email },
-            'Course / Organization': { rich_text: [{ text: { content: course || '' } }] },
-            'Message': { rich_text: [{ text: { content: message } }] },
-            'Status': { select: { name: 'New' } },
-          },
+          name,
+          email,
+          courseOrganization: course || null,
+          message,
         }),
       });
     } catch (e) {
-      console.error('Notion error:', e);
+      console.error('CRM webhook error:', e);
     }
   }
 
-  // 2. Create a follow-up task in Notion Tasks database (non-blocking)
-  if (notionKey && notionTasksDbId) {
-    try {
-      const tomorrow = new Date();
-      tomorrow.setDate(tomorrow.getDate() + 1);
-      if (tomorrow.getDay() === 0) tomorrow.setDate(tomorrow.getDate() + 1);
-      if (tomorrow.getDay() === 6) tomorrow.setDate(tomorrow.getDate() + 2);
-
-      await fetch('https://api.notion.com/v1/pages', {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${notionKey}`,
-          'Content-Type': 'application/json',
-          'Notion-Version': '2022-06-28',
-        },
-        body: JSON.stringify({
-          parent: { database_id: notionTasksDbId },
-          properties: {
-            'Task': { title: [{ text: { content: `Respond to inquiry from ${name}${course ? ' (' + course + ')' : ''}` } }] },
-            'Status': { select: { name: 'To Do' } },
-            'Priority': { select: { name: 'High' } },
-            'Due Date': { date: { start: tomorrow.toISOString().split('T')[0] } },
-            'Notes': { rich_text: [{ text: { content: `Website inquiry received. Check Website Inquiries database for full details.` } }] },
-          },
-        }),
-      });
-    } catch (e) {
-      console.error('Notion Tasks error:', e);
-    }
-  }
-
-  // 3. Send email notification via Resend
+  // 2. Send email notification via Resend
   if (resendKey) {
     try {
       await fetch('https://api.resend.com/emails', {
