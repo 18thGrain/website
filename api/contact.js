@@ -9,7 +9,7 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: 'Name, email, and message are required.' });
   }
 
-  const crmWebhookSecret = process.env.CRM_WEBHOOK_SECRET;
+  const crmWebhookSecret = process.env.WEBHOOK_SECRET;
   const resendKey = process.env.RESEND_API_KEY;
 
   // 1. Forward to CRM (creates a Website Inquiry record)
