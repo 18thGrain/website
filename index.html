@@ -715,6 +715,11 @@ nav.primary a:hover::after { transform: scaleX(1); }
 }
 .work-tile.is-in { opacity: 1; transform: translateY(0); }
 .work-tile-b { transition-delay: 200ms; }
+.work-tile-c { transition-delay: 300ms; }
+.work-tile-c img {
+  aspect-ratio: 3 / 2;
+  object-position: center 70%;
+}
 @media (max-width: 900px) {
   .work-grid { grid-template-columns: 1fr; gap: 56px; }
 }
@@ -1308,6 +1313,17 @@ footer.site-footer .copyright {
         <div class="work-tile work-tile-b" id="workTileB">
           <figure>
             <img
+              src="images/course-sign-etiquette-01.JPG"
+              alt="Wooden course etiquette sign with engraved rules and club logo for Vancouver Golf Club, mounted on a single post with greenery behind."
+              loading="lazy">
+            <figcaption>Course etiquette sign — engraved rules with club branding.</figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="work-grid" style="margin-top: 56px;">
+        <div class="work-tile work-tile-c" id="workTileC">
+          <figure>
+            <img
               src="images/tee-marker-10.png"
               alt="A walnut hexagonal tee marker with blue inlay stripe on steel legs, sitting on turf."
               loading="lazy">
@@ -1515,9 +1531,11 @@ footer.site-footer .copyright {
     // Work tiles
     var workTileA = document.getElementById('workTileA');
     var workTileB = document.getElementById('workTileB');
+    var workTileC = document.getElementById('workTileC');
     var workTail = document.getElementById('workTail');
     if (workTileA) revealObserver.observe(workTileA);
     if (workTileB) revealObserver.observe(workTileB);
+    if (workTileC) revealObserver.observe(workTileC);
     if (workTail) revealObserver.observe(workTail);
 
     // Maker columns
