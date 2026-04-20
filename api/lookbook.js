@@ -3,7 +3,7 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const { name, email, course } = req.body;
+  const { name, email, course, marketingConsent } = req.body;
 
   if (!name || !email) {
     return res.status(400).json({ error: 'Name and email are required.' });
@@ -25,6 +25,7 @@ export default async function handler(req, res) {
           name,
           email,
           courseOrganization: course || null,
+          marketingConsent: !!marketingConsent,
         }),
       });
     } catch (e) {
@@ -51,6 +52,8 @@ export default async function handler(req, res) {
             `Name: ${name}`,
             `Email: ${email}`,
             course ? `Club / Course: ${course}` : null,
+            ``,
+            `Marketing consent: ${marketingConsent ? 'Yes' : 'No'}`,
           ].filter(Boolean).join('\n'),
         }),
       });
