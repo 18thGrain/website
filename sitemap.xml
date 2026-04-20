@@ -43,4 +43,10 @@
     <priority>0.7</priority>
   </url>
 
+  <url>
+    <loc>https://www.18thgrain.com/privacy-policy.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
 </urlset>

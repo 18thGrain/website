@@ -3,14 +3,9 @@
 <head>
 <meta charset="utf-8">
 <link rel="icon" type="image/png" href="/favicon.png">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-FV9SFXG94P"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-FV9SFXG94P');
-</script>
+<!-- Cookie consent + analytics (loads GA only after consent) -->
+<script src="/js/consent.js" defer></script>
+<link rel="stylesheet" href="/js/consent.css">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Custom Handcrafted Golf Course Tee Markers, Plaques & Signs | 18th Grain — Vancouver, BC</title>
 <meta name="description" content="18th Grain is a Vancouver-based studio that designs and builds custom tee markers, yardage markers, plaques, and golf course signs from locally sourced hardwoods. Each piece is commissioned for a specific course — CNC-fabricated and hand-finished by designer Benjamin McLaughlin.">
@@ -1342,7 +1337,7 @@ footer.site-footer .copyright {
      ============================================================ -->
 <div class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
   <a href="#work" class="mobile-menu-link">Work</a>
-  <a href="collections.html" class="mobile-menu-link">Collections</a>
+  <a href="/collections" class="mobile-menu-link">Collections</a>
   <a href="#about" class="mobile-menu-link">About</a>
   <a href="#contact" class="mobile-menu-link">Contact</a>
 </div>
@@ -1352,11 +1347,11 @@ footer.site-footer .copyright {
      ============================================================ -->
 <header class="site-header" id="siteHeader">
   <div class="container inner">
-    <a href="index.html" class="nav-wordmark">18<span class="th">th</span>&nbsp;Grain</a>
+    <a href="/" class="nav-wordmark">18<span class="th">th</span>&nbsp;Grain</a>
     <nav class="primary" aria-label="Primary">
       <a href="#work">Work</a>
       <a href="#about">About</a>
-      <a href="collections.html">Collections</a>
+      <a href="/collections">Collections</a>
       <a href="#contact">Contact</a>
     </nav>
     <button class="hamburger" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">
@@ -1389,7 +1384,7 @@ footer.site-footer .copyright {
       <p class="hero-tagline">Commissioned for the course</p>
       <p class="hero-subline">Canadian-made tee markers, yardage markers, plaques and golf course signs.</p>
       <div class="hero-cta">
-        <a href="collections.html" class="cta">See what we make <span class="arrow">&rarr;</span></a>
+        <a href="/collections" class="cta">See what we make <span class="arrow">&rarr;</span></a>
       </div>
     </div>
   </section>
@@ -1415,35 +1410,35 @@ footer.site-footer .copyright {
       </div>
       <ul class="numbered-list" id="productList">
         <li>
-          <a href="collection-tee-markers.html" style="display:contents;color:inherit;text-decoration:none;">
+          <a href="/collection-tee-markers" style="display:contents;color:inherit;text-decoration:none;">
           <span class="num">01 / 05</span>
           <span class="label">Tee markers</span>
           <span class="note">Designed and built for your tee boxes.</span>
           </a>
         </li>
         <li>
-          <a href="collection-yardage-markers.html" style="display:contents;color:inherit;text-decoration:none;">
+          <a href="/collection-yardage-markers" style="display:contents;color:inherit;text-decoration:none;">
           <span class="num">02 / 05</span>
           <span class="label">Yardage markers</span>
           <span class="note">Fairway and tee-side distance markers.</span>
           </a>
         </li>
         <li>
-          <a href="collection-plaques.html" style="display:contents;color:inherit;text-decoration:none;">
+          <a href="/collection-plaques" style="display:contents;color:inherit;text-decoration:none;">
           <span class="num">03 / 05</span>
           <span class="label">Plaques</span>
           <span class="note">Commemorative and hole-in-one pieces.</span>
           </a>
         </li>
         <li>
-          <a href="collection-course-signs.html" style="display:contents;color:inherit;text-decoration:none;">
+          <a href="/collection-course-signs" style="display:contents;color:inherit;text-decoration:none;">
           <span class="num">04 / 05</span>
           <span class="label">Course signage</span>
           <span class="note">Wayfinding and course identity.</span>
           </a>
         </li>
         <li>
-          <a href="collection-course-accessories.html" style="display:contents;color:inherit;text-decoration:none;">
+          <a href="/collection-course-accessories" style="display:contents;color:inherit;text-decoration:none;">
           <span class="num">05 / 05</span>
           <span class="label">Course accessories</span>
           <span class="note">Range baskets, furnishings, and custom pieces.</span>
@@ -1497,7 +1492,7 @@ footer.site-footer .copyright {
         </div>
       </div>
       <div class="work-tail" id="workTail">
-        <a href="collections.html" class="cta">See all work <span class="arrow">&rarr;</span></a>
+        <a href="/collections" class="cta">See all work <span class="arrow">&rarr;</span></a>
       </div>
     </div>
   </section>
@@ -1525,7 +1520,7 @@ footer.site-footer .copyright {
         </div>
         <div class="form-row-full consent-row">
           <label class="consent-label">
-            <input type="checkbox" id="lookbook-consent" name="marketing_consent">
+            <input type="checkbox" id="lookbook-consent" name="marketing_consent" required>
             <span class="consent-text">I'd like to receive occasional updates from 18th Grain about new work, materials, and studio news. You can unsubscribe at any time.</span>
           </label>
         </div>
@@ -1617,9 +1612,10 @@ footer.site-footer .copyright {
       </div>
       <nav class="foot-nav" aria-label="Footer">
         <a href="#work">Work</a>
-        <a href="collections.html">Collections</a>
+        <a href="/collections">Collections</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
+        <a href="/privacy-policy">Privacy</a>
       </nav>
       <div class="foot-contact">
         <a href="mailto:info@18thgrain.com">info@18thgrain.com</a>
@@ -1775,6 +1771,12 @@ footer.site-footer .copyright {
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     var btn = form.querySelector('button[type="submit"]');
+    var consent = form.querySelector('#lookbook-consent');
+    if (!consent.checked) {
+      status.textContent = 'Please check the box above to continue.';
+      status.className = 'lookbook-status error';
+      return;
+    }
     btn.disabled = true;
     status.textContent = 'Sending...';
     status.className = 'lookbook-status';

@@ -1,0 +1,508 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<link rel="icon" type="image/png" href="/favicon.png">
+<!-- Cookie consent + analytics (loads GA only after consent) -->
+<script src="/js/consent.js" defer></script>
+<link rel="stylesheet" href="/js/consent.css">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Privacy Policy | 18th Grain</title>
+<meta name="description" content="How 18th Grain collects, uses, and protects your personal information.">
+<link rel="canonical" href="https://www.18thgrain.com/privacy-policy">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="18th Grain">
+<meta property="og:url" content="https://www.18thgrain.com/privacy-policy">
+<meta property="og:title" content="Privacy Policy | 18th Grain">
+<meta property="og:description" content="How 18th Grain collects, uses, and protects your personal information.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ground: #171719;
+  --ground-2: #1c1c1f;
+  --ground-deep: #111113;
+  --wine: #171719;
+  --wine-deep: #111113;
+  --cream: #ebe0c4;
+  --cream-strong: #f3e9cd;
+  --cream-dim: rgba(235, 224, 196, 0.62);
+  --cream-faint: rgba(235, 224, 196, 0.38);
+  --rule: rgba(235, 224, 196, 0.14);
+  --rule-soft: rgba(235, 224, 196, 0.08);
+  --accent: #c7a96b;
+  --serif: "Fraunces", Georgia, "Times New Roman", serif;
+  --sans: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--ground);
+  color: var(--cream);
+  font-family: var(--sans);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.028;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+::selection { background: var(--cream); color: var(--ground); }
+
+.container {
+  width: 100%;
+  max-width: 1480px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+@media (max-width: 800px) { .container { padding: 0 24px; } }
+
+h1, h2, h3 { margin: 0; font-family: var(--serif); font-weight: 400; }
+
+.serif {
+  font-family: var(--serif);
+  font-variation-settings: "opsz" 144, "SOFT" 0, "WONK" 0;
+  font-weight: 400;
+}
+
+/* Navigation */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 24px 0;
+  background: rgba(23, 23, 25, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.site-header .inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-wordmark {
+  font-family: var(--serif);
+  font-variation-settings: "opsz" 144, "SOFT" 0, "WONK" 0;
+  font-weight: 400;
+  font-size: 20px;
+  letter-spacing: -0.01em;
+  color: var(--cream);
+  line-height: 1;
+}
+.nav-wordmark .th { font-style: italic; }
+
+nav.primary {
+  display: flex;
+  gap: 40px;
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--cream);
+}
+nav.primary a {
+  position: relative;
+  padding-bottom: 2px;
+  transition: color 300ms ease;
+}
+nav.primary a::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 400ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+nav.primary a:hover { color: var(--cream); }
+nav.primary a:hover::after { transform: scaleX(1); }
+
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  width: 44px;
+  height: 44px;
+  position: relative;
+  z-index: 200;
+}
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background: var(--cream);
+  margin: 0 auto;
+  transition: transform 300ms ease, opacity 200ms ease;
+}
+.hamburger span:nth-child(1) { margin-bottom: 6px; }
+.hamburger span:nth-child(3) { margin-top: 6px; }
+.hamburger.is-open span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+.hamburger.is-open span:nth-child(2) { opacity: 0; }
+.hamburger.is-open span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  background: var(--ground);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 400ms ease;
+}
+.mobile-menu.is-open { opacity: 1; pointer-events: auto; }
+.mobile-menu a {
+  font-family: var(--serif);
+  font-variation-settings: "opsz" 144;
+  font-size: 36px;
+  font-weight: 400;
+  color: var(--cream);
+  transition: color 300ms ease;
+}
+.mobile-menu a:hover { color: var(--accent); }
+
+@media (max-width: 800px) {
+  nav.primary { display: none; }
+  .hamburger { display: flex; flex-direction: column; justify-content: center; }
+}
+
+/* Page content */
+.policy-section {
+  padding: 180px 0 140px;
+  background: var(--ground);
+}
+
+.policy-content {
+  max-width: 680px;
+}
+
+.policy-content .eyebrow {
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--cream-dim);
+  margin: 0 0 40px;
+}
+
+.policy-content h1 {
+  font-family: var(--serif);
+  font-variation-settings: "opsz" 144, "SOFT" 0, "WONK" 0;
+  font-weight: 400;
+  font-size: clamp(30px, 3.6vw, 52px);
+  letter-spacing: -0.015em;
+  line-height: 1.02;
+  color: var(--cream);
+  margin-bottom: 24px;
+}
+
+.policy-content .last-updated {
+  font-family: var(--sans);
+  font-size: 12px;
+  color: var(--cream-faint);
+  letter-spacing: 0.02em;
+  margin-bottom: 64px;
+}
+
+.policy-content h2 {
+  font-family: var(--serif);
+  font-variation-settings: "opsz" 144;
+  font-size: clamp(20px, 2vw, 26px);
+  letter-spacing: -0.01em;
+  color: var(--cream);
+  margin: 56px 0 20px;
+  padding-top: 56px;
+  border-top: 1px solid var(--rule);
+}
+
+.policy-content h2:first-of-type {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
+.policy-content p {
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--cream-dim);
+  margin: 0 0 16px;
+}
+
+.policy-content ul {
+  margin: 0 0 16px;
+  padding-left: 20px;
+}
+
+.policy-content li {
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--cream-dim);
+  margin-bottom: 8px;
+}
+
+.policy-content a {
+  color: var(--accent);
+  transition: color 300ms ease;
+}
+.policy-content a:hover { color: var(--cream); }
+
+/* Footer */
+footer.site-footer {
+  background: var(--ground-deep);
+  color: var(--cream-dim);
+  padding: 80px 0 48px;
+  border-top: 1px solid var(--rule);
+}
+footer.site-footer .row {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 32px;
+  align-items: start;
+}
+footer.site-footer .foot-mark { grid-column: 1 / span 5; }
+footer.site-footer .foot-wordmark {
+  font-family: var(--serif);
+  font-variation-settings: "opsz" 144;
+  font-size: 34px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: var(--cream);
+  display: block;
+  margin-bottom: 18px;
+  line-height: 1;
+}
+footer.site-footer .foot-tag {
+  font-size: 12px;
+  line-height: 1.65;
+  color: var(--cream-dim);
+  max-width: 38ch;
+  display: block;
+}
+footer.site-footer nav.foot-nav {
+  grid-column: 6 / span 3;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-weight: 500;
+}
+footer.site-footer nav.foot-nav a {
+  color: var(--cream);
+  transition: color 300ms ease;
+}
+footer.site-footer nav.foot-nav a:hover { color: var(--accent); }
+footer.site-footer .foot-contact {
+  grid-column: 9 / span 4;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  font-size: 12px;
+}
+footer.site-footer .foot-contact a {
+  color: var(--cream);
+  transition: color 300ms ease;
+}
+footer.site-footer .foot-contact a:hover { color: var(--accent); }
+footer.site-footer .copyright {
+  grid-column: 1 / -1;
+  margin-top: 64px;
+  padding-top: 28px;
+  border-top: 1px solid var(--rule);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cream-faint);
+}
+
+@media (max-width: 900px) {
+  footer.site-footer .foot-mark,
+  footer.site-footer nav.foot-nav,
+  footer.site-footer .foot-contact { grid-column: 1 / -1; }
+  footer.site-footer nav.foot-nav { margin-top: 28px; }
+  footer.site-footer .foot-contact { margin-top: 20px; }
+}
+
+@media (max-width: 800px) {
+  .policy-section { padding: 140px 0 88px; }
+}
+</style>
+</head>
+<body>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
+  <a href="/#work" class="mobile-menu-link">Work</a>
+  <a href="/collections" class="mobile-menu-link">Collections</a>
+  <a href="/#about" class="mobile-menu-link">About</a>
+  <a href="/#contact" class="mobile-menu-link">Contact</a>
+</div>
+
+<!-- Header -->
+<header class="site-header" id="siteHeader">
+  <div class="container inner">
+    <a href="/" class="nav-wordmark">18<span class="th">th</span>&nbsp;Grain</a>
+    <nav class="primary" aria-label="Primary">
+      <a href="/#work">Work</a>
+      <a href="/#about">About</a>
+      <a href="/collections">Collections</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+    <button class="hamburger" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<!-- Content -->
+<main>
+  <section class="policy-section">
+    <div class="container">
+      <div class="policy-content">
+        <span class="eyebrow">Legal</span>
+        <h1>Privacy Policy</h1>
+        <p class="last-updated">Last updated: April 20, 2026</p>
+
+        <h2>Who we are</h2>
+        <p>18th Grain is a Vancouver-based design studio that creates custom tee markers, yardage markers, plaques, and golf course signs. This policy explains how we collect, use, and protect your personal information when you visit our website or interact with our services.</p>
+
+        <h2>What we collect</h2>
+        <p>We collect personal information only when you voluntarily provide it through our website forms:</p>
+        <ul>
+          <li><strong>Contact form:</strong> your name, email address, club or course name, and message.</li>
+          <li><strong>Lookbook request:</strong> your name, email address, club or course name, and marketing consent preference.</li>
+        </ul>
+        <p>We also collect anonymous usage data through Google Analytics, including pages visited, time on site, device type, and general geographic region. This data does not identify you personally.</p>
+
+        <h2>How we use your information</h2>
+        <p>We use the information you provide to:</p>
+        <ul>
+          <li>Respond to your enquiry or project request.</li>
+          <li>Send you the studio lookbook you requested.</li>
+          <li>Send occasional updates about new work, materials, and studio news — only if you opted in.</li>
+          <li>Understand how visitors use our website so we can improve it.</li>
+        </ul>
+        <p>We do not sell, rent, or share your personal information with third parties for marketing purposes.</p>
+
+        <h2>Third-party services</h2>
+        <p>We use a small number of trusted services to operate our website:</p>
+        <ul>
+          <li><strong>Vercel:</strong> website hosting and serverless functions.</li>
+          <li><strong>Resend:</strong> transactional email delivery (sends you the lookbook and sends us form notifications).</li>
+          <li><strong>Google Analytics:</strong> anonymous website usage analytics.</li>
+        </ul>
+        <p>Each of these services has its own privacy policy governing how it handles data.</p>
+
+        <h2>Cookies</h2>
+        <p>When you first visit our website, we ask for your consent before setting any cookies. If you accept, Google Analytics sets analytical cookies that help us see aggregate visitor patterns. If you decline, no tracking cookies are set. You can also disable cookies in your browser settings at any time.</p>
+
+        <h2>Data retention</h2>
+        <p>We retain contact form submissions and lookbook requests for the purpose of ongoing client relationships and project enquiries. If you would like your data removed, contact us and we will delete it promptly.</p>
+
+        <h2>Your rights</h2>
+        <p>You have the right to:</p>
+        <ul>
+          <li>Request access to the personal information we hold about you.</li>
+          <li>Request correction or deletion of your personal information.</li>
+          <li>Unsubscribe from marketing communications at any time.</li>
+          <li>Ask us any questions about how your data is handled.</li>
+        </ul>
+
+        <h2>Contact</h2>
+        <p>If you have questions about this privacy policy or your personal information, contact us at <a href="mailto:info@18thgrain.com">info@18thgrain.com</a>.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="row">
+      <div class="foot-mark">
+        <span class="foot-wordmark">18<span style="font-style: italic;">th</span>&nbsp;Grain</span>
+        <span class="foot-tag">Commissioned for the course. Canadian-made tee markers, yardage markers, plaques and golf course signs.</span>
+      </div>
+      <nav class="foot-nav" aria-label="Footer">
+        <a href="/#work">Work</a>
+        <a href="/collections">Collections</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+        <a href="/privacy-policy">Privacy</a>
+      </nav>
+      <div class="foot-contact">
+        <a href="mailto:info@18thgrain.com">info@18thgrain.com</a>
+        <a href="https://www.instagram.com/18thgrain" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.linkedin.com/company/18thgrain" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+      <div class="copyright">&copy; 2026 18th Grain &middot; Vancouver, British Columbia</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+  var hamburger = document.getElementById('hamburgerBtn');
+  var mobileMenu = document.getElementById('mobileMenu');
+  if (hamburger && mobileMenu) {
+    hamburger.addEventListener('click', function () {
+      var isOpen = hamburger.classList.toggle('is-open');
+      mobileMenu.classList.toggle('is-open');
+      hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+    mobileMenu.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        hamburger.classList.remove('is-open');
+        mobileMenu.classList.remove('is-open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
+    });
+  }
+})();
+</script>
+
+</body>
+</html>
