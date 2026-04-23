@@ -310,22 +310,36 @@ nav.primary a:hover::after { transform: scaleX(1); }
 }
 
 /* ================================================================
-   IMAGE SECTION
+   PRODUCT GRID
    ================================================================ */
-.image-section {
+.product-grid-section {
   padding: 0 0 80px;
   background: var(--ground);
 }
-.image-mat {
+.product-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+.product-cell {
   opacity: 0;
-  transform: scale(0.97);
-  transition: opacity 900ms ease, transform 900ms cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(20px);
+  transition: opacity 700ms ease, transform 700ms ease;
 }
-.image-mat.is-in {
+.product-cell.is-in {
   opacity: 1;
-  transform: scale(1);
+  transform: translateY(0);
 }
-.image-mat img {
+.product-cell--offset {
+  margin-top: 100px;
+  transition-delay: 150ms;
+}
+.product-cell .image-mat {
+  opacity: 1;
+  transform: none;
+}
+.product-cell .image-mat img {
   width: 100%;
   object-fit: cover;
   background: var(--ground-2);
@@ -333,20 +347,25 @@ nav.primary a:hover::after { transform: scaleX(1); }
   filter: brightness(0.95) saturate(0.9);
   transition: filter 0.4s ease;
 }
-.image-mat img:hover {
+.product-cell .image-mat img:hover {
   filter: brightness(1) saturate(1);
 }
-.image-caption {
+.product-cell .image-caption {
   margin-top: 22px;
   font-family: var(--sans);
   font-size: 13px;
   line-height: 1.6;
   color: var(--cream-dim);
-  opacity: 0;
-  transform: translateY(8px);
-  transition: opacity 600ms ease 200ms, transform 600ms ease 200ms;
 }
-.image-caption.is-in { opacity: 1; transform: translateY(0); }
+@media (max-width: 800px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+  .product-cell--offset {
+    margin-top: 0;
+  }
+}
 
 /* ================================================================
    DESCRIPTION SECTION
@@ -529,29 +548,32 @@ footer.site-footer .copyright {
     </div>
   </section>
 
-  <!-- IMAGES -->
-  <section class="image-section">
+  <!-- PRODUCT GRID -->
+  <section class="product-grid-section">
     <div class="container">
-      <div class="image-mat" id="imageMain">
-        <img
-          src="images/golf-range-ball-basket-01.webp"
-          alt="Custom wooden range ball basket with engraved club logo, filled with golf balls on a driving range."
-          loading="eager">
-      </div>
-      <p class="image-caption" id="imageCaption">Range ball basket. Locally sourced hardwood with engraved club branding.</p>
-    </div>
-  </section>
+      <div class="product-grid">
 
-  <!-- RANGE BALL DISPENSER -->
-  <section class="image-section">
-    <div class="container">
-      <div class="image-mat">
-        <img
-          src="images/golf-range-ball-dispenser-01.JPG"
-          alt="Hexagonal wood range ball dispenser with gravity-fed dispensing slot, shown from multiple angles on a driving range."
-          loading="lazy">
+        <div class="product-cell" id="productCell1">
+          <div class="image-mat">
+            <img
+              src="images/golf-range-ball-basket-01.webp"
+              alt="Custom wooden range ball basket with engraved club logo, filled with golf balls on a driving range."
+              loading="eager">
+          </div>
+          <p class="image-caption">Range ball basket. Locally sourced hardwood with engraved club branding.</p>
+        </div>
+
+        <div class="product-cell product-cell--offset" id="productCell2">
+          <div class="image-mat">
+            <img
+              src="images/golf-range-ball-dispenser-01.webp"
+              alt="Hexagonal wood range ball dispenser with gravity-fed dispensing slot, shown from multiple angles on a driving range."
+              loading="lazy">
+          </div>
+          <p class="image-caption">Range ball dispenser. Hexagonal form with gravity-fed ball delivery.</p>
+        </div>
+
       </div>
-      <p class="image-caption">Range ball dispenser. Hexagonal form with gravity-fed ball delivery.</p>
     </div>
   </section>
 
@@ -638,12 +660,12 @@ footer.site-footer .copyright {
       });
     }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
 
-    ['heroEyebrow', 'heroHeading', 'heroSubline', 'imageMain', 'imageCaption', 'descText', 'descCta'].forEach(function (id) {
+    ['heroEyebrow', 'heroHeading', 'heroSubline', 'productCell1', 'productCell2', 'descText', 'descCta'].forEach(function (id) {
       var el = document.getElementById(id);
       if (el) revealObserver.observe(el);
     });
   } else {
-    document.querySelectorAll('.eyebrow, h1.display, .subline, .image-mat, .image-caption, .desc-text, .desc-cta').forEach(function (el) {
+    document.querySelectorAll('.eyebrow, h1.display, .subline, .product-cell, .desc-text, .desc-cta').forEach(function (el) {
       el.classList.add('is-in');
     });
   }
