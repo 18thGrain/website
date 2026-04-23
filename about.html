@@ -1,0 +1,1131 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<link rel="icon" type="image/png" href="/favicon.png">
+<!-- Cookie consent + analytics (loads GA only after consent) -->
+<script src="/js/consent.js" defer></script>
+<link rel="stylesheet" href="/js/consent.css">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>About 18th Grain | Handcrafted Golf Course Markers from Vancouver, BC</title>
+<meta name="description" content="18th Grain is a Vancouver-based design studio specializing in custom tee markers, yardage markers, plaques, and golf course signage. The studio creates bespoke, handcrafted pieces from locally sourced hardwoods for private clubs and resort courses worldwide.">
+<link rel="canonical" href="https://www.18thgrain.com/about">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="18th Grain">
+<meta property="og:url" content="https://www.18thgrain.com/about">
+<meta property="og:title" content="About 18th Grain | Handcrafted Golf Course Markers from Vancouver, BC">
+<meta property="og:description" content="18th Grain is a Vancouver-based design studio specializing in custom tee markers, yardage markers, plaques, and golf course signage. Bespoke, handcrafted pieces from locally sourced hardwoods.">
+<meta property="og:image" content="https://www.18thgrain.com/images/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="About 18th Grain | Handcrafted Golf Course Markers from Vancouver, BC">
+<meta name="twitter:description" content="18th Grain is a Vancouver-based design studio specializing in custom tee markers, yardage markers, plaques, and golf course signage. Bespoke, handcrafted pieces from locally sourced hardwoods.">
+<meta name="twitter:image" content="https://www.18thgrain.com/images/og-image.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ================================================================
+   DESIGN TOKENS
+   ================================================================ */
+:root {
+  --ground: #171719;
+  --ground-2: #1c1c1f;
+  --ground-deep: #111113;
+  --wine: #171719;
+  --wine-deep: #111113;
+  --cream: #ebe0c4;
+  --cream-strong: #f3e9cd;
+  --cream-dim: rgba(235, 224, 196, 0.62);
+  --cream-faint: rgba(235, 224, 196, 0.38);
+  --rule: rgba(235, 224, 196, 0.14);
+  --rule-soft: rgba(235, 224, 196, 0.08);
+  --accent: #c7a96b;
+
+  --serif: "Fraunces", Georgia, "Times New Roman", serif;
+  --sans: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+/* ================================================================
+   RESET & GLOBALS
+   ================================================================ */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--ground);
+  color: var(--cream);
+  font-family: var(--sans);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+/* Noise texture overlay */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.028;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+}
+
+img { max-width: 100%; display: block; }
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection { background: var(--cream); color: var(--ground); }
+
+.container {
+  width: 100%;
+  max-width: 1480px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+@media (max-width: 800px) { .container { padding: 0 24px; } }
+
+/* ================================================================
+   TYPOGRAPHY
+   ================================================================ */
+h1, h2, h3 { margin: 0; font-family: var(--serif); font-weight: 400; }
+
+h1.display, h2.display {
+  font-family: var(--serif);
+  font-variation-settings: "opsz" 144, "SOFT" 0, "WONK" 0;
+  font-weight: 400;
+  letter-spacing: -0.015em;
+  line-height: 1.02;
+  color: var(--cream);
+}
+h1.display { font-size: clamp(34px, 4.4vw, 64px); }
+h2.display { font-size: clamp(30px, 3.6vw, 52px); }
+
+/* ================================================================
+   FIXED NAVIGATION
+   ================================================================ */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 24px 0;
+  background: transparent;
+  transition: background 400ms ease, backdrop-filter 400ms ease, padding 400ms ease;
+}
+.site-header.is-scrolled {
+  background: rgba(23, 23, 25, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 18px 0;
+}
+.site-header .inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-wordmark {
+  font-family: var(--serif);
+  font-variation-settings: "opsz" 144, "SOFT" 0, "WONK" 0;
+  font-weight: 400;
+  font-size: 20px;
+  letter-spacing: -0.01em;
+  color: var(--cream);
+  line-height: 1;
+}
+.nav-wordmark .th {
+  font-style: italic;
+}
+
+nav.primary {
+  display: flex;
+  gap: 40px;
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--cream);
+}
+nav.primary a {
+  position: relative;
+  padding-bottom: 2px;
+  transition: color 300ms ease;
+}
+nav.primary a::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 400ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+nav.primary a:hover { color: var(--cream); }
+nav.primary a:hover::after { transform: scaleX(1); }
+nav.primary a.is-current::after { transform: scaleX(1); }
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  width: 44px;
+  height: 44px;
+  position: relative;
+  z-index: 200;
+}
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background: var(--cream);
+  margin: 0 auto;
+  transition: transform 300ms ease, opacity 200ms ease;
+}
+.hamburger span:nth-child(1) { margin-bottom: 6px; }
+.hamburger span:nth-child(3) { margin-top: 6px; }
+
+.hamburger.is-open span:nth-child(1) {
+  transform: translateY(7.5px) rotate(45deg);
+}
+.hamburger.is-open span:nth-child(2) { opacity: 0; }
+.hamburger.is-open span:nth-child(3) {
+  transform: translateY(-7.5px) rotate(-45deg);
+}
+
+/* Mobile menu overlay */
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  background: var(--ground);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 400ms ease;
+}
+.mobile-menu.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+.mobile-menu a {
+  font-family: var(--serif);
+  font-variation-settings: "opsz" 144;
+  font-size: 36px;
+  font-weight: 400;
+  color: var(--cream);
+  transition: color 300ms ease;
+}
+.mobile-menu a:hover { color: var(--accent); }
+
+@media (max-width: 800px) {
+  nav.primary { display: none; }
+  .hamburger { display: flex; flex-direction: column; justify-content: center; }
+}
+
+/* ================================================================
+   EYEBROW
+   ================================================================ */
+.eyebrow {
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--cream-dim);
+  margin: 0 0 40px;
+}
+
+/* ================================================================
+   CTA BUTTON
+   ================================================================ */
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 32px;
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--cream);
+  background: transparent;
+  border: 1px solid var(--cream-dim);
+  border-radius: 999px;
+  cursor: pointer;
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+  transition: color 350ms ease, border-color 350ms ease;
+  z-index: 1;
+}
+.cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--cream);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 450ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  z-index: -1;
+  border-radius: 999px;
+}
+.cta .arrow {
+  transition: transform 300ms ease;
+  display: inline-block;
+}
+.cta:hover, .cta:focus {
+  color: var(--ground);
+  border-color: var(--cream);
+}
+.cta:hover::before, .cta:focus::before { transform: scaleX(1); }
+.cta:hover .arrow, .cta:focus .arrow { transform: translateX(5px); }
+
+/* ================================================================
+   PAGE HERO
+   ================================================================ */
+.page-hero {
+  padding: 180px 0 100px;
+  background: var(--ground);
+}
+.page-hero .eyebrow {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 600ms ease, transform 600ms ease;
+}
+.page-hero .eyebrow.is-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+.page-hero h1.display {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 700ms cubic-bezier(0.16, 1, 0.3, 1) 100ms, transform 700ms cubic-bezier(0.16, 1, 0.3, 1) 100ms;
+}
+.page-hero h1.display.is-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+.page-hero .subline {
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--cream-dim);
+  max-width: 54ch;
+  margin: 28px 0 0;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 600ms ease 200ms, transform 600ms ease 200ms;
+}
+.page-hero .subline.is-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 800px) {
+  .page-hero { padding: 140px 0 72px; }
+}
+
+/* ================================================================
+   ABOUT SECTIONS
+   ================================================================ */
+
+/* --- Entity Section --- */
+.entity-section {
+  padding: 0 0 120px;
+  border-bottom: 1px solid var(--rule);
+}
+.entity-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+.entity-narrative {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 600ms ease, transform 600ms ease;
+}
+.entity-narrative.is-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+.entity-narrative p {
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--cream-dim);
+  margin: 0 0 24px;
+  max-width: 52ch;
+}
+.entity-narrative p:last-child { margin-bottom: 0; }
+.entity-narrative p:first-child {
+  font-size: 17px;
+  color: var(--cream);
+  line-height: 1.7;
+}
+
+.entity-facts {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 600ms ease 150ms, transform 600ms ease 150ms;
+}
+.entity-facts.is-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.entity-facts dl {
+  margin: 0;
+  padding: 0;
+}
+.entity-facts dl > div {
+  padding: 28px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.entity-facts dl > div:first-child {
+  padding-top: 0;
+}
+.entity-facts dt {
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--cream-faint);
+  margin: 0 0 10px;
+}
+.entity-facts dd {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--cream);
+}
+
+@media (max-width: 800px) {
+  .entity-grid {
+    grid-template-columns: 1fr;
+    gap: 56px;
+  }
+}
+
+/* --- Maker Section --- */
+.about-maker {
+  padding: 120px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.about-maker .section-head {
+  margin-bottom: 64px;
+}
+.about-maker .section-head .eyebrow {
+  margin-bottom: 28px;
+}
+.about-maker-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+.about-maker-col {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 600ms ease, transform 600ms ease;
+}
+.about-maker-col.is-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+.about-maker-col:nth-child(2) { transition-delay: 120ms; }
+
+.about-maker-col p {
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--cream-dim);
+  margin: 0 0 24px;
+  max-width: 52ch;
+}
+.about-maker-col p:last-child { margin-bottom: 0; }
+
+.maker-credentials {
+  margin: 0;
+  padding: 0;
+}
+.maker-credentials > div {
+  padding: 28px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.maker-credentials > div:first-child { padding-top: 0; }
+.maker-credentials dt {
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--cream-faint);
+  margin: 0 0 10px;
+}
+.maker-credentials dd {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--cream);
+}
+
+@media (max-width: 800px) {
+  .about-maker { padding: 80px 0; }
+  .about-maker-grid {
+    grid-template-columns: 1fr;
+    gap: 56px;
+  }
+}
+
+/* --- Process Section --- */
+.process-section {
+  padding: 120px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.process-section .section-head {
+  margin-bottom: 64px;
+}
+.process-section .section-head .eyebrow {
+  margin-bottom: 28px;
+}
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px;
+}
+.process-step {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 600ms ease, transform 600ms ease;
+}
+.process-step.is-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+.process-step:nth-child(2) { transition-delay: 100ms; }
+.process-step:nth-child(3) { transition-delay: 200ms; }
+
+.process-step .step-num {
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 20px;
+}
+.process-step h3 {
+  font-family: var(--serif);
+  font-variation-settings: "opsz" 144, "SOFT" 0, "WONK" 0;
+  font-size: clamp(22px, 2vw, 28px);
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+  color: var(--cream);
+  margin-bottom: 18px;
+}
+.process-step p {
+  font-family: var(--sans);
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--cream-dim);
+  margin: 0;
+  max-width: 36ch;
+}
+
+@media (max-width: 800px) {
+  .process-section { padding: 80px 0; }
+  .process-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}
+
+/* --- CTA Section --- */
+.cta-section {
+  padding: 140px 0;
+  text-align: center;
+  background: var(--ground);
+}
+.cta-section h2 {
+  font-family: var(--serif);
+  font-variation-settings: "opsz" 144;
+  font-weight: 400;
+  font-size: clamp(28px, 3.4vw, 48px);
+  letter-spacing: -0.015em;
+  line-height: 1.1;
+  color: var(--cream);
+  margin-bottom: 40px;
+}
+.cta-section h2,
+.cta-section .cta-wrap {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 600ms ease, transform 600ms ease;
+}
+.cta-section h2.is-in,
+.cta-section .cta-wrap.is-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+.cta-section .cta-wrap { transition-delay: 150ms; }
+
+@media (max-width: 800px) {
+  .cta-section { padding: 88px 0; }
+}
+
+/* ================================================================
+   FOOTER
+   ================================================================ */
+footer.site-footer {
+  background: var(--ground-deep);
+  color: var(--cream-dim);
+  padding: 80px 0 48px;
+  border-top: 1px solid var(--rule);
+}
+footer.site-footer .row {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 32px;
+  align-items: start;
+}
+footer.site-footer .foot-mark {
+  grid-column: 1 / span 5;
+}
+footer.site-footer .foot-wordmark {
+  font-family: var(--serif);
+  font-variation-settings: "opsz" 144;
+  font-size: 34px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: var(--cream);
+  display: block;
+  margin-bottom: 18px;
+  line-height: 1;
+}
+footer.site-footer .foot-tag {
+  font-size: 12px;
+  line-height: 1.65;
+  color: var(--cream-dim);
+  max-width: 38ch;
+  display: block;
+}
+footer.site-footer nav.foot-nav {
+  grid-column: 6 / span 3;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-weight: 500;
+}
+footer.site-footer nav.foot-nav a {
+  color: var(--cream);
+  transition: color 300ms ease;
+}
+footer.site-footer nav.foot-nav a:hover { color: var(--accent); }
+
+footer.site-footer .foot-contact {
+  grid-column: 9 / span 4;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  font-size: 12px;
+}
+footer.site-footer .foot-contact a {
+  color: var(--cream);
+  transition: color 300ms ease;
+}
+footer.site-footer .foot-contact a:hover { color: var(--accent); }
+
+footer.site-footer .copyright {
+  grid-column: 1 / -1;
+  margin-top: 64px;
+  padding-top: 28px;
+  border-top: 1px solid var(--rule);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cream-faint);
+}
+
+@media (max-width: 900px) {
+  footer.site-footer .foot-mark,
+  footer.site-footer nav.foot-nav,
+  footer.site-footer .foot-contact { grid-column: 1 / -1; }
+  footer.site-footer nav.foot-nav { margin-top: 28px; }
+  footer.site-footer .foot-contact { margin-top: 20px; }
+}
+</style>
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["Organization", "LocalBusiness"],
+      "@id": "https://www.18thgrain.com/#organization",
+      "name": "18th Grain",
+      "alternateName": "18th Grain Studio",
+      "url": "https://www.18thgrain.com",
+      "logo": "https://www.18thgrain.com/favicon.png",
+      "image": "https://www.18thgrain.com/images/og-image.jpg",
+      "description": "18th Grain is a Vancouver-based design studio specializing in custom tee markers, yardage markers, plaques, and golf course signage. Each piece is commissioned for a specific golf course. Designed, CNC-fabricated, and finished from locally sourced hardwoods in the studio of designer Benjamin McLaughlin.",
+      "slogan": "Commissioned for the course.",
+      "foundingLocation": {
+        "@type": "Place",
+        "name": "Vancouver, British Columbia, Canada"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Vancouver",
+        "addressRegion": "BC",
+        "addressCountry": "CA"
+      },
+      "areaServed": [
+        { "@type": "Country", "name": "Canada" },
+        { "@type": "Country", "name": "United States" },
+        { "@type": "Place", "name": "International" }
+      ],
+      "knowsAbout": [
+        "custom golf course tee markers",
+        "handcrafted yardage markers",
+        "golf course plaques",
+        "commemorative hole-in-one plaques",
+        "golf course signage and wayfinding",
+        "bespoke woodworking for golf courses",
+        "CNC fabrication and hand finishing",
+        "mixed-media marker design",
+        "course accessories and furnishings",
+        "golf course branding and identity"
+      ],
+      "makesOffer": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Product",
+            "name": "Custom Tee Markers",
+            "description": "Handcrafted wood tee markers designed and built for a specific golf course. Made from locally sourced hardwoods with mixed-media options.",
+            "category": "Golf Course Equipment"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Product",
+            "name": "Yardage Markers",
+            "description": "Custom fairway and tee-side distance markers commissioned for individual golf courses.",
+            "category": "Golf Course Equipment"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Product",
+            "name": "Golf Course Plaques",
+            "description": "Commemorative and hole-in-one plaques crafted from hardwoods with options for epoxy inlay and mixed-media finishes.",
+            "category": "Golf Course Equipment"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Product",
+            "name": "Golf Course Signs",
+            "description": "Custom wayfinding, starter station, and course identity signage designed for golf course properties.",
+            "category": "Golf Course Equipment"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Product",
+            "name": "Course Accessories",
+            "description": "Custom range baskets, furnishings, and bespoke pieces for golf course facilities.",
+            "category": "Golf Course Equipment"
+          }
+        }
+      ],
+      "founder": {
+        "@type": "Person",
+        "@id": "https://www.18thgrain.com/#founder",
+        "name": "Benjamin McLaughlin",
+        "jobTitle": "Designer and Maker",
+        "description": "Award-winning artist and designer based in Vancouver, British Columbia. Trained at the Milwaukee Institute of Art & Design, holds a Bachelor of Industrial Design from Emily Carr University of Art + Design. Over fifteen years of professional practice spanning furniture, art, and bespoke commissions.",
+        "alumniOf": [
+          {
+            "@type": "CollegeOrUniversity",
+            "name": "Emily Carr University of Art + Design",
+            "address": { "@type": "PostalAddress", "addressLocality": "Vancouver", "addressRegion": "BC", "addressCountry": "CA" }
+          },
+          {
+            "@type": "CollegeOrUniversity",
+            "name": "Milwaukee Institute of Art & Design"
+          }
+        ],
+        "knowsAbout": [
+          "industrial design",
+          "furniture design",
+          "woodworking",
+          "CNC fabrication",
+          "mixed-media construction",
+          "golf course product design"
+        ],
+        "workLocation": {
+          "@type": "Place",
+          "name": "Vancouver, British Columbia, Canada"
+        }
+      },
+      "email": "info@18thgrain.com",
+      "sameAs": [
+        "https://www.instagram.com/18thgrain/",
+        "https://www.linkedin.com/company/18thgrain"
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.18thgrain.com/about",
+      "name": "About 18th Grain",
+      "description": "Learn about 18th Grain, a Vancouver-based design studio specializing in custom tee markers, yardage markers, plaques, and golf course signage.",
+      "url": "https://www.18thgrain.com/about",
+      "isPartOf": { "@id": "https://www.18thgrain.com/#website" },
+      "about": { "@id": "https://www.18thgrain.com/#organization" },
+      "mainEntity": { "@id": "https://www.18thgrain.com/#organization" }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.18thgrain.com/#website",
+      "name": "18th Grain",
+      "url": "https://www.18thgrain.com",
+      "publisher": { "@id": "https://www.18thgrain.com/#organization" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.18thgrain.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "About",
+          "item": "https://www.18thgrain.com/about"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<!-- MOBILE MENU OVERLAY -->
+<div class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
+  <a href="/#work">Work</a>
+  <a href="/collections">Collections</a>
+  <a href="/about">About</a>
+  <a href="/#contact">Contact</a>
+</div>
+
+<!-- FIXED HEADER -->
+<header class="site-header is-scrolled" id="siteHeader">
+  <div class="container inner">
+    <a href="/" class="nav-wordmark">18<span class="th">th</span>&nbsp;Grain</a>
+    <nav class="primary" aria-label="Primary">
+      <a href="/#work">Work</a>
+      <a href="/collections">Collections</a>
+      <a href="/about" class="is-current">About</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+    <button class="hamburger" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<!-- MAIN CONTENT -->
+<main>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow" id="heroEyebrow">About</span>
+      <h1 class="display" id="heroHeading">The studio behind the markers.</h1>
+      <p class="subline" id="heroSubline">18th Grain is a Vancouver-based design studio that creates handcrafted tee markers, yardage markers, plaques, and signage for golf courses worldwide. Every piece is commissioned for a specific course.</p>
+    </div>
+  </section>
+
+  <!-- ENTITY DEFINITION -->
+  <section class="entity-section">
+    <div class="container">
+      <div class="entity-grid">
+        <div class="entity-narrative" id="entityNarrative">
+          <p>18th Grain designs and builds custom golf course markers from locally sourced hardwoods in Vancouver, British Columbia. The studio serves private clubs, resort properties, and management companies that want their course condition to reflect the same intention and quality their members expect everywhere else.</p>
+          <p>Each commission begins with the course itself. Its identity, its landscape, its membership. From there, the studio designs marker systems, signage, and commemorative pieces that belong to that specific place. Nothing is pulled from a catalogue. Every piece is designed, CNC-fabricated, and finished in the studio.</p>
+          <p>The result is work that elevates the playing experience. Markers and signs built with the same care as the greens they sit beside.</p>
+        </div>
+        <div class="entity-facts" id="entityFacts">
+          <dl>
+            <div>
+              <dt>Studio</dt>
+              <dd>Vancouver, British Columbia, Canada</dd>
+            </div>
+            <div>
+              <dt>Designer &amp; maker</dt>
+              <dd>Benjamin McLaughlin</dd>
+            </div>
+            <div>
+              <dt>Specialization</dt>
+              <dd>Custom tee markers, yardage markers, commemorative plaques, course signage, and course accessories</dd>
+            </div>
+            <div>
+              <dt>Materials</dt>
+              <dd>Locally sourced hardwoods, mixed-media elements, metal inlays, and epoxy finishes</dd>
+            </div>
+            <div>
+              <dt>Clients</dt>
+              <dd>Private golf clubs, resort courses, and course management companies worldwide</dd>
+            </div>
+            <div>
+              <dt>Production</dt>
+              <dd>Bespoke. Every piece is designed and built for a specific course.</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE MAKER -->
+  <section class="about-maker">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">The maker</span>
+        <h2 class="display">Over 15 years of design and craft.</h2>
+      </div>
+      <div class="about-maker-grid">
+        <div class="about-maker-col" id="makerColA">
+          <p>Benjamin McLaughlin is an award-winning artist and designer in Vancouver, British Columbia. He trained at the Milwaukee Institute of Art &amp; Design and holds a Bachelor of Industrial Design from Emily Carr University of Art + Design.</p>
+          <p>With twenty years studying design and fifteen years in professional practice, his studio work spans furniture, art, and bespoke commissions for private and commercial clients. That depth of craft experience is what the studio brings to every golf course commission: understanding how materials behave, how finishes age, how form serves function.</p>
+        </div>
+        <div class="about-maker-col" id="makerColB">
+          <dl class="maker-credentials">
+            <div>
+              <dt>Training</dt>
+              <dd>Bachelor of Industrial Design, Emily Carr University of Art + Design, Vancouver. Milwaukee Institute of Art &amp; Design.</dd>
+            </div>
+            <div>
+              <dt>Studio location</dt>
+              <dd>Vancouver, British Columbia</dd>
+            </div>
+            <div>
+              <dt>Practice</dt>
+              <dd>Fifteen years of commissioned furniture, art, and bespoke design</dd>
+            </div>
+            <div>
+              <dt>Capabilities</dt>
+              <dd>CNC fabrication, hand finishing, mixed-media construction, custom hardware, design consultation</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="process-section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">How we work</span>
+        <h2 class="display">Commissioned, not ordered.</h2>
+      </div>
+      <div class="process-grid">
+        <div class="process-step" id="processStep1">
+          <span class="step-num">01</span>
+          <h3>Consultation</h3>
+          <p>Tell us about your course, your membership, and what you have in mind. We work with superintendents, club managers, and course designers to understand the setting and the brief.</p>
+        </div>
+        <div class="process-step" id="processStep2">
+          <span class="step-num">02</span>
+          <h3>Design</h3>
+          <p>We develop concepts tailored to your course: material selection, finish, form, and branding integration. You review and refine with us until the design is right.</p>
+        </div>
+        <div class="process-step" id="processStep3">
+          <span class="step-num">03</span>
+          <h3>Production</h3>
+          <p>Each piece is CNC-fabricated and finished in our Vancouver studio. We manage production, quality, and delivery so the finished markers arrive ready for the course.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2 id="ctaHeading">Have a project in mind?</h2>
+      <div class="cta-wrap" id="ctaWrap">
+        <a href="/#contact" class="cta">Start a project <span class="arrow">&rarr;</span></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="row">
+      <div class="foot-mark">
+        <span class="foot-wordmark">18<span style="font-style: italic;">th</span>&nbsp;Grain</span>
+        <span class="foot-tag">Commissioned for the course. Canadian-made tee markers, yardage markers, plaques and golf course signs.</span>
+      </div>
+      <nav class="foot-nav" aria-label="Footer">
+        <a href="/#work">Work</a>
+        <a href="/collections">Collections</a>
+        <a href="/about">About</a>
+        <a href="/#contact">Contact</a>
+        <a href="/privacy-policy">Privacy</a>
+      </nav>
+      <div class="foot-contact">
+        <a href="mailto:info@18thgrain.com">info@18thgrain.com</a>
+        <a href="https://www.instagram.com/18thgrain" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.linkedin.com/company/18thgrain" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+      <div class="copyright">&copy; 2026 18th Grain &middot; Vancouver, British Columbia</div>
+    </div>
+  </div>
+</footer>
+
+<!-- JAVASCRIPT -->
+<script>
+(function () {
+  'use strict';
+
+  // Sticky header
+  var header = document.getElementById('siteHeader');
+  function updateHeader() {
+    if (window.scrollY > 40) {
+      header.classList.add('is-scrolled');
+    } else {
+      header.classList.remove('is-scrolled');
+    }
+  }
+  window.addEventListener('scroll', updateHeader, { passive: true });
+  updateHeader();
+
+  // Hamburger menu
+  var hamburger = document.getElementById('hamburgerBtn');
+  var mobileMenu = document.getElementById('mobileMenu');
+
+  if (hamburger && mobileMenu) {
+    hamburger.addEventListener('click', function () {
+      var isOpen = hamburger.classList.toggle('is-open');
+      mobileMenu.classList.toggle('is-open');
+      hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+
+    var mobileLinks = mobileMenu.querySelectorAll('a');
+    mobileLinks.forEach(function (link) {
+      link.addEventListener('click', function () {
+        hamburger.classList.remove('is-open');
+        mobileMenu.classList.remove('is-open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
+    });
+  }
+
+  // IntersectionObserver — scroll reveal
+  if ('IntersectionObserver' in window) {
+    var revealObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-in');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+
+    // Hero elements
+    var heroEyebrow = document.getElementById('heroEyebrow');
+    var heroHeading = document.getElementById('heroHeading');
+    var heroSubline = document.getElementById('heroSubline');
+    if (heroEyebrow) revealObserver.observe(heroEyebrow);
+    if (heroHeading) revealObserver.observe(heroHeading);
+    if (heroSubline) revealObserver.observe(heroSubline);
+
+    // Entity section
+    var entityNarrative = document.getElementById('entityNarrative');
+    var entityFacts = document.getElementById('entityFacts');
+    if (entityNarrative) revealObserver.observe(entityNarrative);
+    if (entityFacts) revealObserver.observe(entityFacts);
+
+    // Maker columns
+    var makerColA = document.getElementById('makerColA');
+    var makerColB = document.getElementById('makerColB');
+    if (makerColA) revealObserver.observe(makerColA);
+    if (makerColB) revealObserver.observe(makerColB);
+
+    // Process steps
+    var step1 = document.getElementById('processStep1');
+    var step2 = document.getElementById('processStep2');
+    var step3 = document.getElementById('processStep3');
+    if (step1) revealObserver.observe(step1);
+    if (step2) revealObserver.observe(step2);
+    if (step3) revealObserver.observe(step3);
+
+    // CTA section
+    var ctaHeading = document.getElementById('ctaHeading');
+    var ctaWrap = document.getElementById('ctaWrap');
+    if (ctaHeading) revealObserver.observe(ctaHeading);
+    if (ctaWrap) revealObserver.observe(ctaWrap);
+  } else {
+    document.querySelectorAll('.eyebrow, h1.display, .subline, .entity-narrative, .entity-facts, .about-maker-col, .process-step, .cta-section h2, .cta-section .cta-wrap').forEach(function (el) {
+      el.classList.add('is-in');
+    });
+  }
+})();
+</script>
+
+</body>
+</html>
