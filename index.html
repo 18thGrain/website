@@ -25,238 +25,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="image" href="images/tee-marker-02.webp" type="image/webp" fetchpriority="high">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/styles.css">
 <style>
-/* ================================================================
-   DESIGN TOKENS
-   ================================================================ */
-:root {
-  --ground: #171719;
-  --ground-2: #1c1c1f;
-  --ground-deep: #111113;
-  --wine: #171719;
-  --wine-deep: #111113;
-  --cream: #ebe0c4;
-  --cream-strong: #f3e9cd;
-  --cream-dim: rgba(235, 224, 196, 0.62);
-  --cream-faint: rgba(235, 224, 196, 0.38);
-  --rule: rgba(235, 224, 196, 0.14);
-  --rule-soft: rgba(235, 224, 196, 0.08);
-  --accent: #c7a96b;
-
-  --serif: "Fraunces", Georgia, "Times New Roman", serif;
-  --sans: "Inter", system-ui, -apple-system, sans-serif;
-}
-
-/* ================================================================
-   RESET & GLOBALS
-   ================================================================ */
-*, *::before, *::after { box-sizing: border-box; }
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  background: var(--ground);
-  color: var(--cream);
-  font-family: var(--sans);
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-  overflow-x: hidden;
-}
-
-/* Noise texture overlay for tactile depth */
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  pointer-events: none;
-  opacity: 0.028;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  background-repeat: repeat;
-  background-size: 256px 256px;
-}
-
-img { max-width: 100%; display: block; }
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-::selection { background: var(--cream); color: var(--ground); }
-
-.container {
-  width: 100%;
-  max-width: 1480px;
-  margin: 0 auto;
-  padding: 0 40px;
-}
-@media (max-width: 800px) { .container { padding: 0 24px; } }
-
-/* Loading screen removed — hero self-reveals */
-
-/* ================================================================
-   TYPOGRAPHY PRIMITIVES
-   ================================================================ */
-.serif {
-  font-family: var(--serif);
-  font-variation-settings: "opsz" 144, "SOFT" 0, "WONK" 0;
-  font-weight: 400;
-}
-
-h1, h2, h3 { margin: 0; font-family: var(--serif); font-weight: 400; }
-
-h1.display, h2.display {
-  font-family: var(--serif);
-  font-variation-settings: "opsz" 144, "SOFT" 0, "WONK" 0;
-  font-weight: 400;
-  letter-spacing: -0.015em;
-  line-height: 1.02;
-  color: var(--cream);
-}
-h1.display { font-size: clamp(34px, 4.4vw, 64px); }
-h2.display { font-size: clamp(30px, 3.6vw, 52px); }
-
-/* ================================================================
-   FIXED NAVIGATION
-   ================================================================ */
-.site-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 100;
-  padding: 24px 0;
-  background: transparent;
-  transition: background 400ms ease, backdrop-filter 400ms ease, padding 400ms ease;
-}
-.site-header.is-scrolled {
-  background: rgba(23, 23, 25, 0.94);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  padding: 18px 0;
-}
-.site-header .inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.nav-wordmark {
-  font-family: var(--serif);
-  font-variation-settings: "opsz" 144, "SOFT" 0, "WONK" 0;
-  font-weight: 400;
-  font-size: 20px;
-  letter-spacing: -0.01em;
-  color: var(--cream);
-  line-height: 1;
-}
-.nav-wordmark .th {
-  font-style: italic;
-}
-
-nav.primary {
-  display: flex;
-  gap: 40px;
-  font-family: var(--sans);
-  font-size: 11px;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
-  color: var(--cream);
-}
-nav.primary a {
-  position: relative;
-  padding-bottom: 2px;
-  transition: color 300ms ease;
-}
-nav.primary a::after {
-  content: "";
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 100%;
-  height: 1px;
-  background: var(--accent);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 400ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-nav.primary a:hover { color: var(--cream); }
-nav.primary a:hover::after { transform: scaleX(1); }
-
-/* Hamburger button */
-.hamburger {
-  display: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 8px;
-  width: 44px;
-  height: 44px;
-  position: relative;
-  z-index: 200;
-}
-.hamburger span {
-  display: block;
-  width: 22px;
-  height: 1.5px;
-  background: var(--cream);
-  margin: 0 auto;
-  transition: transform 300ms ease, opacity 200ms ease;
-}
-.hamburger span:nth-child(1) { margin-bottom: 6px; }
-.hamburger span:nth-child(3) { margin-top: 6px; }
-
-.hamburger.is-open span:nth-child(1) {
-  transform: translateY(7.5px) rotate(45deg);
-}
-.hamburger.is-open span:nth-child(2) { opacity: 0; }
-.hamburger.is-open span:nth-child(3) {
-  transform: translateY(-7.5px) rotate(-45deg);
-}
-
-/* Mobile menu overlay */
-.mobile-menu {
-  position: fixed;
-  inset: 0;
-  z-index: 90;
-  background: var(--ground);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 40px;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 400ms ease;
-}
-.mobile-menu.is-open {
-  opacity: 1;
-  pointer-events: auto;
-}
-.mobile-menu a {
-  font-family: var(--serif);
-  font-variation-settings: "opsz" 144;
-  font-size: 36px;
-  font-weight: 400;
-  color: var(--cream);
-  transition: color 300ms ease;
-}
-.mobile-menu a:hover { color: var(--accent); }
-
-@media (max-width: 800px) {
-  nav.primary { display: none; }
-  .hamburger { display: flex; flex-direction: column; justify-content: center; }
-}
-
 /* ================================================================
    HERO
    ================================================================ */
@@ -715,6 +485,7 @@ nav.primary a:hover::after { transform: scaleX(1); }
   aspect-ratio: 3 / 2;
   object-position: center 70%;
 }
+.work-tile-d { transition-delay: 200ms; }
 @media (max-width: 900px) {
   .work-grid { grid-template-columns: 1fr; gap: 56px; }
 }
@@ -1028,6 +799,20 @@ nav.primary a:hover::after { transform: scaleX(1); }
   transition: opacity 600ms ease 300ms, transform 600ms ease 300ms;
 }
 .closing .sub.is-in { opacity: 1; transform: translateY(0); }
+.contact-email {
+  font-family: var(--sans);
+  font-size: 13px;
+  color: var(--cream-dim);
+  margin: -40px auto 48px;
+  max-width: 54ch;
+  text-align: center;
+}
+.contact-email a {
+  color: var(--cream);
+  border-bottom: 1px solid var(--rule);
+  text-decoration: none;
+}
+.contact-email a:hover { color: var(--accent); border-color: var(--accent); }
 
 .closing .cta-wrap {
   margin-bottom: 120px;
@@ -1130,89 +915,6 @@ nav.primary a:hover::after { transform: scaleX(1); }
   .closing .cta-wrap { margin-bottom: 80px; }
 }
 
-/* ================================================================
-   FOOTER
-   ================================================================ */
-footer.site-footer {
-  background: var(--ground-deep);
-  color: var(--cream-dim);
-  padding: 80px 0 48px;
-  border-top: 1px solid var(--rule);
-}
-footer.site-footer .row {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 32px;
-  align-items: start;
-}
-footer.site-footer .foot-mark {
-  grid-column: 1 / span 5;
-}
-footer.site-footer .foot-wordmark {
-  font-family: var(--serif);
-  font-variation-settings: "opsz" 144;
-  font-size: 34px;
-  font-weight: 400;
-  letter-spacing: -0.01em;
-  color: var(--cream);
-  display: block;
-  margin-bottom: 18px;
-  line-height: 1;
-}
-footer.site-footer .foot-tag {
-  font-size: 12px;
-  line-height: 1.65;
-  color: var(--cream-dim);
-  max-width: 38ch;
-  display: block;
-}
-footer.site-footer nav.foot-nav {
-  grid-column: 6 / span 3;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  font-weight: 500;
-}
-footer.site-footer nav.foot-nav a {
-  color: var(--cream);
-  transition: color 300ms ease;
-}
-footer.site-footer nav.foot-nav a:hover { color: var(--accent); }
-
-footer.site-footer .foot-contact {
-  grid-column: 9 / span 4;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  font-size: 12px;
-}
-footer.site-footer .foot-contact a {
-  color: var(--cream);
-  transition: color 300ms ease;
-}
-footer.site-footer .foot-contact a:hover { color: var(--accent); }
-
-footer.site-footer .copyright {
-  grid-column: 1 / -1;
-  margin-top: 64px;
-  padding-top: 28px;
-  border-top: 1px solid var(--rule);
-  font-size: 10px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--cream-faint);
-}
-
-@media (max-width: 900px) {
-  footer.site-footer .foot-mark,
-  footer.site-footer nav.foot-nav,
-  footer.site-footer .foot-contact { grid-column: 1 / -1; }
-  footer.site-footer nav.foot-nav { margin-top: 28px; }
-  footer.site-footer .foot-contact { margin-top: 20px; }
-}
 </style>
 <!-- Structured Data: Organization + LocalBusiness + Person -->
 <script type="application/ld+json">
@@ -1338,8 +1040,8 @@ footer.site-footer .copyright {
     <a href="/" class="nav-wordmark">18<span class="th">th</span>&nbsp;Grain</a>
     <nav class="primary" aria-label="Primary">
       <a href="#work">Work</a>
-      <a href="/about">About</a>
       <a href="/collections">Collections</a>
+      <a href="/about">About</a>
       <a href="#contact">Contact</a>
     </nav>
     <button class="hamburger" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">
@@ -1370,7 +1072,7 @@ footer.site-footer .copyright {
       </div>
       <div class="hero-rule" aria-hidden="true"></div>
       <p class="hero-tagline">Commissioned for the course</p>
-      <p class="hero-subline">Canadian-made tee markers, yardage markers, plaques and golf course signs.</p>
+      <p class="hero-subline">A design studio for golf course markers, plaques, and signage. Made in Vancouver.</p>
       <div class="hero-cta">
         <a href="/collections" class="cta">See what we make <span class="arrow">&rarr;</span></a>
       </div>
@@ -1382,7 +1084,7 @@ footer.site-footer .copyright {
     <div class="container">
       <ul class="fact-row" id="factRow">
         <li>Vancouver studio</li>
-        <li>Award-winning designer</li>
+        <li>Installed at Fairmont Chateau Whistler</li>
         <li>One course at a time</li>
       </ul>
     </div>
@@ -1442,7 +1144,7 @@ footer.site-footer .copyright {
       <div class="work-head">
         <div>
           <span class="eyebrow">(02) Selected work</span>
-          <h2 class="display">Recent and in progress.</h2>
+          <h2 class="display">From the studio.</h2>
         </div>
       </div>
       <div class="work-grid">
@@ -1478,6 +1180,15 @@ footer.site-footer .copyright {
             <figcaption>Walnut hexagonal tee marker with blue inlay stripe on steel legs.</figcaption>
           </figure>
         </div>
+        <div class="work-tile work-tile-d" id="workTileD">
+          <figure>
+            <img
+              src="images/fairmont-whistler-golf-course-signage-01.webp"
+              alt="Handcrafted wooden starter station sign at Fairmont Chateau Whistler Golf Club."
+              loading="lazy">
+            <figcaption>Course signage for Fairmont Chateau Whistler Golf Club.</figcaption>
+          </figure>
+        </div>
       </div>
       <div class="work-tail" id="workTail">
         <a href="/collections" class="cta">See all work <span class="arrow">&rarr;</span></a>
@@ -1506,9 +1217,12 @@ footer.site-footer .copyright {
           <label for="lookbook-course">Club / Course</label>
           <input type="text" id="lookbook-course" name="course" placeholder="Course or club name">
         </div>
+        <div style="position:absolute;left:-9999px;" aria-hidden="true">
+          <input type="text" name="website" tabindex="-1" autocomplete="off">
+        </div>
         <div class="form-row-full consent-row">
           <label class="consent-label">
-            <input type="checkbox" id="lookbook-consent" name="marketing_consent" required>
+            <input type="checkbox" id="lookbook-consent" name="marketing_consent">
             <span class="consent-text">I'd like to receive occasional updates from 18th Grain about new work, materials, and studio news. You can unsubscribe at any time.</span>
           </label>
         </div>
@@ -1561,6 +1275,7 @@ footer.site-footer .copyright {
         <span class="reveal-line">course</span>
       </h2>
       <p class="sub" id="closingSub">Tell us about the course, the piece, and when you'd want it in place.</p>
+      <p class="contact-email">Or email us directly: <a href="mailto:info@18thgrain.com">info@18thgrain.com</a></p>
       <form class="contact-form" id="contactForm">
         <div class="form-row">
           <label for="contact-name">Name</label>
@@ -1573,6 +1288,9 @@ footer.site-footer .copyright {
         <div class="form-row">
           <label for="contact-course">Club / Course</label>
           <input type="text" id="contact-course" name="course" placeholder="Course or club name">
+        </div>
+        <div style="position:absolute;left:-9999px;" aria-hidden="true">
+          <input type="text" name="website" tabindex="-1" autocomplete="off">
         </div>
         <div class="form-row">
           <label for="contact-message">Message</label>
@@ -1596,7 +1314,7 @@ footer.site-footer .copyright {
     <div class="row">
       <div class="foot-mark">
         <span class="foot-wordmark">18<span style="font-style: italic;">th</span>&nbsp;Grain</span>
-        <span class="foot-tag">Commissioned for the course. Canadian-made tee markers, yardage markers, plaques and golf course signs.</span>
+        <span class="foot-tag">Commissioned for the course. A design studio for golf course markers, plaques, and signage. Made in Vancouver.</span>
       </div>
       <nav class="foot-nav" aria-label="Footer">
         <a href="#work">Work</a>
@@ -1618,26 +1336,10 @@ footer.site-footer .copyright {
 <!-- ============================================================
      JAVASCRIPT
      ============================================================ -->
+<script src="/js/main.js" defer></script>
 <script>
 (function () {
   'use strict';
-
-  // ----------------------------------------------------------
-  // Sticky header background on scroll
-  // ----------------------------------------------------------
-  var header = document.getElementById('siteHeader');
-  var lastScrollY = 0;
-
-  function updateHeader() {
-    lastScrollY = window.scrollY;
-    if (lastScrollY > 40) {
-      header.classList.add('is-scrolled');
-    } else {
-      header.classList.remove('is-scrolled');
-    }
-  }
-  window.addEventListener('scroll', updateHeader, { passive: true });
-  updateHeader();
 
   // ----------------------------------------------------------
   // Parallax on hero wordmark
@@ -1660,43 +1362,18 @@ footer.site-footer .copyright {
   }, { passive: true });
 
   // ----------------------------------------------------------
-  // Hamburger menu
-  // ----------------------------------------------------------
-  var hamburger = document.getElementById('hamburgerBtn');
-  var mobileMenu = document.getElementById('mobileMenu');
-
-  if (hamburger && mobileMenu) {
-    hamburger.addEventListener('click', function () {
-      var isOpen = hamburger.classList.toggle('is-open');
-      mobileMenu.classList.toggle('is-open');
-      hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-      document.body.style.overflow = isOpen ? 'hidden' : '';
-    });
-
-    // Close menu when a link is clicked
-    var mobileLinks = mobileMenu.querySelectorAll('a');
-    mobileLinks.forEach(function (link) {
-      link.addEventListener('click', function () {
-        hamburger.classList.remove('is-open');
-        mobileMenu.classList.remove('is-open');
-        hamburger.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
-      });
-    });
-  }
-
-  // ----------------------------------------------------------
   // IntersectionObserver — scroll reveal with staggering
   // ----------------------------------------------------------
-  if ('IntersectionObserver' in window) {
-    var revealObserver = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-in');
-          revealObserver.unobserve(entry.target);
-        }
+  function initReveal() {
+    var revealObserver = window.eighteenGrainReveal;
+    if (!revealObserver) {
+      document.querySelectorAll('.fact-row li, .numbered-list li, .work-tile, .work-tail, .lookbook-form, .maker-col-a, .maker-col-b, .reveal-line, .closing .sub, .contact-form').forEach(function (el) {
+        el.classList.add('is-in');
       });
-    }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+      var ph = document.getElementById('productsHeading');
+      if (ph) ph.classList.add('is-in');
+      return;
+    }
 
     // Credibility band items
     document.querySelectorAll('.fact-row li').forEach(function (el) {
@@ -1716,10 +1393,12 @@ footer.site-footer .copyright {
     var workTileA = document.getElementById('workTileA');
     var workTileB = document.getElementById('workTileB');
     var workTileC = document.getElementById('workTileC');
+    var workTileD = document.getElementById('workTileD');
     var workTail = document.getElementById('workTail');
     if (workTileA) revealObserver.observe(workTileA);
     if (workTileB) revealObserver.observe(workTileB);
     if (workTileC) revealObserver.observe(workTileC);
+    if (workTileD) revealObserver.observe(workTileD);
     if (workTail) revealObserver.observe(workTail);
 
     // Lookbook form
@@ -1740,13 +1419,13 @@ footer.site-footer .copyright {
     var contactForm = document.getElementById('contactForm');
     if (closingSub) revealObserver.observe(closingSub);
     if (contactForm) revealObserver.observe(contactForm);
+  }
+
+  // Wait for main.js to load, then init
+  if (window.eighteenGrainReveal) {
+    initReveal();
   } else {
-    // Fallback: show everything
-    document.querySelectorAll('.fact-row li, .numbered-list li, .work-tile, .work-tail, .lookbook-form, .maker-col-a, .maker-col-b, .reveal-line, .closing .sub, .contact-form').forEach(function (el) {
-      el.classList.add('is-in');
-    });
-    var ph = document.getElementById('productsHeading');
-    if (ph) ph.classList.add('is-in');
+    window.addEventListener('load', initReveal);
   }
 })();
 
@@ -1759,12 +1438,6 @@ footer.site-footer .copyright {
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     var btn = form.querySelector('button[type="submit"]');
-    var consent = form.querySelector('#lookbook-consent');
-    if (!consent.checked) {
-      status.textContent = 'Please check the box above to continue.';
-      status.className = 'lookbook-status error';
-      return;
-    }
     btn.disabled = true;
     status.textContent = 'Sending...';
     status.className = 'lookbook-status';
