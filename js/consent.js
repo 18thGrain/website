@@ -4,6 +4,14 @@
   var GA_ID = 'G-FV9SFXG94P';
   var CONSENT_KEY = '18g_cookie_consent';
 
+  // Expose dataLayer and gtag stub globally so events can be queued before
+  // the GA script loads. If the user declines, GA never loads and the queued
+  // events are never sent — no privacy risk.
+  window.dataLayer = window.dataLayer || [];
+  if (!window.gtag) {
+    window.gtag = function () { window.dataLayer.push(arguments); };
+  }
+
   function loadGA() {
     if (document.getElementById('ga-script')) return;
     var s = document.createElement('script');
@@ -11,10 +19,8 @@
     s.async = true;
     s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
     document.head.appendChild(s);
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', GA_ID);
+    window.gtag('js', new Date());
+    window.gtag('config', GA_ID);
   }
 
   function getConsent() {

@@ -1084,7 +1084,6 @@
     <div class="container">
       <ul class="fact-row" id="factRow">
         <li>Vancouver studio</li>
-        <li>Installed at Fairmont Chateau Whistler</li>
         <li>One course at a time</li>
       </ul>
     </div>
@@ -1459,6 +1458,10 @@
         return res.json().then(function (json) {
           status.innerHTML = 'Thank you. <a class="lookbook-download-link" href="' + json.downloadUrl + '" target="_blank" rel="noopener">Download your lookbook \u2192</a>';
           status.className = 'lookbook-status success';
+          window.gtag('event', 'lookbook_download', {
+            has_course: !!data.course,
+            marketing_consent: data.marketingConsent,
+          });
           form.reset();
           btn.disabled = false;
         });
@@ -1472,6 +1475,34 @@
       status.textContent = 'Something went wrong. Please try again or email info@18thgrain.com.';
       status.className = 'lookbook-status error';
       btn.disabled = false;
+    });
+  });
+})();
+
+// GA4 CTA click tracking
+(function () {
+  // Hero: "See what we make"
+  var heroCta = document.querySelector('.hero-cta .cta');
+  if (heroCta) {
+    heroCta.addEventListener('click', function () {
+      window.gtag('event', 'cta_click', { cta_label: 'see_what_we_make', cta_location: 'hero' });
+    });
+  }
+
+  // Work section: "See all work"
+  var workTailCta = document.querySelector('#workTail .cta');
+  if (workTailCta) {
+    workTailCta.addEventListener('click', function () {
+      window.gtag('event', 'cta_click', { cta_label: 'see_all_work', cta_location: 'work_section' });
+    });
+  }
+
+  // Product category list links
+  document.querySelectorAll('#productList li a').forEach(function (link) {
+    link.addEventListener('click', function () {
+      var href = link.getAttribute('href') || '';
+      var collection = href.replace('/collection-', '').replace(/-/g, '_');
+      window.gtag('event', 'collection_click', { collection_name: collection });
     });
   });
 })();
@@ -1505,6 +1536,9 @@
       if (res.ok) {
         status.textContent = 'Thank you. We\u2019ll be in touch shortly.';
         status.className = 'form-status success';
+        window.gtag('event', 'contact_form_submit', {
+          has_course: !!data.course,
+        });
         form.reset();
       } else {
         status.textContent = 'Something went wrong. Please email us at info@18thgrain.com.';
