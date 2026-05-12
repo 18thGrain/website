@@ -2,29 +2,33 @@
 <html lang="en-CA">
 <head>
 <meta charset="utf-8">
-<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#171719">
 <!-- Cookie consent + analytics (loads GA only after consent) -->
 <script src="/js/consent.js" defer></script>
 <link rel="stylesheet" href="/js/consent.css">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Custom Handcrafted Golf Course Tee Markers, Plaques & Signs | 18th Grain | Vancouver, BC</title>
 <meta name="description" content="18th Grain is a Vancouver-based studio that designs and builds custom tee markers, yardage markers, plaques, and golf course signs from locally sourced hardwoods. Each piece is commissioned for a specific course. CNC-fabricated and finished by designer Benjamin McLaughlin.">
-<link rel="canonical" href="https://www.18thgrain.com/">
+<link rel="canonical" href="https://18thgrain.com/">
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="18th Grain">
-<meta property="og:url" content="https://www.18thgrain.com/">
+<meta property="og:url" content="https://18thgrain.com/">
 <meta property="og:title" content="Custom Handcrafted Golf Course Tee Markers, Plaques & Signs | 18th Grain">
 <meta property="og:description" content="18th Grain is a Vancouver-based studio that designs and builds custom tee markers, yardage markers, plaques, and golf course signs from locally sourced hardwoods. Commissioned for a specific course.">
-<meta property="og:image" content="https://www.18thgrain.com/images/og-image.jpg">
+<meta property="og:image" content="https://18thgrain.com/images/og-image.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Custom Handcrafted Golf Course Tee Markers, Plaques & Signs | 18th Grain">
 <meta name="twitter:description" content="18th Grain is a Vancouver-based studio that designs and builds custom tee markers, yardage markers, plaques, and golf course signs from locally sourced hardwoods. Commissioned for a specific course.">
-<meta name="twitter:image" content="https://www.18thgrain.com/images/og-image.jpg">
+<meta name="twitter:image" content="https://18thgrain.com/images/og-image.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="image" href="images/tee-marker-02.webp" type="image/webp" fetchpriority="high">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/styles.css">
 <style>
 /* ================================================================
@@ -91,18 +95,38 @@
   will-change: transform, opacity;
 }
 .hero-wordmark-inner {
-  font-family: var(--serif);
-  font-variation-settings: "opsz" 144, "SOFT" 0, "WONK" 0;
-  font-weight: 400;
-  font-size: clamp(52px, 13vw, 200px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   line-height: 1;
-  letter-spacing: -0.02em;
   color: var(--cream);
   margin: 0;
-  white-space: nowrap;
 }
-.hero-wordmark-inner .th {
-  font-style: italic;
+.hero-wordmark-inner .monogram-18 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(48px, 10vw, 140px);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  line-height: 0.85;
+}
+.hero-wordmark-inner .monogram-rule {
+  width: clamp(70px, 12vw, 180px);
+  height: 2px;
+  background: var(--cream);
+  margin: clamp(4px, 0.6vw, 10px) 0 clamp(2px, 0.3vw, 6px);
+}
+.hero-wordmark-inner .monogram-g {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(56px, 12vw, 160px);
+  font-weight: 400;
+  line-height: 0.88;
+}
+.hero-wordmark-inner .monogram-name {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(11px, 1.8vw, 22px);
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  margin-top: clamp(10px, 1.5vw, 24px);
 }
 
 /* -- Brass accent rule -- */
@@ -150,8 +174,8 @@
 
 /* -- Keyframes -- */
 @keyframes hero-wordmark-in {
-  from { opacity: 0; letter-spacing: -0.035em; transform: translateY(12px); }
-  to   { opacity: 1; letter-spacing: -0.02em;  transform: translateY(0); }
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 @keyframes hero-rule-extend {
   from { transform: scaleX(0); }
@@ -893,21 +917,41 @@
   overflow: hidden;
   pointer-events: none;
   padding-bottom: 40px;
+  display: flex;
+  justify-content: center;
 }
 .closing-wordmark-inner {
-  font-family: var(--serif);
-  font-variation-settings: "opsz" 144, "SOFT" 0, "WONK" 0;
-  font-weight: 400;
-  font-size: clamp(72px, 16vw, 280px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   line-height: 1;
-  letter-spacing: -0.02em;
   color: var(--cream);
-  text-align: center;
-  display: inline-block;
-  white-space: nowrap;
 }
-.closing-wordmark-inner .th {
-  font-style: italic;
+.closing-wordmark-inner .monogram-18 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(60px, 12vw, 180px);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  line-height: 0.85;
+}
+.closing-wordmark-inner .monogram-rule {
+  width: clamp(80px, 14vw, 220px);
+  height: 2px;
+  background: var(--cream);
+  margin: clamp(4px, 0.6vw, 12px) 0 clamp(2px, 0.4vw, 8px);
+}
+.closing-wordmark-inner .monogram-g {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(70px, 14vw, 200px);
+  font-weight: 400;
+  line-height: 0.88;
+}
+.closing-wordmark-inner .monogram-name {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(12px, 2vw, 26px);
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  margin-top: clamp(12px, 2vw, 30px);
 }
 
 @media (max-width: 800px) {
@@ -923,11 +967,11 @@
   "@graph": [
     {
       "@type": ["Organization", "LocalBusiness"],
-      "@id": "https://www.18thgrain.com/#organization",
+      "@id": "https://18thgrain.com/#organization",
       "name": "18th Grain",
-      "url": "https://www.18thgrain.com",
-      "logo": "https://www.18thgrain.com/favicon.png",
-      "image": "https://www.18thgrain.com/images/og-image.jpg",
+      "url": "https://18thgrain.com",
+      "logo": "https://18thgrain.com/favicon.png",
+      "image": "https://18thgrain.com/images/og-image.jpg",
       "description": "18th Grain is a Vancouver-based studio that designs and builds custom tee markers, yardage markers, plaques, and golf course signs from locally sourced hardwoods. Each piece is commissioned for a specific golf course. Designed, CNC-fabricated, and finished in the studio.",
       "slogan": "Commissioned for the course.",
       "foundingLocation": {
@@ -987,7 +1031,7 @@
       },
       "founder": {
         "@type": "Person",
-        "@id": "https://www.18thgrain.com/#founder",
+        "@id": "https://18thgrain.com/#founder",
         "name": "Benjamin McLaughlin",
         "jobTitle": "Designer and Maker",
         "description": "Award-winning artist and designer based in Vancouver, British Columbia. Trained at the Milwaukee Institute of Art & Design, holds a Bachelor of Industrial Design from Emily Carr University of Art + Design. Over fifteen years of professional practice spanning furniture, art, and bespoke commissions.",
@@ -1011,10 +1055,10 @@
     },
     {
       "@type": "WebSite",
-      "@id": "https://www.18thgrain.com/#website",
+      "@id": "https://18thgrain.com/#website",
       "name": "18th Grain",
-      "url": "https://www.18thgrain.com",
-      "publisher": { "@id": "https://www.18thgrain.com/#organization" }
+      "url": "https://18thgrain.com",
+      "publisher": { "@id": "https://18thgrain.com/#organization" }
     }
   ]
 }
@@ -1037,7 +1081,7 @@
      ============================================================ -->
 <header class="site-header" id="siteHeader">
   <div class="container inner">
-    <a href="/" class="nav-wordmark">18<span class="th">th</span>&nbsp;Grain</a>
+    <a href="/" class="nav-wordmark"><span class="monogram-18">18</span><span class="monogram-rule"></span><span class="monogram-g">G</span></a>
     <nav class="primary" aria-label="Primary">
       <a href="#work">Work</a>
       <a href="/collections">Collections</a>
@@ -1068,7 +1112,7 @@
     <div class="hero-overlay" aria-hidden="true"></div>
     <div class="hero-content">
       <div class="hero-wordmark" id="heroWordmark">
-        <h1 class="hero-wordmark-inner">18<span class="th">th</span> Grain</h1>
+        <h1 class="hero-wordmark-inner"><span class="monogram-18">18</span><span class="monogram-rule"></span><span class="monogram-g">G</span><span class="monogram-name">18TH GRAIN</span></h1>
       </div>
       <div class="hero-rule" aria-hidden="true"></div>
       <p class="hero-tagline">Commissioned for the course</p>
@@ -1312,7 +1356,7 @@
   <div class="container">
     <div class="row">
       <div class="foot-mark">
-        <span class="foot-wordmark">18<span style="font-style: italic;">th</span>&nbsp;Grain</span>
+        <span class="foot-wordmark"><span class="monogram-18">18</span><span class="monogram-rule"></span><span class="monogram-g">G</span><span class="monogram-name">18TH GRAIN</span></span>
         <span class="foot-tag">Commissioned for the course. A design studio for golf course markers, plaques, and signage. Made in Vancouver.</span>
       </div>
       <nav class="foot-nav" aria-label="Footer">

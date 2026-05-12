@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect width="32" height="32" fill="#171719"/>
+  <!-- 18 -->
+  <text
+    x="16" y="13"
+    text-anchor="middle"
+    dominant-baseline="auto"
+    fill="#ebe0c4"
+    font-family="'Cormorant Garamond', Georgia, 'Times New Roman', serif"
+    font-size="10"
+    font-weight="300"
+    letter-spacing="-0.2"
+  >18</text>
+  <!-- Rule -->
+  <rect x="6" y="14.5" width="20" height="0.8" fill="#ebe0c4"/>
+  <!-- G -->
+  <text
+    x="16" y="27"
+    text-anchor="middle"
+    dominant-baseline="auto"
+    fill="#ebe0c4"
+    font-family="'Cormorant Garamond', Georgia, 'Times New Roman', serif"
+    font-size="13"
+    font-weight="400"
+  >G</text>
+</svg>

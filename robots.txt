@@ -21,4 +21,4 @@ User-agent: Google-Extended
 Allow: /
 
 # Sitemap
-Sitemap: https://www.18thgrain.com/sitemap.xml
+Sitemap: https://18thgrain.com/sitemap.xml

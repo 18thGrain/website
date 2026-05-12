@@ -120,16 +120,31 @@ h2.display { font-size: clamp(30px, 3.6vw, 52px); }
 }
 
 .nav-wordmark {
-  font-family: var(--serif);
-  font-variation-settings: "opsz" 144, "SOFT" 0, "WONK" 0;
-  font-weight: 400;
-  font-size: 20px;
-  letter-spacing: -0.01em;
-  color: var(--cream);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   line-height: 1;
+  color: var(--cream);
+  text-decoration: none;
 }
-.nav-wordmark .th {
-  font-style: italic;
+.nav-wordmark .monogram-18 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  line-height: 0.85;
+}
+.nav-wordmark .monogram-rule {
+  width: 24px;
+  height: 1px;
+  background: var(--cream);
+  margin: 2px 0 1px;
+}
+.nav-wordmark .monogram-g {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 0.9;
 }
 
 nav.primary {
@@ -307,15 +322,38 @@ footer.site-footer .foot-mark {
   grid-column: 1 / span 5;
 }
 footer.site-footer .foot-wordmark {
-  font-family: var(--serif);
-  font-variation-settings: "opsz" 144;
-  font-size: 34px;
-  font-weight: 400;
-  letter-spacing: -0.01em;
-  color: var(--cream);
-  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   margin-bottom: 18px;
   line-height: 1;
+  color: var(--cream);
+}
+footer.site-footer .foot-wordmark .monogram-18 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 30px;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  line-height: 0.85;
+}
+footer.site-footer .foot-wordmark .monogram-rule {
+  width: 50px;
+  height: 1.5px;
+  background: var(--cream);
+  margin: 3px 0 1px;
+}
+footer.site-footer .foot-wordmark .monogram-g {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 34px;
+  font-weight: 400;
+  line-height: 0.88;
+}
+footer.site-footer .foot-wordmark .monogram-name {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  margin-top: 8px;
 }
 footer.site-footer .foot-tag {
   font-size: 12px;
