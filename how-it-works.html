@@ -1,0 +1,599 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<link rel="icon" type="image/png" href="/favicon.png">
+<!-- Cookie consent + analytics (loads GA only after consent) -->
+<script src="/js/consent.js" defer></script>
+<link rel="stylesheet" href="/js/consent.css">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How It Works | Commission Process | 18th Grain</title>
+<meta name="description" content="From first conversation to finished markers. Learn how 18th Grain's commission process works: consultation, design, production, and delivery of custom golf course tee markers, plaques, and signage.">
+<link rel="canonical" href="https://18thgrain.com/how-it-works">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="18th Grain">
+<meta property="og:url" content="https://18thgrain.com/how-it-works">
+<meta property="og:title" content="How It Works | Commission Process | 18th Grain">
+<meta property="og:description" content="From first conversation to finished markers. Learn how 18th Grain's commission process works: consultation, design, production, and delivery of custom golf course tee markers, plaques, and signage.">
+<meta property="og:image" content="https://18thgrain.com/images/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How It Works | Commission Process | 18th Grain">
+<meta name="twitter:description" content="From first conversation to finished markers. Learn how 18th Grain's commission process works: consultation, design, production, and delivery.">
+<meta name="twitter:image" content="https://18thgrain.com/images/og-image.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/styles.css">
+<style>
+/* ================================================================
+   PAGE HERO
+   ================================================================ */
+.page-hero {
+  padding: 180px 0 100px;
+  background: var(--ground);
+}
+.page-hero .eyebrow {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 600ms ease, transform 600ms ease;
+}
+.page-hero .eyebrow.is-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+.page-hero h1.display {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 700ms cubic-bezier(0.16, 1, 0.3, 1) 100ms, transform 700ms cubic-bezier(0.16, 1, 0.3, 1) 100ms;
+}
+.page-hero h1.display.is-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+.page-hero .subline {
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--cream-dim);
+  max-width: 54ch;
+  margin: 28px 0 0;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 600ms ease 200ms, transform 600ms ease 200ms;
+}
+.page-hero .subline.is-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 800px) {
+  .page-hero { padding: 140px 0 72px; }
+}
+
+/* ================================================================
+   PROCESS TIMELINE
+   ================================================================ */
+.timeline-section {
+  padding: 120px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.timeline-section .section-head {
+  margin-bottom: 72px;
+}
+.timeline-section .section-head .eyebrow {
+  margin-bottom: 28px;
+}
+
+.timeline-steps {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+
+.timeline-step {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 40px;
+  padding: 48px 0;
+  border-top: 1px solid var(--rule);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 600ms ease, transform 600ms ease;
+}
+.timeline-step.is-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.timeline-step .step-num {
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--accent);
+  padding-top: 4px;
+}
+
+.timeline-step h3 {
+  font-family: var(--serif);
+  font-variation-settings: "opsz" 144, "SOFT" 0, "WONK" 0;
+  font-size: clamp(22px, 2vw, 28px);
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+  color: var(--cream);
+  margin-bottom: 16px;
+}
+
+.timeline-step p {
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--cream-dim);
+  margin: 0;
+  max-width: 56ch;
+}
+
+@media (max-width: 800px) {
+  .timeline-section { padding: 80px 0; }
+  .timeline-step {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 36px 0;
+  }
+}
+
+/* ================================================================
+   WHAT WE NEED / WHAT'S CUSTOMIZABLE (shared two-column layout)
+   ================================================================ */
+.detail-section {
+  padding: 120px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.detail-section .section-head {
+  margin-bottom: 64px;
+}
+.detail-section .section-head .eyebrow {
+  margin-bottom: 28px;
+}
+.detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.detail-col {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 600ms ease, transform 600ms ease;
+}
+.detail-col.is-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+.detail-col:nth-child(2) { transition-delay: 120ms; }
+
+.detail-col p {
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--cream-dim);
+  margin: 0 0 24px;
+  max-width: 52ch;
+}
+.detail-col p:last-child { margin-bottom: 0; }
+.detail-col p:first-child {
+  font-size: 17px;
+  color: var(--cream);
+  line-height: 1.7;
+}
+
+.detail-list {
+  margin: 0;
+  padding: 0;
+}
+.detail-list > div {
+  padding: 28px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.detail-list > div:first-child { padding-top: 0; }
+.detail-list dt {
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--cream-faint);
+  margin: 0 0 10px;
+}
+.detail-list dd {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--cream);
+}
+
+@media (max-width: 800px) {
+  .detail-section { padding: 80px 0; }
+  .detail-grid {
+    grid-template-columns: 1fr;
+    gap: 56px;
+  }
+}
+
+/* ================================================================
+   CTA SECTION
+   ================================================================ */
+.cta-section {
+  padding: 140px 0;
+  text-align: center;
+  background: var(--ground);
+}
+.cta-section h2 {
+  font-family: var(--serif);
+  font-variation-settings: "opsz" 144;
+  font-weight: 400;
+  font-size: clamp(28px, 3.4vw, 48px);
+  letter-spacing: -0.015em;
+  line-height: 1.1;
+  color: var(--cream);
+  margin-bottom: 20px;
+}
+.cta-section .cta-subline {
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--cream-dim);
+  max-width: 48ch;
+  margin: 0 auto 40px;
+}
+.cta-section h2,
+.cta-section .cta-subline,
+.cta-section .cta-wrap {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 600ms ease, transform 600ms ease;
+}
+.cta-section h2.is-in,
+.cta-section .cta-subline.is-in,
+.cta-section .cta-wrap.is-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+.cta-section .cta-subline { transition-delay: 100ms; }
+.cta-section .cta-wrap { transition-delay: 200ms; }
+
+@media (max-width: 800px) {
+  .cta-section { padding: 88px 0; }
+}
+
+</style>
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://18thgrain.com/how-it-works",
+      "name": "How It Works — Commission Process",
+      "description": "From first conversation to finished markers. Learn how 18th Grain's commission process works: consultation, design, production, and delivery of custom golf course tee markers, plaques, and signage.",
+      "url": "https://18thgrain.com/how-it-works",
+      "isPartOf": { "@id": "https://18thgrain.com/#website" },
+      "about": { "@id": "https://18thgrain.com/#organization" }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://18thgrain.com/#website",
+      "name": "18th Grain",
+      "url": "https://18thgrain.com",
+      "publisher": { "@id": "https://18thgrain.com/#organization" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://18thgrain.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "How It Works",
+          "item": "https://18thgrain.com/how-it-works"
+        }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "name": "How to commission custom golf course markers from 18th Grain",
+      "description": "The process for commissioning handcrafted tee markers, yardage markers, plaques, and signage for your golf course.",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Reach out",
+          "text": "Tell us about your course and what you're looking for. A brief email or form submission is all it takes to start the conversation."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Consultation",
+          "text": "We learn about your course identity, membership, and operational needs. We discuss materials, style, quantities, and placement."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Design development",
+          "text": "We develop concepts specific to your course: material selection, form, finish, and branding integration. You review renderings and refine with us."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "Production",
+          "text": "Each piece is CNC-fabricated and hand-finished in our Vancouver studio. We manage quality control throughout production."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 5,
+          "name": "Delivery and installation",
+          "text": "Finished pieces are carefully packaged and shipped directly to your course, ready for placement."
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<!-- MOBILE MENU OVERLAY -->
+<div class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
+  <a href="/#work">Work</a>
+  <a href="/collections">Collections</a>
+  <a href="/how-it-works">Process</a>
+  <a href="/about">About</a>
+  <a href="/#contact">Contact</a>
+</div>
+
+<!-- FIXED HEADER -->
+<header class="site-header is-scrolled" id="siteHeader">
+  <div class="container inner">
+    <a href="/" class="nav-wordmark"><span class="monogram-18">18</span><span class="monogram-rule"></span><span class="monogram-g">G</span></a>
+    <nav class="primary" aria-label="Primary">
+      <a href="/#work">Work</a>
+      <a href="/collections">Collections</a>
+      <a href="/how-it-works" class="is-current">Process</a>
+      <a href="/about">About</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+    <button class="hamburger" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<!-- MAIN CONTENT -->
+<main>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow" id="heroEyebrow">How it works</span>
+      <h1 class="display" id="heroHeading">From first conversation to finished markers.</h1>
+      <p class="subline" id="heroSubline">Every commission begins the same way: you tell us about your course, and we design something that belongs there. Here is what the process looks like, what we need from you, and what to expect along the way.</p>
+    </div>
+  </section>
+
+  <!-- PROCESS TIMELINE -->
+  <section class="timeline-section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">The process</span>
+        <h2 class="display">Five steps. One point of contact.</h2>
+      </div>
+      <div class="timeline-steps">
+        <div class="timeline-step" id="step1">
+          <span class="step-num">01</span>
+          <div>
+            <h3>Reach out</h3>
+            <p>Tell us about your course and what you have in mind. A short email or a contact form submission is all it takes. There is no minimum order, no commitment at this stage. We are simply learning about each other.</p>
+          </div>
+        </div>
+        <div class="timeline-step" id="step2">
+          <span class="step-num">02</span>
+          <div>
+            <h3>Consultation</h3>
+            <p>We schedule a call or video meeting to learn about your course identity, your membership, and your operational needs. We discuss materials, style, quantities, placement, and any branding guidelines. This conversation shapes everything that follows.</p>
+          </div>
+        </div>
+        <div class="timeline-step" id="step3">
+          <span class="step-num">03</span>
+          <div>
+            <h3>Design development</h3>
+            <p>We develop concepts tailored to your course: material selection, form, finish, and branding integration. You receive renderings to review. We refine together until the design is right. Revisions are part of the process, not an extra charge.</p>
+          </div>
+        </div>
+        <div class="timeline-step" id="step4">
+          <span class="step-num">04</span>
+          <div>
+            <h3>Production</h3>
+            <p>Once the design is approved, each piece is CNC-fabricated and hand-finished in our Vancouver studio. We manage quality control throughout production and keep you updated on progress.</p>
+          </div>
+        </div>
+        <div class="timeline-step" id="step5">
+          <span class="step-num">05</span>
+          <div>
+            <h3>Delivery</h3>
+            <p>Finished pieces are carefully packaged and shipped directly to your course, ready for placement. We provide care guidance so your markers maintain their finish season after season.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT WE NEED FROM YOU -->
+  <section class="detail-section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">What we need from you</span>
+        <h2 class="display">A conversation, not a specification sheet.</h2>
+      </div>
+      <div class="detail-grid">
+        <div class="detail-col" id="needsNarrative">
+          <p>You do not need a detailed brief or production-ready artwork to get started.</p>
+          <p>Most commissions begin with a conversation about the course: its character, its landscape, what the membership values. We handle the design side. Your role is to share context about the course and tell us what matters to your members.</p>
+          <p>If you have brand guidelines, a logo file, or reference photos of the property, those help. But they are not prerequisites. Some courses come to us with a clear vision, others start with nothing more than a phone call. We work with both.</p>
+        </div>
+        <div class="detail-col" id="needsList">
+          <dl class="detail-list">
+            <div>
+              <dt>Helpful to have</dt>
+              <dd>Course logo or crest (vector format if available). Brand guidelines or colour palette. Photos of the property or existing signage.</dd>
+            </div>
+            <div>
+              <dt>Good to know</dt>
+              <dd>Number of holes or tee boxes. Types of markers needed (tee markers, yardage, plaques, signage). Any course-specific requirements for size, durability, or mounting.</dd>
+            </div>
+            <div>
+              <dt>Not required</dt>
+              <dd>Detailed specifications, production drawings, or material selections. That is our job. We guide the design process from consultation through to finished product.</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT'S CUSTOMIZABLE -->
+  <section class="detail-section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Customization</span>
+        <h2 class="display">Everything. That is the point.</h2>
+      </div>
+      <div class="detail-grid">
+        <div class="detail-col" id="customNarrative">
+          <p>Start with one of our existing marker styles and customize it for your course, or commission something entirely new. Both paths lead to the same place: markers designed for your property.</p>
+          <p>Shape, size, material, finish, colour, logo placement, typography. It is all open. We work with you to design markers that reflect your course identity and meet your operational requirements. If you want something we have not made before, that is not a problem. That is how we work.</p>
+        </div>
+        <div class="detail-col" id="customList">
+          <dl class="detail-list">
+            <div>
+              <dt>Materials</dt>
+              <dd>Locally sourced hardwoods, mixed-media elements, metal inlays, epoxy finishes. Material selection is guided by aesthetics, durability, and the conditions on your course.</dd>
+            </div>
+            <div>
+              <dt>Form + dimensions</dt>
+              <dd>Shape, profile, and size are designed to suit your course. No fixed moulds or catalogue forms.</dd>
+            </div>
+            <div>
+              <dt>Branding</dt>
+              <dd>Course logo, crest, name, or custom typography. Integrated into the design as engraving, inlay, or mixed-media application.</dd>
+            </div>
+            <div>
+              <dt>Finish</dt>
+              <dd>Hand-applied finishes selected for appearance and longevity. Options range from natural oils to marine-grade coatings depending on climate and exposure.</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2 id="ctaHeading">Ready to start a commission?</h2>
+      <p class="cta-subline" id="ctaSubline">Tell us about your course. We will follow up within two business days to schedule a consultation.</p>
+      <div class="cta-wrap" id="ctaWrap">
+        <a href="/#contact" class="cta">Start a project <span class="arrow">&rarr;</span></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="row">
+      <div class="foot-mark">
+        <span class="foot-wordmark"><span class="monogram-18">18</span><span class="monogram-rule"></span><span class="monogram-g">G</span><span class="monogram-name">18TH GRAIN</span></span>
+        <span class="foot-tag">Commissioned for the course. Canadian-made tee markers, yardage markers, plaques and golf course signs.</span>
+      </div>
+      <nav class="foot-nav" aria-label="Footer">
+        <a href="/#work">Work</a>
+        <a href="/collections">Collections</a>
+        <a href="/how-it-works">Process</a>
+        <a href="/about">About</a>
+        <a href="/#contact">Contact</a>
+        <a href="/privacy-policy">Privacy</a>
+      </nav>
+      <div class="foot-contact">
+        <a href="mailto:info@18thgrain.com">info@18thgrain.com</a>
+        <a href="https://www.instagram.com/18thgrain" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.linkedin.com/company/18thgrain" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+      <div class="copyright">&copy; 2026 18th Grain &middot; Vancouver, British Columbia</div>
+    </div>
+  </div>
+</footer>
+
+<!-- JAVASCRIPT -->
+<script src="/js/main.js" defer></script>
+<script>
+(function () {
+  'use strict';
+
+  function initReveal() {
+    var revealObserver = window.eighteenGrainReveal;
+    if (!revealObserver) {
+      document.querySelectorAll('.eyebrow, h1.display, .subline, .timeline-step, .detail-col, .cta-section h2, .cta-section .cta-subline, .cta-section .cta-wrap').forEach(function (el) {
+        el.classList.add('is-in');
+      });
+      return;
+    }
+
+    // Hero elements
+    ['heroEyebrow', 'heroHeading', 'heroSubline'].forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el) revealObserver.observe(el);
+    });
+
+    // Timeline steps
+    ['step1', 'step2', 'step3', 'step4', 'step5'].forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el) revealObserver.observe(el);
+    });
+
+    // Detail columns
+    ['needsNarrative', 'needsList', 'customNarrative', 'customList'].forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el) revealObserver.observe(el);
+    });
+
+    // CTA section
+    ['ctaHeading', 'ctaSubline', 'ctaWrap'].forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el) revealObserver.observe(el);
+    });
+  }
+
+  if (window.eighteenGrainReveal) {
+    initReveal();
+  } else {
+    window.addEventListener('load', initReveal);
+  }
+})();
+</script>
+
+</body>
+</html>
