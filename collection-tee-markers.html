@@ -254,7 +254,6 @@
           src="images/tee-marker-hex-walnut-red-inlay.jpg"
           alt="Faceted walnut tee marker with engraved tree crest on turf."
           loading="eager">
-        <p class="image-caption" id="heroCaption">Faceted walnut marker with engraved crest.</p>
       </div>
       <div class="gallery-grid">
         <div class="gallery-item" id="galleryItem1">
@@ -262,63 +261,54 @@
             src="images/tee-marker-01.webp"
             alt="Charred hexagonal tee marker with engraved tree logo and 1922 date mark."
             loading="lazy">
-          <p class="image-caption">Charred hexagonal marker with engraved crest.</p>
         </div>
         <div class="gallery-item" id="galleryItem2">
           <img
             src="images/tee-marker-03.webp"
             alt="Walnut trapezoidal tee marker with oak leaf engraving."
             loading="lazy">
-          <p class="image-caption">Walnut trapezoidal marker with oak leaf engraving.</p>
         </div>
         <div class="gallery-item" id="galleryItem3">
           <img
             src="images/tee-marker-05.webp"
             alt="Walnut trapezoidal tee marker with engraved course logo."
             loading="lazy">
-          <p class="image-caption">Walnut trapezoidal marker with engraved course logo.</p>
         </div>
         <div class="gallery-item" id="galleryItem4">
           <img
             src="images/tee-marker-09.webp"
             alt="Walnut trapezoidal tee marker on a fairway, trees in the background."
             loading="lazy">
-          <p class="image-caption">Walnut trapezoidal marker on the fairway.</p>
         </div>
         <div class="gallery-item" id="galleryItem5">
           <img
             src="images/tee-marker-02.webp"
             alt="Walnut faceted hexagonal tee marker with engraved tree logo and 1922 date mark, on turf."
             loading="lazy">
-          <p class="image-caption">Walnut faceted hexagonal marker with engraved crest.</p>
         </div>
         <div class="gallery-item" id="galleryItem6">
           <img
             src="images/tee-marker-04.webp"
             alt="Maple hexagonal tee marker with engraved tree logo and 1922 date mark, on turf."
             loading="lazy">
-          <p class="image-caption">Maple hexagonal marker with engraved crest.</p>
         </div>
         <div class="gallery-item" id="galleryItem7">
           <img
             src="images/tee-marker-06.webp"
             alt="Walnut hexagonal tee marker with engraved tree logo and 1922 date mark, on turf."
             loading="lazy">
-          <p class="image-caption">Walnut hexagonal marker with engraved crest.</p>
         </div>
         <div class="gallery-item" id="galleryItem8">
           <img
             src="images/tee-marker-08.webp"
             alt="Charred wood mountain silhouette tee marker on turf with trees behind."
             loading="lazy">
-          <p class="image-caption">Mountain silhouette marker. Charred timber with ridge line detail.</p>
         </div>
         <div class="gallery-item" id="galleryItem9">
           <img
             src="images/tee-marker-10.webp"
             alt="Hexagonal tee marker on steel legs with engraved tree logo and 1922 date mark."
             loading="lazy">
-          <p class="image-caption">Hexagonal marker on steel legs with engraved crest.</p>
         </div>
       </div>
     </div>
@@ -387,7 +377,7 @@
       return;
     }
 
-    ['heroEyebrow', 'heroHeading', 'heroSubline', 'galleryHero', 'heroCaption', 'galleryItem1', 'galleryItem2', 'galleryItem3', 'galleryItem4', 'galleryItem5', 'galleryItem6', 'galleryItem7', 'galleryItem8', 'galleryItem9', 'descText', 'descCta'].forEach(function (id) {
+    ['heroEyebrow', 'heroHeading', 'heroSubline', 'galleryHero', 'galleryItem1', 'galleryItem2', 'galleryItem3', 'galleryItem4', 'galleryItem5', 'galleryItem6', 'galleryItem7', 'galleryItem8', 'galleryItem9', 'descText', 'descCta'].forEach(function (id) {
       var el = document.getElementById(id);
       if (el) revealObserver.observe(el);
     });
