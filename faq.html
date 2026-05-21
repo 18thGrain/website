@@ -1,0 +1,852 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<link rel="icon" type="image/png" href="/favicon.png">
+<!-- Cookie consent + analytics (loads GA only after consent) -->
+<script src="/js/consent.js" defer></script>
+<link rel="stylesheet" href="/js/consent.css">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FAQ | Custom Golf Course Tee Markers, Signage, Furnishings &amp; Plaques | 18th Grain</title>
+<meta name="description" content="Answers to common questions about custom wood tee markers, golf course signage, course furnishings, materials, durability, the commission process, and timelines. 18th Grain, Vancouver, BC.">
+<link rel="canonical" href="https://18thgrain.com/faq">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="18th Grain">
+<meta property="og:url" content="https://18thgrain.com/faq">
+<meta property="og:title" content="FAQ | Custom Golf Course Tee Markers, Signage, Furnishings &amp; Plaques | 18th Grain">
+<meta property="og:description" content="Answers to common questions about custom wood tee markers, golf course signage, course furnishings, materials, durability, and the commission process.">
+<meta property="og:image" content="https://18thgrain.com/images/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="FAQ | Custom Golf Course Tee Markers, Signage &amp; Furnishings | 18th Grain">
+<meta name="twitter:description" content="Answers to common questions about custom wood tee markers, golf course signage, course furnishings, and the commission process.">
+<meta name="twitter:image" content="https://18thgrain.com/images/og-image.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/styles.css">
+<style>
+/* ================================================================
+   PAGE HERO
+   ================================================================ */
+.page-hero {
+  padding: 180px 0 100px;
+  background: var(--ground);
+}
+.page-hero .eyebrow {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 600ms ease, transform 600ms ease;
+}
+.page-hero .eyebrow.is-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+.page-hero h1.display {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 700ms cubic-bezier(0.16, 1, 0.3, 1) 100ms, transform 700ms cubic-bezier(0.16, 1, 0.3, 1) 100ms;
+}
+.page-hero h1.display.is-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+.page-hero .subline {
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--cream-dim);
+  max-width: 54ch;
+  margin: 28px 0 0;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 600ms ease 200ms, transform 600ms ease 200ms;
+}
+.page-hero .subline.is-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 800px) {
+  .page-hero { padding: 140px 0 72px; }
+}
+
+/* ================================================================
+   FAQ SECTIONS
+   ================================================================ */
+.faq-section {
+  padding: 120px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.faq-section .section-head {
+  margin-bottom: 72px;
+}
+.faq-section .section-head .eyebrow {
+  margin-bottom: 28px;
+}
+
+.faq-item {
+  border-top: 1px solid var(--rule);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 600ms ease, transform 600ms ease;
+}
+.faq-item.is-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.faq-item details {
+  padding: 0;
+}
+
+.faq-item summary {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 32px 0;
+  cursor: pointer;
+  list-style: none;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::marker { display: none; content: ""; }
+
+.faq-item summary h3 {
+  font-family: var(--serif);
+  font-variation-settings: "opsz" 144, "SOFT" 0, "WONK" 0;
+  font-size: clamp(20px, 1.8vw, 26px);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  color: var(--cream);
+  margin: 0;
+  transition: color 300ms ease;
+}
+.faq-item summary:hover h3 { color: var(--accent); }
+
+.faq-item summary .faq-icon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  margin-top: 4px;
+  position: relative;
+}
+.faq-item summary .faq-icon::before,
+.faq-item summary .faq-icon::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: var(--cream-dim);
+  transition: transform 300ms ease, opacity 300ms ease;
+}
+.faq-item summary .faq-icon::before {
+  width: 16px;
+  height: 1px;
+  transform: translate(-50%, -50%);
+}
+.faq-item summary .faq-icon::after {
+  width: 1px;
+  height: 16px;
+  transform: translate(-50%, -50%);
+}
+.faq-item details[open] summary .faq-icon::after {
+  transform: translate(-50%, -50%) rotate(90deg);
+  opacity: 0;
+}
+
+.faq-answer {
+  padding: 0 0 40px;
+  max-width: 64ch;
+}
+.faq-answer p {
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--cream-dim);
+  margin: 0 0 16px;
+}
+.faq-answer p:last-child { margin-bottom: 0; }
+.faq-answer ul {
+  margin: 0 0 16px;
+  padding: 0 0 0 20px;
+}
+.faq-answer li {
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--cream-dim);
+  margin-bottom: 8px;
+}
+.faq-answer li:last-child { margin-bottom: 0; }
+
+@media (max-width: 800px) {
+  .faq-section { padding: 80px 0; }
+  .faq-item summary { padding: 28px 0; }
+  .faq-answer { padding: 0 0 32px; }
+}
+
+/* ================================================================
+   CTA SECTION
+   ================================================================ */
+.cta-section {
+  padding: 140px 0;
+  text-align: center;
+  background: var(--ground);
+}
+.cta-section h2 {
+  font-family: var(--serif);
+  font-variation-settings: "opsz" 144;
+  font-weight: 400;
+  font-size: clamp(28px, 3.4vw, 48px);
+  letter-spacing: -0.015em;
+  line-height: 1.1;
+  color: var(--cream);
+  margin-bottom: 20px;
+}
+.cta-section .cta-subline {
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--cream-dim);
+  max-width: 48ch;
+  margin: 0 auto 40px;
+}
+.cta-section h2,
+.cta-section .cta-subline,
+.cta-section .cta-wrap {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 600ms ease, transform 600ms ease;
+}
+.cta-section h2.is-in,
+.cta-section .cta-subline.is-in,
+.cta-section .cta-wrap.is-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+.cta-section .cta-subline { transition-delay: 100ms; }
+.cta-section .cta-wrap { transition-delay: 200ms; }
+
+@media (max-width: 800px) {
+  .cta-section { padding: 88px 0; }
+}
+
+</style>
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://18thgrain.com/faq",
+      "name": "FAQ: Custom Golf Course Tee Markers, Signage, Furnishings & Plaques",
+      "description": "Answers to common questions about custom wood tee markers, golf course signage, course furnishings, materials, durability, the commission process, and timelines.",
+      "url": "https://18thgrain.com/faq",
+      "isPartOf": { "@id": "https://18thgrain.com/#website" },
+      "about": { "@id": "https://18thgrain.com/#organization" }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://18thgrain.com/#website",
+      "name": "18th Grain",
+      "url": "https://18thgrain.com",
+      "publisher": { "@id": "https://18thgrain.com/#organization" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://18thgrain.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "FAQ",
+          "item": "https://18thgrain.com/faq"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What materials does 18th Grain use?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "18th Grain products are made from Canadian hardwoods, custom-fabricated corrosion-resistant alloy, and an exterior-grade finish system designed for outdoor use on golf courses. Each piece is designed and produced in our Vancouver studio using CNC fabrication, laser cutting, and precision German-engineered cutting systems. The wood is hand-selected for grain character and figure. The finish is exterior- and marine-grade, chosen specifically so the piece handles rain, UV, and seasonal weather without losing the grain detail. The same material system and production standards apply across tee markers, signage, course furnishings, and display pieces."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long do wood tee markers last outdoors?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Wood tee markers built for outdoor use last for years when the material and finish system are chosen correctly. 18th Grain uses an exterior- and marine-grade finish system: the same category of protection used on wooden boats and outdoor timber structures. This is not an indoor furniture finish applied to an outdoor object. It is a system selected specifically for UV exposure, rain, frost cycles, and direct turf contact. Maintenance is minimal. Over time, the piece develops a natural patina that many courses prefer."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What wood species work best for golf course markers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The species that work best for outdoor golf course markers are dense, figured hardwoods with natural resistance to moisture and temperature change. 18th Grain works with Canadian hardwoods, hand-selected for grain character and durability in outdoor conditions. Species selection is part of the design conversation: different woods bring different colour, figure, and character to a set of markers, and the right choice depends on the course environment and the aesthetic you want."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are handcrafted wood products durable enough for course use?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. 18th Grain products are designed and built for daily outdoor use. The studio uses CNC fabrication and laser cutting on German-engineered machinery to produce pieces with tight tolerances and consistent quality. The finish system is exterior- and marine-grade. Corrosion-resistant alloy bases and hardware are custom-fabricated for secure mounting. The combination of precision production, appropriate materials, and an outdoor-rated finish system means these products are built for the same conditions as any other course fixture: weather, foot traffic, mowing equipment, and seasonal cycles."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are there alternatives to plastic or metal tee markers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Wood tee markers are a distinct alternative to the plastic and cast-metal markers most courses use. The difference is material character: wood has visible grain, natural colour variation, and a warmth that plastic and metal do not. 18th Grain produces tee markers from Canadian hardwoods with custom corrosion-resistant alloy bases, finished in an exterior- and marine-grade system for outdoor durability."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between custom and off-the-shelf course furnishings?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Off-the-shelf course furnishings are produced in standard designs and sold in fixed configurations. You choose from what exists. Custom furnishings are designed for your course specifically. With 18th Grain, every piece starts with a design conversation: your course, your brand, your aesthetic, your requirements. The wood species, metal finish, logo placement, and overall character are all set during the commission process. Nothing is pulled from a shelf."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the options for custom golf course signage?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Custom golf course signage ranges from tee markers and yardage markers to hole plaques, directional signs, and course identification signs. 18th Grain produces all of these in its Vancouver studio. Materials include Canadian hardwoods and custom-fabricated corrosion-resistant alloy, with logo integration via laser cutting and CNC fabrication. The studio has produced golf course signage for Fairmont Chateau Whistler Golf Club, currently installed on the course."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you make benches, bag stands, and other course furnishings?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. 18th Grain produces handcrafted benches, bag stands, bag racks, ball washer housings, and divot mix containers in the same Vancouver studio, using the same materials and production standards as our tee markers and signage. These are designed to replace generic plastic and metal equivalents with wood and mixed-media alternatives that complement the rest of your course aesthetic."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you make trophy boards and honour boards?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. 18th Grain produces handcrafted trophy boards and honour boards for clubhouse display. These are interior pieces celebrating club history, tournament champions, and member achievements. Materials include premium hardwoods with metal nameplates or engraved plaques, and mixed-media options are available for more complex designs. Each board is built with an annual update capability so champion listings can grow over time."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I commission custom products from 18th Grain?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Start by reaching out to 18th Grain directly. The process begins with a conversation, not a form or a catalogue. We ask about your course: how many holes, which products you need, any brand or logo requirements, aesthetic references you have in mind, and your timeline. From there, the studio develops a design proposal. Once the design is confirmed, production begins in our Vancouver studio."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does a custom order take?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Timeline depends on the scope of the commission. A single set of tee markers for one course is a different production timeline than a full complement of markers, signage, furnishings, and honour boards across 36 holes. We provide a clear timeline estimate after the first conversation, once the scope is understood."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I get products that match my club's brand and logo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Logo integration is a standard part of the commission process, across every product category. The studio uses laser cutting and CNC fabrication to produce precise logo reproductions in wood, corrosion-resistant alloy, or a combination of materials. We work from your brand guidelines, your crest, or your existing visual identity. The goal is a set of products that looks like it belongs on your course specifically, not generic pieces with a logo stamped on."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I order a single product, or do I need to furnish the whole course?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Single-product commissions are welcome. A set of tee markers for one course, a single entrance sign, or one honour board are all valid starting points. Many clubs begin with tee markers and return later for signage, furnishings, or display pieces as the relationship develops. If you want a coordinated system from the start, our course furnishing packages are designed for that. But there is no minimum scope to begin a conversation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are your course furnishing packages?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "If you are looking to furnish more than one element of your course, 18th Grain can coordinate across product categories so that tee markers, signage, furnishings, and accessories share a unified design language, material palette, and finish standard. The benefit is a cohesive visual identity across every touchpoint on the property, with a single point of contact for design, production, and delivery."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who makes handcrafted golf course furnishings in Canada?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "18th Grain is a design studio in Vancouver, British Columbia, producing custom tee markers, yardage markers, signage, benches, bag stands, ball washers, divot mix containers, trophy boards, honour boards, and golf course accessories. The studio works with Canadian hardwoods and custom-fabricated corrosion-resistant alloy, using CNC fabrication, laser cutting, 3D printing, and precision German-engineered cutting systems. Each piece is commissioned for a specific course. Benjamin McLaughlin, an award-winning Vancouver-based artist and designer, leads design and production."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you work with course architects on renovation projects?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Course renovations are a natural fit for commissioned markers, signage, and furnishings because the architect is already making decisions about the visual and material language of the course. 18th Grain can work directly with the architect, the superintendent, or the club's project team. Designing these elements alongside the renovation, rather than after it, produces a more coherent result."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What information do you need to start a commission?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The first conversation is informal. Helpful to have: course details (number of holes, tee positions, which products you are interested in), brand assets (logo files, brand guidelines), aesthetic references (photos of markers, signage, or furnishings you like), timeline (season opening, renovation deadline), and a general budget range. You do not need all of this to reach out. A two-line email is a perfectly good starting point."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do custom course furnishings improve member experience?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Members notice the details of their course. Tee markers, signage, benches, and bag stands are among the most visible and most frequently encountered objects on any golf course: players interact with them on every hole, every round. A set of furnishings that reflects the specific character of the club, made from real materials with visible grain and a considered design, signals that the course cares about the details members interact with. A commissioned set, designed for your course, turns functional objects into an expression of the club's identity and standards."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<!-- MOBILE MENU OVERLAY -->
+<div class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
+  <a href="/#work">Work</a>
+  <a href="/collections">Collections</a>
+  <a href="/how-it-works">Process</a>
+  <a href="/about">About</a>
+  <a href="/#contact">Contact</a>
+</div>
+
+<!-- FIXED HEADER -->
+<header class="site-header is-scrolled" id="siteHeader">
+  <div class="container inner">
+    <a href="/" class="nav-wordmark"><span class="monogram-18">18</span><span class="monogram-rule"></span><span class="monogram-g">G</span></a>
+    <nav class="primary" aria-label="Primary">
+      <a href="/#work">Work</a>
+      <a href="/collections">Collections</a>
+      <a href="/how-it-works">Process</a>
+      <a href="/about">About</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+    <button class="hamburger" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<!-- MAIN CONTENT -->
+<main>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow" id="heroEyebrow">Frequently asked questions</span>
+      <h1 class="display" id="heroHeading">Questions we hear most.</h1>
+      <p class="subline" id="heroSubline">Materials, durability, the commission process, and what to expect. If your question is not here, reach out directly.</p>
+    </div>
+  </section>
+
+  <!-- FAQ: MATERIALS & DURABILITY -->
+  <section class="faq-section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Materials and durability</span>
+        <h2 class="display">What they are made from and how they hold up.</h2>
+      </div>
+
+      <div class="faq-item" id="faq1">
+        <details open>
+          <summary>
+            <h3>What materials does 18th Grain use?</h3>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </summary>
+          <div class="faq-answer">
+            <p>18th Grain products are made from Canadian hardwoods, custom-fabricated corrosion-resistant alloy, and an exterior-grade finish system designed for outdoor use on golf courses.</p>
+            <p>Each piece is designed and produced in our Vancouver studio using CNC fabrication, laser cutting, and precision German-engineered cutting systems. The wood is hand-selected for grain character and figure.</p>
+            <p>The finish is exterior- and marine-grade, chosen specifically so the piece handles rain, UV, and seasonal weather without losing the grain detail. The same material system and production standards apply across tee markers, signage, course furnishings, and display pieces.</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="faq-item" id="faq2">
+        <details>
+          <summary>
+            <h3>How long do wood tee markers last outdoors?</h3>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </summary>
+          <div class="faq-answer">
+            <p>Wood tee markers built for outdoor use last for years when the material and finish system are chosen correctly.</p>
+            <p>18th Grain uses an exterior- and marine-grade finish system: the same category of protection used on wooden boats and outdoor timber structures. This is not an indoor furniture finish applied to an outdoor object. It is a system selected specifically for UV exposure, rain, frost cycles, and direct turf contact.</p>
+            <p>Maintenance is minimal. Over time, the piece develops a natural patina that many courses prefer. We can advise on seasonal care based on your climate and course conditions.</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="faq-item" id="faq3">
+        <details>
+          <summary>
+            <h3>What wood species work best for golf course markers?</h3>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </summary>
+          <div class="faq-answer">
+            <p>The species that work best for outdoor golf course markers are dense, figured hardwoods with natural resistance to moisture and temperature change.</p>
+            <p>18th Grain works with Canadian hardwoods, hand-selected for grain character and durability in outdoor conditions. Species selection is part of the design conversation: different woods bring different colour, figure, and character to a set of markers, and the right choice depends on the course environment and the aesthetic you want.</p>
+            <p>We can walk you through the options during the first conversation.</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="faq-item" id="faq4">
+        <details>
+          <summary>
+            <h3>Are handcrafted wood products durable enough for course use?</h3>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </summary>
+          <div class="faq-answer">
+            <p>Yes. 18th Grain products are not decorative objects placed on a course. They are designed and built for daily outdoor use.</p>
+            <p>The studio uses CNC fabrication and laser cutting on German-engineered machinery to produce pieces with tight tolerances and consistent quality. The finish system is exterior- and marine-grade, not an indoor furniture finish. Corrosion-resistant alloy bases and hardware are custom-fabricated for secure mounting.</p>
+            <p>The combination of precision production, appropriate materials, and an outdoor-rated finish system means these products are built for the same conditions as any other course fixture: weather, foot traffic, mowing equipment, and seasonal cycles.</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="faq-item" id="faq5">
+        <details>
+          <summary>
+            <h3>Are there alternatives to plastic or metal tee markers?</h3>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </summary>
+          <div class="faq-answer">
+            <p>Yes. Wood tee markers are a distinct alternative to the plastic and cast-metal markers most courses use.</p>
+            <p>The difference is material character: wood has visible grain, natural colour variation, and a warmth that plastic and metal do not. A set of wood tee markers reads as a considered design choice rather than a default equipment purchase.</p>
+            <p>18th Grain produces tee markers from Canadian hardwoods with custom corrosion-resistant alloy bases, finished in an exterior- and marine-grade system for outdoor durability. They are designed to perform in the same conditions as any course fixture while offering a material quality that off-the-shelf alternatives do not.</p>
+          </div>
+        </details>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FAQ: PRODUCTS & RANGE -->
+  <section class="faq-section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Products and range</span>
+        <h2 class="display">What we make beyond tee markers.</h2>
+      </div>
+
+      <div class="faq-item" id="faq6">
+        <details>
+          <summary>
+            <h3>What is the difference between custom and off-the-shelf course furnishings?</h3>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </summary>
+          <div class="faq-answer">
+            <p>Off-the-shelf course furnishings are produced in standard designs and sold in fixed configurations. You choose from what exists. Custom furnishings are designed for your course specifically.</p>
+            <p>With 18th Grain, every piece starts with a design conversation: your course, your brand, your aesthetic, your requirements. The wood species, metal finish, logo placement, and overall character are all set during the commission process. Nothing is pulled from a shelf.</p>
+            <p>The difference is the same as the difference between buying a dining table from a furniture store and commissioning one from a designer: the commissioned piece fits because it was made to fit.</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="faq-item" id="faq7">
+        <details>
+          <summary>
+            <h3>What are the options for custom golf course signage?</h3>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </summary>
+          <div class="faq-answer">
+            <p>Custom golf course signage ranges from tee markers and yardage markers to hole plaques, directional signs, and course identification signs. 18th Grain produces all of these in its Vancouver studio.</p>
+            <p>Materials include Canadian hardwoods and custom-fabricated corrosion-resistant alloy, with logo integration via laser cutting and CNC fabrication. Every sign is commissioned for a specific course: your brand, your materials, your design.</p>
+            <p>The studio has produced golf course signage for Fairmont Chateau Whistler Golf Club, currently installed on the course. If you are looking for signage that matches the character of your course rather than a catalogue option, reach out to start a conversation.</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="faq-item" id="faq8">
+        <details>
+          <summary>
+            <h3>Do you make benches, bag stands, and other course furnishings?</h3>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </summary>
+          <div class="faq-answer">
+            <p>Yes. 18th Grain produces handcrafted benches, bag stands, bag racks, ball washer housings, and divot mix containers in the same Vancouver studio, using the same materials and production standards as our tee markers and signage.</p>
+            <p>These are designed to replace generic plastic and metal equivalents with wood and mixed-media alternatives that complement the rest of your course aesthetic. Every piece shares a unified design language, so your markers, signage, and furnishings feel like they belong together.</p>
+            <p>The collections page has full details on each product category.</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="faq-item" id="faq9">
+        <details>
+          <summary>
+            <h3>Do you make trophy boards and honour boards?</h3>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </summary>
+          <div class="faq-answer">
+            <p>Yes. 18th Grain produces handcrafted trophy boards and honour boards for clubhouse display. These are interior pieces celebrating club history, tournament champions, and member achievements.</p>
+            <p>Materials include premium hardwoods with metal nameplates or engraved plaques, and mixed-media options are available for more complex designs. Each board is built with an annual update capability so champion listings can grow over time.</p>
+            <p>The same craftsmanship and material quality applied to our outdoor course products carries through to these clubhouse pieces.</p>
+          </div>
+        </details>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FAQ: THE COMMISSION PROCESS -->
+  <section class="faq-section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">The commission process</span>
+        <h2 class="display">How it works from first conversation to installation.</h2>
+      </div>
+
+      <div class="faq-item" id="faq10">
+        <details>
+          <summary>
+            <h3>How do I commission custom products from 18th Grain?</h3>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </summary>
+          <div class="faq-answer">
+            <p>Start by reaching out to 18th Grain directly. The process begins with a conversation, not a form or a catalogue.</p>
+            <p>We will ask about your course: how many holes, which products you need (tee markers, signage, furnishings, display pieces), any brand or logo requirements, aesthetic references you have in mind, and your timeline. From there, the studio develops a design proposal. Once the design is confirmed, production begins in our Vancouver studio.</p>
+            <p>Each commission is a collaboration between the course and the maker.</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="faq-item" id="faq11">
+        <details>
+          <summary>
+            <h3>How long does a custom order take?</h3>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </summary>
+          <div class="faq-answer">
+            <p>Timeline depends on the scope of the commission. A single set of tee markers for one course is a different production timeline than a full complement of markers, signage, furnishings, and honour boards across 36 holes.</p>
+            <p>We will give you a clear timeline estimate after the first conversation, once the scope is understood.</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="faq-item" id="faq12">
+        <details>
+          <summary>
+            <h3>Can I get products that match my club's brand and logo?</h3>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </summary>
+          <div class="faq-answer">
+            <p>Yes. Logo integration is a standard part of the commission process, across every product category.</p>
+            <p>The studio uses laser cutting and CNC fabrication to produce precise logo reproductions in wood, corrosion-resistant alloy, or a combination of materials. We work from your brand guidelines, your crest, or your existing visual identity.</p>
+            <p>If you have specific colours, materials, or finishes that tie to your club brand, those become part of the design conversation. The goal is a set of products that looks like it belongs on your course specifically, not generic pieces with a logo stamped on.</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="faq-item" id="faq13">
+        <details>
+          <summary>
+            <h3>Can I order a single product, or do I need to furnish the whole course?</h3>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </summary>
+          <div class="faq-answer">
+            <p>Single-product commissions are welcome. A set of tee markers for one course, a single entrance sign, or one honour board are all valid starting points.</p>
+            <p>Many clubs begin with tee markers and return later for signage, furnishings, or display pieces as the relationship develops. If you want a coordinated system from the start, our course furnishing packages are designed for that. But there is no minimum scope to begin a conversation.</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="faq-item" id="faq14">
+        <details>
+          <summary>
+            <h3>What are your course furnishing packages?</h3>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </summary>
+          <div class="faq-answer">
+            <p>If you are looking to furnish more than one element of your course, 18th Grain can coordinate across product categories so that tee markers, signage, furnishings, and accessories share a unified design language, material palette, and finish standard.</p>
+            <p>The benefit is a cohesive visual identity across every touchpoint on the property, with a single point of contact for design, production, and delivery.</p>
+            <p>Reach out for a conversation about what that looks like for your course.</p>
+          </div>
+        </details>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FAQ: ABOUT 18TH GRAIN -->
+  <section class="faq-section" style="border-bottom: none;">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">About 18th Grain</span>
+        <h2 class="display">Who we are and how we work.</h2>
+      </div>
+
+      <div class="faq-item" id="faq15">
+        <details>
+          <summary>
+            <h3>Who makes handcrafted golf course furnishings in Canada?</h3>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </summary>
+          <div class="faq-answer">
+            <p>18th Grain is a design studio in Vancouver, British Columbia, producing custom tee markers, yardage markers, signage, benches, bag stands, ball washers, divot mix containers, trophy boards, honour boards, and golf course accessories.</p>
+            <p>The studio works with Canadian hardwoods and custom-fabricated corrosion-resistant alloy, using CNC fabrication, laser cutting, 3D printing, and precision German-engineered cutting systems. Each piece is commissioned for a specific course.</p>
+            <p>The studio behind 18th Grain has over fifteen years of experience in commissioned furniture and art, with the same maker, the same material language, and the same machinery now applied to golf course objects. Benjamin McLaughlin, an award-winning Vancouver-based artist and designer, leads design and production.</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="faq-item" id="faq16">
+        <details>
+          <summary>
+            <h3>Do you work with course architects on renovation projects?</h3>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </summary>
+          <div class="faq-answer">
+            <p>Yes. Course renovations are a natural fit for commissioned markers, signage, and furnishings because the architect is already making decisions about the visual and material language of the course.</p>
+            <p>18th Grain can work directly with the architect, the superintendent, or the club's project team. If you are in the early stages of a renovation and want to include tee markers, signage, furnishings, or display pieces in the scope, reach out early. Designing these elements alongside the renovation, rather than after it, produces a more coherent result.</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="faq-item" id="faq17">
+        <details>
+          <summary>
+            <h3>What information do you need to start a commission?</h3>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </summary>
+          <div class="faq-answer">
+            <p>The first conversation is informal. Helpful to have on hand:</p>
+            <ul>
+              <li><strong>Course details.</strong> Number of holes, number of tee positions per hole, which products you are interested in.</li>
+              <li><strong>Brand assets.</strong> Logo files, brand guidelines, any existing visual identity for the club.</li>
+              <li><strong>Aesthetic references.</strong> Photos of markers, signage, furnishings, or course details you like. References from outside golf are useful too.</li>
+              <li><strong>Timeline.</strong> Season opening, renovation completion, or membership event driving the deadline.</li>
+              <li><strong>Budget range.</strong> Pricing is set per commission based on scope, materials, and complexity. A general range helps us design within the right parameters from the start.</li>
+            </ul>
+            <p>You do not need all of this to reach out. A two-line email describing what you are looking for is a perfectly good starting point.</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="faq-item" id="faq18">
+        <details>
+          <summary>
+            <h3>How do custom course furnishings improve member experience?</h3>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </summary>
+          <div class="faq-answer">
+            <p>Members notice the details of their course. Tee markers, signage, benches, and bag stands are among the most visible and most frequently encountered objects on any golf course: players interact with them on every hole, every round.</p>
+            <p>A set of furnishings that reflects the specific character of the club, made from real materials with visible grain and a considered design, signals that the course cares about the details members interact with. It is the same principle that drives a club to invest in quality locker room finishes or dining room furniture.</p>
+            <p>A commissioned set, designed for your course, turns functional objects into an expression of the club's identity and standards.</p>
+          </div>
+        </details>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2 id="ctaHeading">Have a question we did not cover?</h2>
+      <p class="cta-subline" id="ctaSubline">Reach out directly. We will follow up within two business days.</p>
+      <div class="cta-wrap" id="ctaWrap">
+        <a href="/#contact" class="cta">Start a conversation <span class="arrow">&rarr;</span></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="row">
+      <div class="foot-mark">
+        <span class="foot-wordmark"><span class="monogram-18">18</span><span class="monogram-rule"></span><span class="monogram-g">G</span><span class="monogram-name">18TH GRAIN</span></span>
+        <span class="foot-tag">Commissioned for the course. Canadian-made tee markers, yardage markers, plaques and golf course signs.</span>
+      </div>
+      <nav class="foot-nav" aria-label="Footer">
+        <a href="/#work">Work</a>
+        <a href="/collections">Collections</a>
+        <a href="/how-it-works">Process</a>
+        <a href="/about">About</a>
+        <a href="/#contact">Contact</a>
+        <a href="/faq">FAQ</a>
+        <a href="/privacy-policy">Privacy</a>
+      </nav>
+      <div class="foot-contact">
+        <a href="mailto:info@18thgrain.com">info@18thgrain.com</a>
+        <a href="https://www.instagram.com/18thgrain" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.linkedin.com/company/18thgrain" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+      <div class="copyright">&copy; 2026 18th Grain &middot; Vancouver, British Columbia</div>
+    </div>
+  </div>
+</footer>
+
+<!-- JAVASCRIPT -->
+<script src="/js/main.js" defer></script>
+<script>
+(function () {
+  'use strict';
+
+  function initReveal() {
+    var revealObserver = window.eighteenGrainReveal;
+    if (!revealObserver) {
+      document.querySelectorAll('.eyebrow, h1.display, .subline, .faq-item, .cta-section h2, .cta-section .cta-subline, .cta-section .cta-wrap').forEach(function (el) {
+        el.classList.add('is-in');
+      });
+      return;
+    }
+
+    // Hero elements
+    ['heroEyebrow', 'heroHeading', 'heroSubline'].forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el) revealObserver.observe(el);
+    });
+
+    // FAQ items
+    for (var i = 1; i <= 18; i++) {
+      var el = document.getElementById('faq' + i);
+      if (el) revealObserver.observe(el);
+    }
+
+    // CTA section
+    ['ctaHeading', 'ctaSubline', 'ctaWrap'].forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el) revealObserver.observe(el);
+    });
+  }
+
+  if (window.eighteenGrainReveal) {
+    initReveal();
+  } else {
+    window.addEventListener('load', initReveal);
+  }
+})();
+</script>
+
+</body>
+</html>
