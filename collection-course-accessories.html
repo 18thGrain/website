@@ -238,21 +238,37 @@
         <div class="product-cell" id="productCell1">
           <div class="image-mat">
             <img
-              src="images/golf-range-ball-basket-01.webp"
-              alt="Custom wooden range ball basket with engraved club logo, filled with golf balls on a driving range."
+              src="images/course-accessories-scorecard-box-walnut.jpg"
+              alt="Walnut scorecard box with compartments for tees, ball markers, pencils, and scorecards, engraved with 18th Grain branding."
               loading="eager">
           </div>
-          <p class="image-caption">Range ball basket. Locally sourced hardwood with engraved club branding.</p>
         </div>
 
         <div class="product-cell product-cell--offset" id="productCell2">
+          <div class="image-mat">
+            <img
+              src="images/course-accessories-range-caddie-maple.jpg"
+              alt="Wooden range caddie club stand with engraved Laurel Hill crest and tee holders."
+              loading="lazy">
+          </div>
+        </div>
+
+        <div class="product-cell" id="productCell3">
+          <div class="image-mat">
+            <img
+              src="images/golf-range-ball-basket-01.webp"
+              alt="Custom wooden range ball basket with engraved club logo, filled with golf balls on a driving range."
+              loading="lazy">
+          </div>
+        </div>
+
+        <div class="product-cell product-cell--offset" id="productCell4">
           <div class="image-mat">
             <img
               src="images/golf-range-ball-dispenser-01.webp"
               alt="Hexagonal wood range ball dispenser with gravity-fed dispensing slot, shown from multiple angles on a driving range."
               loading="lazy">
           </div>
-          <p class="image-caption">Range ball dispenser. Hexagonal form with gravity-fed ball delivery.</p>
         </div>
 
       </div>
@@ -322,7 +338,7 @@
       return;
     }
 
-    ['heroEyebrow', 'heroHeading', 'heroSubline', 'productCell1', 'productCell2', 'descText', 'descCta'].forEach(function (id) {
+    ['heroEyebrow', 'heroHeading', 'heroSubline', 'productCell1', 'productCell2', 'productCell3', 'productCell4', 'descText', 'descCta'].forEach(function (id) {
       var el = document.getElementById(id);
       if (el) revealObserver.observe(el);
     });
