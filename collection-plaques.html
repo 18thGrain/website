@@ -318,7 +318,7 @@
         </div>
       </div>
 
-      <div class="work-tile work-tile-full" style="margin-top: 56px;">
+      <div class="work-tile work-tile-full" id="workTileE" style="margin-top: 56px;">
         <figure>
           <img
             src="images/hole-in-one-plaque-shane-lowry.webp"
@@ -393,7 +393,7 @@
       return;
     }
 
-    ['heroEyebrow', 'heroHeading', 'heroSubline', 'workTileFull0', 'workTileA', 'workTileB', 'workTileFull', 'workTileC', 'workTileD', 'descText', 'descCta'].forEach(function (id) {
+    ['heroEyebrow', 'heroHeading', 'heroSubline', 'workTileFull0', 'workTileA', 'workTileB', 'workTileFull', 'workTileC', 'workTileD', 'workTileE', 'descText', 'descCta'].forEach(function (id) {
       var el = document.getElementById(id);
       if (el) revealObserver.observe(el);
     });
