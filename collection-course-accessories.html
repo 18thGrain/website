@@ -271,6 +271,15 @@
           </div>
         </div>
 
+        <div class="product-cell" id="productCell5">
+          <div class="image-mat">
+            <img
+              src="images/course-accessories-pencil-scorecard-station-01.JPG"
+              alt="Wall-mounted wooden scorecard and pencil station with shelved compartments and engraved club crest, installed at a pro shop entrance."
+              loading="lazy">
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -311,6 +320,7 @@
         <a href="/about">About</a>
         <a href="/#contact">Contact</a>
         <a href="/faq">FAQ</a>
+        <a href="/for-architects">For architects and the trade</a>
         <a href="/privacy-policy">Privacy</a>
       </nav>
       <div class="foot-contact">
@@ -338,7 +348,7 @@
       return;
     }
 
-    ['heroEyebrow', 'heroHeading', 'heroSubline', 'productCell1', 'productCell2', 'productCell3', 'productCell4', 'descText', 'descCta'].forEach(function (id) {
+    ['heroEyebrow', 'heroHeading', 'heroSubline', 'productCell1', 'productCell2', 'productCell3', 'productCell4', 'productCell5', 'descText', 'descCta'].forEach(function (id) {
       var el = document.getElementById(id);
       if (el) revealObserver.observe(el);
     });
