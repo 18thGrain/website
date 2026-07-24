@@ -1208,8 +1208,8 @@
         <div class="work-tile work-tile-b" id="workTileB">
           <figure>
             <img
-              src="images/course-sign-etiquette-01.webp"
-              alt="Wooden course etiquette sign with engraved rules and club logo for Vancouver Golf Club, mounted on a single post with greenery behind."
+              src="images/course-sign-etiquette-01.JPG"
+              alt="Wooden short game facility etiquette sign with club logo and engraved guidelines for divot repair, ball collection, and sand raking, mounted on steel stakes on a practice green."
               loading="lazy">
             <figcaption>Course etiquette sign. Engraved rules with club branding.</figcaption>
           </figure>
@@ -1245,10 +1245,10 @@
   <section class="lookbook-section" id="lookbook">
     <div class="container">
       <div class="section-head">
-        <span class="eyebrow">Studio lookbook</span>
-        <h2 class="display">Explore our full capabilities</h2>
+        <span class="eyebrow">The Collection</span>
+        <h2 class="display">Explore our full product range</h2>
       </div>
-      <p class="lookbook-desc">A curated overview of materials, marker systems, and commissioning details. Yours to share with your team.</p>
+      <p class="lookbook-desc">Tee markers, signage, plaques, and course accessories. Materials, sizes, and commissioning details. Yours to share with your team.</p>
       <form class="lookbook-form" id="lookbookForm">
         <div>
           <label for="lookbook-name">Name</label>
@@ -1272,7 +1272,7 @@
           </label>
         </div>
         <div class="form-submit">
-          <button type="submit" class="cta">Send me the lookbook <span class="arrow">&rarr;</span></button>
+          <button type="submit" class="cta">Send me The Collection <span class="arrow">&rarr;</span></button>
         </div>
         <p class="lookbook-status" id="lookbookStatus"></p>
       </form>
@@ -1368,6 +1368,7 @@
         <a href="/about">About</a>
         <a href="#contact">Contact</a>
         <a href="/faq">FAQ</a>
+        <a href="/for-architects">For architects and the trade</a>
         <a href="/privacy-policy">Privacy</a>
       </nav>
       <div class="foot-contact">
@@ -1504,7 +1505,7 @@
     .then(function (res) {
       if (res.ok) {
         return res.json().then(function (json) {
-          status.innerHTML = 'Thank you. <a class="lookbook-download-link" href="' + json.downloadUrl + '" target="_blank" rel="noopener">Download your lookbook \u2192</a>';
+          status.innerHTML = 'Thank you. <a class="lookbook-download-link" href="' + json.downloadUrl + '" target="_blank" rel="noopener">Download The Collection \u2192</a>';
           status.className = 'lookbook-status success';
           window.gtag('event', 'lookbook_download', {
             has_course: !!data.course,
