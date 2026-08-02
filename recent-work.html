@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#171719">
+<!-- Cookie consent + analytics (loads GA only after consent) -->
+<script src="/js/consent.js" defer></script>
+<link rel="stylesheet" href="/js/consent.css">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Recent Work | Custom Golf Course Markers, Signs & Plaques | 18th Grain</title>
+<meta name="description" content="Recent commissions and studio projects from 18th Grain. Custom tee markers, course signage, plaques, and accessories designed and made in Vancouver, BC for golf courses across North America.">
+<link rel="canonical" href="https://18thgrain.com/recent-work">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="18th Grain">
+<meta property="og:url" content="https://18thgrain.com/recent-work">
+<meta property="og:title" content="Recent Work | Custom Golf Course Markers, Signs & Plaques | 18th Grain">
+<meta property="og:description" content="Recent commissions and studio projects from 18th Grain. Custom tee markers, course signage, plaques, and accessories designed and made in Vancouver, BC.">
+<meta property="og:image" content="https://18thgrain.com/images/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Recent Work | Custom Golf Course Markers, Signs & Plaques | 18th Grain">
+<meta name="twitter:description" content="Recent commissions and studio projects from 18th Grain. Custom tee markers, course signage, plaques, and accessories designed and made in Vancouver, BC.">
+<meta name="twitter:image" content="https://18thgrain.com/images/og-image.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/styles.css">
+<style>
+/* ================================================================
+   PAGE HERO
+   ================================================================ */
+.page-hero {
+  padding: 180px 0 100px;
+  background: var(--ground);
+}
+.page-hero .eyebrow {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 600ms ease, transform 600ms ease;
+}
+.page-hero .eyebrow.is-in { opacity: 1; transform: translateY(0); }
+.page-hero h1.display {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 700ms cubic-bezier(0.16, 1, 0.3, 1) 100ms, transform 700ms cubic-bezier(0.16, 1, 0.3, 1) 100ms;
+}
+.page-hero h1.display.is-in { opacity: 1; transform: translateY(0); }
+.page-hero .subline {
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--cream-dim);
+  max-width: 48ch;
+  margin: 28px 0 0;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 600ms ease 200ms, transform 600ms ease 200ms;
+}
+.page-hero .subline.is-in { opacity: 1; transform: translateY(0); }
+
+@media (max-width: 800px) {
+  .page-hero { padding: 140px 0 72px; }
+}
+
+/* ================================================================
+   WORK GRID
+   ================================================================ */
+.work-portfolio {
+  padding: 0 0 120px;
+  background: var(--ground);
+}
+
+.work-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+}
+
+.work-card {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 800ms ease, transform 800ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.work-card.is-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+.work-card:nth-child(even) {
+  transition-delay: 150ms;
+}
+
+.work-card figure {
+  margin: 0;
+}
+
+.work-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background: var(--ground-2);
+  filter: brightness(0.95) saturate(0.9);
+  transition: filter 0.4s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.4);
+}
+.work-card img:hover {
+  filter: brightness(1) saturate(1);
+  transform: scale(1.01);
+  box-shadow: 0 32px 100px rgba(0, 0, 0, 0.5);
+}
+
+.work-card figcaption {
+  margin-top: 22px;
+}
+
+.work-card-title {
+  font-family: var(--serif);
+  font-variation-settings: "opsz" 144;
+  font-weight: 400;
+  font-size: clamp(20px, 2vw, 26px);
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  color: var(--cream);
+  margin: 0 0 8px;
+}
+
+.work-card-detail {
+  font-family: var(--sans);
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--cream-dim);
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .work-cards {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .work-card:nth-child(even) {
+    transition-delay: 0ms;
+  }
+}
+
+/* ================================================================
+   CTA SECTION
+   ================================================================ */
+.cta-section {
+  padding: 100px 0 140px;
+  background: var(--ground);
+  border-top: 1px solid var(--rule);
+  text-align: center;
+}
+
+.cta-section .section-head {
+  max-width: 28ch;
+  margin: 0 auto 24px;
+}
+
+.cta-prompt {
+  font-family: var(--sans);
+  font-size: 14px;
+  color: var(--cream-dim);
+  margin: 0 0 40px;
+}
+
+.cta-section .cta-wrap {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 600ms ease, transform 600ms ease;
+}
+.cta-section .cta-wrap.is-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* CTA button (reused from global) */
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 32px;
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--cream);
+  background: transparent;
+  border: 1px solid var(--cream-dim);
+  border-radius: 999px;
+  cursor: pointer;
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+  transition: color 350ms ease, border-color 350ms ease;
+  z-index: 1;
+}
+.cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--cream);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 450ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  z-index: -1;
+  border-radius: 999px;
+}
+.cta .arrow {
+  transition: transform 300ms ease;
+  display: inline-block;
+}
+.cta:hover, .cta:focus {
+  color: var(--ground);
+  border-color: var(--cream);
+}
+.cta:hover::before, .cta:focus::before { transform: scaleX(1); }
+.cta:hover .arrow, .cta:focus .arrow { transform: translateX(5px); }
+
+</style>
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Recent Work",
+  "description": "Recent commissions and studio projects from 18th Grain. Custom tee markers, course signage, plaques, and accessories designed and made in Vancouver, BC for golf courses across North America.",
+  "url": "https://18thgrain.com/recent-work",
+  "isPartOf": {
+    "@type": "WebSite",
+    "@id": "https://18thgrain.com/#website"
+  },
+  "provider": {
+    "@type": "Organization",
+    "@id": "https://18thgrain.com/#organization",
+    "name": "18th Grain"
+  }
+}
+</script>
+</head>
+<body>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
+  <a href="/recent-work" class="mobile-menu-link">Work</a>
+  <a href="/collections" class="mobile-menu-link">Collections</a>
+  <a href="/how-it-works" class="mobile-menu-link">Process</a>
+  <a href="/about" class="mobile-menu-link">About</a>
+  <a href="/#contact" class="mobile-menu-link">Contact</a>
+</div>
+
+<!-- FIXED HEADER -->
+<header class="site-header" id="siteHeader">
+  <div class="container inner">
+    <a href="/" class="nav-wordmark"><span class="monogram-18">18</span><span class="monogram-rule"></span><span class="monogram-g">G</span></a>
+    <nav class="primary" aria-label="Primary">
+      <a href="/recent-work">Work</a>
+      <a href="/collections">Collections</a>
+      <a href="/how-it-works">Process</a>
+      <a href="/about">About</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+    <button class="hamburger" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<!-- MAIN -->
+<main>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow" id="heroEyebrow">Recent work</span>
+      <h1 class="display" id="heroHeading">From the studio.</h1>
+      <p class="subline" id="heroSubline">Recent commissions and studio projects.</p>
+    </div>
+  </section>
+
+  <!-- WORK PORTFOLIO -->
+  <section class="work-portfolio">
+    <div class="container">
+      <div class="work-cards" id="workCards">
+
+        <div class="work-card">
+          <figure>
+            <img
+              src="images/fairmont-whistler-golf-course-signage-01.webp"
+              alt="Wooden starter station sign with Chateau Whistler 1993 logo, flanked by two A-frame yardage signs on the first tee."
+              loading="eager">
+            <figcaption>
+              <h2 class="work-card-title">Course signage</h2>
+              <p class="work-card-detail">Starter station and yardage markers. Fairmont Chateau Whistler Golf Club.</p>
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="work-card">
+          <figure>
+            <img
+              src="images/hole-in-one-plaque-shane-lowry.webp"
+              alt="Burl wood and black epoxy resin hole-in-one plaque with engraved topographic hole map and golf ball mounted on steel pin."
+              loading="eager">
+            <figcaption>
+              <h2 class="work-card-title">Hole-in-one plaque</h2>
+              <p class="work-card-detail">Burl wood with black epoxy resin. Engraved hole topography.</p>
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="work-card">
+          <figure>
+            <img
+              src="images/course-sign-putting-only-01.JPG"
+              alt="Wooden practice area sign reading Putting Only with engraved putter and ball graphic, mounted on steel stakes beside a putting green."
+              loading="lazy">
+            <figcaption>
+              <h2 class="work-card-title">Practice area signage</h2>
+              <p class="work-card-detail">Engraved putter graphic on walnut. Steel stake mounting.</p>
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="work-card">
+          <figure>
+            <img
+              src="images/tee-marker-02.webp"
+              alt="Walnut hexagonal tee marker with silver inlay stripe on manicured turf, tree logo and 1922 engraved."
+              loading="lazy">
+            <figcaption>
+              <h2 class="work-card-title">Tee markers</h2>
+              <p class="work-card-detail">Hexagonal walnut markers with silver inlay and engraved club crest.</p>
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="work-card">
+          <figure>
+            <img
+              src="images/course-sign-wayfinding-01.webp"
+              alt="Walnut restroom wayfinding sign with engraved pictograms and directional arrow, on steel legs beside a cart path."
+              loading="lazy">
+            <figcaption>
+              <h2 class="work-card-title">Wayfinding signage</h2>
+              <p class="work-card-detail">Restroom directional sign. Walnut with engraved pictograms.</p>
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="work-card">
+          <figure>
+            <img
+              src="images/golf-range-ball-basket-01.webp"
+              alt="Wooden range ball basket with metal handle on a driving range tee line."
+              loading="lazy">
+            <figcaption>
+              <h2 class="work-card-title">Range ball baskets</h2>
+              <p class="work-card-detail">Timber and metal construction. Designed for daily use on the range.</p>
+            </figcaption>
+          </figure>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow" id="ctaEyebrow">Collections</span>
+        <h2 class="display" id="ctaHeading">See what we make</h2>
+      </div>
+      <p class="cta-prompt" id="ctaPrompt">Tee markers, signage, plaques, and course accessories.</p>
+      <div class="cta-wrap" id="ctaWrap">
+        <a href="/collections" class="cta">View collections <span class="arrow">&rarr;</span></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="row">
+      <div class="foot-mark">
+        <span class="foot-wordmark"><span class="monogram-18">18</span><span class="monogram-rule"></span><span class="monogram-g">G</span><span class="monogram-name">18TH GRAIN</span></span>
+        <span class="foot-tag">Commissioned for the course. A design studio for golf course markers, plaques, and signage. Made in Vancouver.</span>
+      </div>
+      <nav class="foot-nav" aria-label="Footer">
+        <a href="/recent-work">Work</a>
+        <a href="/collections">Collections</a>
+        <a href="/how-it-works">Process</a>
+        <a href="/about">About</a>
+        <a href="/#contact">Contact</a>
+        <a href="/faq">FAQ</a>
+        <a href="/for-architects">For architects and the trade</a>
+        <a href="/privacy-policy">Privacy</a>
+      </nav>
+      <div class="foot-contact">
+        <a href="mailto:info@18thgrain.com">info@18thgrain.com</a>
+        <a href="https://www.instagram.com/18thgrain" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.linkedin.com/company/18thgrain" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+      <div class="copyright">&copy; 2026 18th Grain &middot; Vancouver, British Columbia</div>
+    </div>
+  </div>
+</footer>
+
+<!-- JAVASCRIPT -->
+<script src="/js/main.js" defer></script>
+<script>
+(function () {
+  'use strict';
+
+  function initReveal() {
+    var revealObserver = window.eighteenGrainReveal;
+    if (!revealObserver) {
+      document.querySelectorAll('.eyebrow, h1.display, .subline, .work-card, .cta-wrap').forEach(function (el) {
+        el.classList.add('is-in');
+      });
+      return;
+    }
+
+    ['heroEyebrow', 'heroHeading', 'heroSubline', 'ctaEyebrow', 'ctaHeading', 'ctaPrompt', 'ctaWrap'].forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el) revealObserver.observe(el);
+    });
+
+    document.querySelectorAll('.work-card').forEach(function (el) {
+      revealObserver.observe(el);
+    });
+  }
+
+  if (window.eighteenGrainReveal) {
+    initReveal();
+  } else {
+    window.addEventListener('load', initReveal);
+  }
+})();
+</script>
+
+</body>
+</html>

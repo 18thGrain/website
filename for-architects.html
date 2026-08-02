@@ -1,0 +1,704 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<link rel="icon" type="image/png" href="/favicon.png">
+<!-- Cookie consent + analytics (loads GA only after consent) -->
+<script src="/js/consent.js" defer></script>
+<link rel="stylesheet" href="/js/consent.css">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>For Golf Course Architects and Management Companies | 18th Grain</title>
+<meta name="description" content="18th Grain works with golf course architects and course management companies on custom tee markers, signage, and commemorative pieces. Specification packages available on request.">
+<link rel="canonical" href="https://18thgrain.com/for-architects">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="18th Grain">
+<meta property="og:url" content="https://18thgrain.com/for-architects">
+<meta property="og:title" content="For Golf Course Architects and Management Companies | 18th Grain">
+<meta property="og:description" content="18th Grain works with golf course architects and course management companies on custom tee markers, signage, and commemorative pieces. Specification packages available on request.">
+<meta property="og:image" content="https://18thgrain.com/images/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="For Golf Course Architects and Management Companies | 18th Grain">
+<meta name="twitter:description" content="18th Grain works with golf course architects and course management companies on custom tee markers, signage, and commemorative pieces. Specification packages available on request.">
+<meta name="twitter:image" content="https://18thgrain.com/images/og-image.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/styles.css">
+<style>
+/* ================================================================
+   PAGE HERO
+   ================================================================ */
+.page-hero {
+  padding: 180px 0 100px;
+  background: var(--ground);
+}
+.page-hero .eyebrow {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 600ms ease, transform 600ms ease;
+}
+.page-hero .eyebrow.is-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+.page-hero h1.display {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 700ms cubic-bezier(0.16, 1, 0.3, 1) 100ms, transform 700ms cubic-bezier(0.16, 1, 0.3, 1) 100ms;
+}
+.page-hero h1.display.is-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+.page-hero .subline {
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--cream-dim);
+  max-width: 54ch;
+  margin: 28px 0 0;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 600ms ease 200ms, transform 600ms ease 200ms;
+}
+.page-hero .subline.is-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 800px) {
+  .page-hero { padding: 140px 0 72px; }
+}
+
+/* ================================================================
+   PROCESS SECTION
+   ================================================================ */
+.process-section {
+  padding: 120px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.process-section .section-head {
+  margin-bottom: 64px;
+}
+.process-section .section-head .eyebrow {
+  margin-bottom: 28px;
+}
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px;
+}
+.process-step {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 600ms ease, transform 600ms ease;
+}
+.process-step.is-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+.process-step:nth-child(2) { transition-delay: 100ms; }
+.process-step:nth-child(3) { transition-delay: 200ms; }
+
+.process-step .step-num {
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 20px;
+}
+.process-step h3 {
+  font-family: var(--serif);
+  font-variation-settings: "opsz" 144, "SOFT" 0, "WONK" 0;
+  font-size: clamp(22px, 2vw, 28px);
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+  color: var(--cream);
+  margin-bottom: 18px;
+}
+.process-step p {
+  font-family: var(--sans);
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--cream-dim);
+  margin: 0;
+  max-width: 36ch;
+}
+
+@media (max-width: 800px) {
+  .process-section { padding: 80px 0; }
+  .process-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}
+
+/* ================================================================
+   ENTITY SECTION (Management companies)
+   ================================================================ */
+.entity-section {
+  padding: 120px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.entity-section .section-head {
+  margin-bottom: 64px;
+}
+.entity-section .section-head .eyebrow {
+  margin-bottom: 28px;
+}
+.entity-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+.entity-narrative {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 600ms ease, transform 600ms ease;
+}
+.entity-narrative.is-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+.entity-narrative p {
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--cream-dim);
+  margin: 0 0 24px;
+  max-width: 52ch;
+}
+.entity-narrative p:last-child { margin-bottom: 0; }
+.entity-narrative p:first-child {
+  font-size: 17px;
+  color: var(--cream);
+  line-height: 1.7;
+}
+
+.entity-facts {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 600ms ease 150ms, transform 600ms ease 150ms;
+}
+.entity-facts.is-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.entity-facts dl {
+  margin: 0;
+  padding: 0;
+}
+.entity-facts dl > div {
+  padding: 28px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.entity-facts dl > div:first-child {
+  padding-top: 0;
+}
+.entity-facts dt {
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--cream-faint);
+  margin: 0 0 10px;
+}
+.entity-facts dd {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--cream);
+}
+
+@media (max-width: 800px) {
+  .entity-section { padding: 80px 0; }
+  .entity-grid {
+    grid-template-columns: 1fr;
+    gap: 56px;
+  }
+}
+
+/* ================================================================
+   PROSE BLOCK (Credentials callout)
+   ================================================================ */
+.prose-block {
+  padding: 100px 0;
+  border-bottom: 1px solid var(--rule);
+  text-align: center;
+}
+.prose-block p {
+  font-family: var(--sans);
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--cream-dim);
+  max-width: 58ch;
+  margin: 0 auto;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 600ms ease, transform 600ms ease;
+}
+.prose-block p.is-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 800px) {
+  .prose-block { padding: 72px 0; }
+}
+
+/* ================================================================
+   CTA SECTION
+   ================================================================ */
+.cta-section {
+  padding: 140px 0;
+  text-align: center;
+  background: var(--ground);
+}
+.cta-section h2 {
+  font-family: var(--serif);
+  font-variation-settings: "opsz" 144;
+  font-weight: 400;
+  font-size: clamp(28px, 3.4vw, 48px);
+  letter-spacing: -0.015em;
+  line-height: 1.1;
+  color: var(--cream);
+  margin-bottom: 20px;
+}
+.cta-section .cta-sub {
+  font-family: var(--sans);
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--cream-dim);
+  max-width: 48ch;
+  margin: 0 auto 48px;
+}
+.cta-section h2,
+.cta-section .cta-sub,
+.cta-section .cta-wrap {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 600ms ease, transform 600ms ease;
+}
+.cta-section h2.is-in,
+.cta-section .cta-sub.is-in,
+.cta-section .cta-wrap.is-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+.cta-section .cta-sub { transition-delay: 100ms; }
+.cta-section .cta-wrap { transition-delay: 200ms; }
+
+/* Inline spec form */
+.spec-form {
+  max-width: 480px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px 20px;
+  text-align: left;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 700ms ease 300ms, transform 700ms ease 300ms;
+}
+.spec-form.is-in { opacity: 1; transform: translateY(0); }
+
+.spec-form .form-row-full {
+  grid-column: 1 / -1;
+}
+
+.spec-form label {
+  display: block;
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--cream-dim);
+  margin-bottom: 10px;
+}
+
+.spec-form input {
+  width: 100%;
+  padding: 14px 0;
+  font-family: var(--sans);
+  font-size: 15px;
+  color: var(--cream);
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--rule);
+  outline: none;
+  transition: border-color 300ms ease;
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+.spec-form input::placeholder {
+  color: var(--cream-faint);
+}
+.spec-form input:focus {
+  border-bottom-color: var(--accent);
+}
+
+.spec-form .form-submit {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin-top: 16px;
+}
+
+.spec-form-status {
+  grid-column: 1 / -1;
+  font-family: var(--sans);
+  font-size: 14px;
+  text-align: center;
+  color: var(--cream-dim);
+  min-height: 1.6em;
+  margin: 0;
+}
+.spec-form-status.success { color: var(--accent); }
+.spec-form-status.error { color: #d4756a; }
+
+.cta-section .secondary-link {
+  display: inline-block;
+  margin-top: 32px;
+  font-family: var(--sans);
+  font-size: 12px;
+  color: var(--cream-dim);
+  letter-spacing: 0.04em;
+  transition: color 300ms ease;
+}
+.cta-section .secondary-link:hover { color: var(--cream); }
+
+@media (max-width: 800px) {
+  .cta-section { padding: 88px 0; }
+}
+@media (max-width: 600px) {
+  .spec-form {
+    grid-template-columns: 1fr;
+  }
+}
+
+</style>
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://18thgrain.com/for-architects",
+      "name": "For Golf Course Architects and Management Companies",
+      "description": "18th Grain works with golf course architects and course management companies on custom tee markers, signage, and commemorative pieces.",
+      "url": "https://18thgrain.com/for-architects",
+      "isPartOf": { "@id": "https://18thgrain.com/#website" },
+      "about": { "@id": "https://18thgrain.com/#organization" }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://18thgrain.com/#website",
+      "name": "18th Grain",
+      "url": "https://18thgrain.com",
+      "publisher": { "@id": "https://18thgrain.com/#organization" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://18thgrain.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "For Architects",
+          "item": "https://18thgrain.com/for-architects"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<!-- MOBILE MENU OVERLAY -->
+<div class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
+  <a href="/recent-work">Work</a>
+  <a href="/collections">Collections</a>
+  <a href="/how-it-works">Process</a>
+  <a href="/about">About</a>
+  <a href="/#contact">Contact</a>
+</div>
+
+<!-- FIXED HEADER -->
+<header class="site-header is-scrolled" id="siteHeader">
+  <div class="container inner">
+    <a href="/" class="nav-wordmark"><span class="monogram-18">18</span><span class="monogram-rule"></span><span class="monogram-g">G</span></a>
+    <nav class="primary" aria-label="Primary">
+      <a href="/recent-work">Work</a>
+      <a href="/collections">Collections</a>
+      <a href="/how-it-works">Process</a>
+      <a href="/about">About</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+    <button class="hamburger" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<!-- MAIN CONTENT -->
+<main>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow" id="heroEyebrow">For architects and the trade</span>
+      <h1 class="display" id="heroHeading">Designed to specification.</h1>
+      <p class="subline" id="heroSubline">18th Grain designs and produces course furnishings, not catalogue golf products. When architects and their clients need markers, signage, and commemorative pieces that hold up to the design intent of the course, this is where that work happens.</p>
+    </div>
+  </section>
+
+  <!-- WORKING WITH ARCHITECTS -->
+  <section class="process-section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Working with architects</span>
+        <h2 class="display">Integrated into your design process.</h2>
+      </div>
+      <div class="process-grid">
+        <div class="process-step" id="processStep1">
+          <span class="step-num">01</span>
+          <h3>Specification</h3>
+          <p>We provide a specification package with material samples, technical drawings, dimensional ranges, and finish options. The package is designed to drop into your documentation set without revision.</p>
+        </div>
+        <div class="process-step" id="processStep2">
+          <span class="step-num">02</span>
+          <h3>Collaboration</h3>
+          <p>We work directly from your site plans and design intent. Materials and form are resolved through conversation, not a catalogue. If your course has a specific landscape character or architectural language, we design to it.</p>
+        </div>
+        <div class="process-step" id="processStep3">
+          <span class="step-num">03</span>
+          <h3>Delivery</h3>
+          <p>We manage production, quality control, and delivery. You receive finished pieces ready for installation. We coordinate directly with the superintendent or site team on timing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MANAGEMENT COMPANIES -->
+  <section class="entity-section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Management companies</span>
+        <h2 class="display">One property at a time.</h2>
+      </div>
+      <div class="entity-grid">
+        <div class="entity-narrative" id="entityNarrative">
+          <p>We understand that management companies operate at portfolio scale. Our approach is intentionally different: start with one flagship property.</p>
+          <p>A single successful commission establishes what the studio can produce for your brand. It creates a reference point for other properties in the portfolio to evaluate, adapt, and build from. We are not asking for a portfolio commitment. We are asking you to consider one course.</p>
+        </div>
+        <div class="entity-facts" id="entityFacts">
+          <dl>
+            <div>
+              <dt>Approach</dt>
+              <dd>One property, fully commissioned</dd>
+            </div>
+            <div>
+              <dt>Process</dt>
+              <dd>Consultation, design, production, delivery</dd>
+            </div>
+            <div>
+              <dt>Timeline</dt>
+              <dd>Determined on a project basis</dd>
+            </div>
+            <div>
+              <dt>Reference</dt>
+              <dd>Fairmont Chateau Whistler Golf Club. Course signage. Still installed.</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CREDENTIALS CALLOUT -->
+  <section class="prose-block">
+    <div class="container">
+      <p id="proseCallout">Every commission is designed and produced in-house, from material selection through to finishing. That process is grounded in Benjamin McLaughlin's training in industrial design at Emily Carr University of Art + Design and fifteen years of practice in commissioned furniture and objects.</p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section" id="spec-form">
+    <div class="container">
+      <h2 id="ctaHeading">Start a conversation.</h2>
+      <p class="cta-sub" id="ctaSub">Tell us about the project and we'll follow up with the details that matter for your scope.</p>
+      <form class="spec-form" id="specForm">
+        <div>
+          <label for="spec-name">Name</label>
+          <input type="text" id="spec-name" name="name" placeholder="Your name" required autocomplete="name">
+        </div>
+        <div>
+          <label for="spec-email">Email</label>
+          <input type="email" id="spec-email" name="email" placeholder="you@example.com" required autocomplete="email">
+        </div>
+        <div class="form-row-full">
+          <label for="spec-org">Organization</label>
+          <input type="text" id="spec-org" name="organization" placeholder="Firm or management company" autocomplete="organization">
+        </div>
+        <div style="position:absolute;left:-9999px;" aria-hidden="true">
+          <input type="text" name="website" tabindex="-1" autocomplete="off">
+        </div>
+        <div class="form-submit">
+          <button type="submit" class="cta">Send enquiry <span class="arrow">&rarr;</span></button>
+        </div>
+        <p class="spec-form-status" id="specFormStatus"></p>
+      </form>
+      <a href="/#lookbook" class="secondary-link">Download the lookbook</a>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="row">
+      <div class="foot-mark">
+        <span class="foot-wordmark"><span class="monogram-18">18</span><span class="monogram-rule"></span><span class="monogram-g">G</span><span class="monogram-name">18TH GRAIN</span></span>
+        <span class="foot-tag">Commissioned for the course. Canadian-made tee markers, yardage markers, plaques and golf course signs.</span>
+      </div>
+      <nav class="foot-nav" aria-label="Footer">
+        <a href="/recent-work">Work</a>
+        <a href="/collections">Collections</a>
+        <a href="/how-it-works">Process</a>
+        <a href="/about">About</a>
+        <a href="/#contact">Contact</a>
+        <a href="/faq">FAQ</a>
+        <a href="/for-architects">For architects and the trade</a>
+        <a href="/privacy-policy">Privacy</a>
+      </nav>
+      <div class="foot-contact">
+        <a href="mailto:info@18thgrain.com">info@18thgrain.com</a>
+        <a href="https://www.instagram.com/18thgrain" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.linkedin.com/company/18thgrain" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+      <div class="copyright">&copy; 2026 18th Grain &middot; Vancouver, British Columbia</div>
+    </div>
+  </div>
+</footer>
+
+<!-- JAVASCRIPT -->
+<script src="/js/main.js" defer></script>
+<script>
+(function () {
+  'use strict';
+
+  function initReveal() {
+    var revealObserver = window.eighteenGrainReveal;
+    if (!revealObserver) {
+      document.querySelectorAll('.eyebrow, h1.display, .subline, .process-step, .entity-narrative, .entity-facts, .prose-block p, .cta-section h2, .cta-section .cta-sub, .cta-section .cta-wrap, .spec-form').forEach(function (el) {
+        el.classList.add('is-in');
+      });
+      return;
+    }
+
+    // Hero elements
+    ['heroEyebrow', 'heroHeading', 'heroSubline'].forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el) revealObserver.observe(el);
+    });
+
+    // Process steps
+    ['processStep1', 'processStep2', 'processStep3'].forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el) revealObserver.observe(el);
+    });
+
+    // Entity section
+    var entityNarrative = document.getElementById('entityNarrative');
+    var entityFacts = document.getElementById('entityFacts');
+    if (entityNarrative) revealObserver.observe(entityNarrative);
+    if (entityFacts) revealObserver.observe(entityFacts);
+
+    // Prose callout
+    var proseCallout = document.getElementById('proseCallout');
+    if (proseCallout) revealObserver.observe(proseCallout);
+
+    // CTA section
+    var ctaHeading = document.getElementById('ctaHeading');
+    var ctaSub = document.getElementById('ctaSub');
+    var specForm = document.getElementById('specForm');
+    if (ctaHeading) revealObserver.observe(ctaHeading);
+    if (ctaSub) revealObserver.observe(ctaSub);
+    if (specForm) revealObserver.observe(specForm);
+  }
+
+  if (window.eighteenGrainReveal) {
+    initReveal();
+  } else {
+    window.addEventListener('load', initReveal);
+  }
+})();
+
+// Spec form submission
+(function () {
+  var form = document.getElementById('specForm');
+  var status = document.getElementById('specFormStatus');
+  if (!form || !status) return;
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var btn = form.querySelector('button[type="submit"]');
+    btn.disabled = true;
+    status.textContent = 'Sending...';
+    status.className = 'spec-form-status';
+
+    var data = {
+      name: form.querySelector('#spec-name').value,
+      email: form.querySelector('#spec-email').value,
+      course: form.querySelector('#spec-org').value,
+      message: 'Enquiry from /for-architects. Organization: ' + (form.querySelector('#spec-org').value || 'Not provided'),
+    };
+
+    fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    })
+    .then(function (res) {
+      if (res.ok) {
+        status.textContent = 'Thank you. We\u2019ll be in touch shortly.';
+        status.className = 'spec-form-status success';
+        if (typeof window.gtag === 'function') window.gtag('event', 'architect_enquiry', {
+          source: 'for-architects',
+        });
+        form.reset();
+      } else {
+        status.textContent = 'Something went wrong. Please email us at info@18thgrain.com.';
+        status.className = 'spec-form-status error';
+      }
+      btn.disabled = false;
+    })
+    .catch(function () {
+      status.textContent = 'Something went wrong. Please email us at info@18thgrain.com.';
+      status.className = 'spec-form-status error';
+      btn.disabled = false;
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

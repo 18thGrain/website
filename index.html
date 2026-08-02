@@ -1070,7 +1070,7 @@
      MOBILE MENU OVERLAY
      ============================================================ -->
 <div class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
-  <a href="#work" class="mobile-menu-link">Work</a>
+  <a href="/recent-work" class="mobile-menu-link">Work</a>
   <a href="/collections" class="mobile-menu-link">Collections</a>
   <a href="/how-it-works" class="mobile-menu-link">Process</a>
   <a href="/about" class="mobile-menu-link">About</a>
@@ -1084,7 +1084,7 @@
   <div class="container inner">
     <a href="/" class="nav-wordmark"><span class="monogram-18">18</span><span class="monogram-rule"></span><span class="monogram-g">G</span></a>
     <nav class="primary" aria-label="Primary">
-      <a href="#work">Work</a>
+      <a href="/recent-work">Work</a>
       <a href="/collections">Collections</a>
       <a href="/how-it-works">Process</a>
       <a href="/about">About</a>
@@ -1120,7 +1120,7 @@
       <p class="hero-tagline">Commissioned for the course</p>
       <p class="hero-subline">A design studio for golf course markers, plaques, and signage. Made in Vancouver.</p>
       <div class="hero-cta">
-        <a href="/collections" class="cta">See what we make <span class="arrow">&rarr;</span></a>
+        <a href="/recent-work" class="cta">See our work <span class="arrow">&rarr;</span></a>
       </div>
     </div>
   </section>
@@ -1208,10 +1208,10 @@
         <div class="work-tile work-tile-b" id="workTileB">
           <figure>
             <img
-              src="images/course-sign-etiquette-01.JPG"
-              alt="Wooden short game facility etiquette sign with club logo and engraved guidelines for divot repair, ball collection, and sand raking, mounted on steel stakes on a practice green."
+              src="images/course-sign-putting-only-01.JPG"
+              alt="Wooden practice area sign reading Putting Only with engraved putter and ball graphic, mounted on steel stakes beside a putting green."
               loading="lazy">
-            <figcaption>Course etiquette sign. Engraved rules with club branding.</figcaption>
+            <figcaption>Practice area sign. Engraved putter graphic on walnut.</figcaption>
           </figure>
         </div>
       </div>
@@ -1219,10 +1219,10 @@
         <div class="work-tile work-tile-c" id="workTileC">
           <figure>
             <img
-              src="images/tee-marker-10.webp"
-              alt="A walnut hexagonal tee marker with blue inlay stripe on steel legs, sitting on turf."
+              src="images/course-sign-chipping-only-01.JPG"
+              alt="Wooden practice area sign reading Chipping Only with engraved wedge and ball graphic, mounted on steel stakes near a practice green."
               loading="lazy">
-            <figcaption>Walnut hexagonal tee marker with blue inlay stripe on steel legs.</figcaption>
+            <figcaption>Practice area sign. Engraved wedge graphic on walnut.</figcaption>
           </figure>
         </div>
         <div class="work-tile work-tile-d" id="workTileD">
@@ -1236,7 +1236,7 @@
         </div>
       </div>
       <div class="work-tail" id="workTail">
-        <a href="/collections" class="cta">See all work <span class="arrow">&rarr;</span></a>
+        <a href="/recent-work" class="cta">See all work <span class="arrow">&rarr;</span></a>
       </div>
     </div>
   </section>
@@ -1362,7 +1362,7 @@
         <span class="foot-tag">Commissioned for the course. A design studio for golf course markers, plaques, and signage. Made in Vancouver.</span>
       </div>
       <nav class="foot-nav" aria-label="Footer">
-        <a href="#work">Work</a>
+        <a href="/recent-work">Work</a>
         <a href="/collections">Collections</a>
         <a href="/how-it-works">Process</a>
         <a href="/about">About</a>
@@ -1534,7 +1534,7 @@
   var heroCta = document.querySelector('.hero-cta .cta');
   if (heroCta) {
     heroCta.addEventListener('click', function () {
-      window.gtag('event', 'cta_click', { cta_label: 'see_what_we_make', cta_location: 'hero' });
+      window.gtag('event', 'cta_click', { cta_label: 'see_our_work', cta_location: 'hero' });
     });
   }
 

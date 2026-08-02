@@ -8,6 +8,12 @@
   </url>
 
   <url>
+    <loc>https://18thgrain.com/recent-work</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
     <loc>https://18thgrain.com/about</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -51,6 +57,12 @@
 
   <url>
     <loc>https://18thgrain.com/collection-course-accessories</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://18thgrain.com/for-architects</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

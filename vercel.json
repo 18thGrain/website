@@ -10,6 +10,11 @@
       "source": "/services",
       "destination": "/collections",
       "permanent": true
+    },
+    {
+      "source": "/work",
+      "destination": "/recent-work",
+      "permanent": true
     }
   ],
   "headers": [
