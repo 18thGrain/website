@@ -135,6 +135,38 @@
   max-width: 56ch;
 }
 
+/* Concept rendering example */
+.concept-example {
+  margin-top: 16px;
+  padding-top: 40px;
+}
+.concept-label {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--cream-faint);
+  margin-bottom: 20px;
+}
+.concept-frame {
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 800ms ease, transform 800ms ease;
+}
+.concept-frame.is-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+.concept-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 @media (max-width: 800px) {
   .timeline-section { padding: 80px 0; }
   .timeline-step {
@@ -419,6 +451,15 @@
           <div>
             <h3>Design development</h3>
             <p>We develop concepts tailored to your course: material selection, form, finish, and branding integration. You receive renderings to review. We refine together until the design is right. Revisions are part of the process, not an extra charge.</p>
+            <div class="concept-example">
+              <p class="concept-label">Example concept sheet</p>
+              <div class="concept-frame" id="conceptFrame">
+                <img
+                  src="images/concept-range-caddie-example.jpg"
+                  alt="Concept rendering for a range caddie in white oak, showing side view, back view, and top view with dimensions, annotated callouts for construction details, and engraved club logo."
+                  loading="lazy">
+              </div>
+            </div>
           </div>
         </div>
         <div class="timeline-step" id="step4">
@@ -558,7 +599,7 @@
   function initReveal() {
     var revealObserver = window.eighteenGrainReveal;
     if (!revealObserver) {
-      document.querySelectorAll('.eyebrow, h1.display, .subline, .timeline-step, .detail-col, .cta-section h2, .cta-section .cta-subline, .cta-section .cta-wrap').forEach(function (el) {
+      document.querySelectorAll('.eyebrow, h1.display, .subline, .timeline-step, .detail-col, .concept-frame, .cta-section h2, .cta-section .cta-subline, .cta-section .cta-wrap').forEach(function (el) {
         el.classList.add('is-in');
       });
       return;
@@ -575,6 +616,10 @@
       var el = document.getElementById(id);
       if (el) revealObserver.observe(el);
     });
+
+    // Concept rendering
+    var conceptFrame = document.getElementById('conceptFrame');
+    if (conceptFrame) revealObserver.observe(conceptFrame);
 
     // Detail columns
     ['needsNarrative', 'needsList', 'customNarrative', 'customList'].forEach(function (id) {
