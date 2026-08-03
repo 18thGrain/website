@@ -504,14 +504,19 @@
 }
 .work-tile.is-in { opacity: 1; transform: translateY(0); }
 .work-tile-b { transition-delay: 200ms; }
-.work-tile-c { transition-delay: 300ms; }
-.work-tile-c img {
-  aspect-ratio: 3 / 2;
-  object-position: center 70%;
+.work-tile-c { transition-delay: 350ms; }
+.work-grid-three {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  align-items: start;
 }
-.work-tile-d { transition-delay: 200ms; }
+.work-grid-three .work-tile img {
+  aspect-ratio: 3 / 4;
+  object-position: center center;
+}
 @media (max-width: 900px) {
   .work-grid { grid-template-columns: 1fr; gap: 56px; }
+  .work-grid-three { grid-template-columns: 1fr; }
 }
 
 .work-tail {
@@ -1192,51 +1197,37 @@
           <h2 class="display">From the studio.</h2>
         </div>
       </div>
-      <div class="work-grid">
+      <div class="work-grid work-grid-three">
         <div class="work-tile work-tile-a" id="workTileA">
           <figure>
-            <div class="work-img-wrap">
-              <img
-                src="images/hole-in-one-plaque-shane-lowry.webp"
-                alt="Burl wood and black epoxy resin hole-in-one plaque for Shane Lowry, Augusta National Golf Club, with engraved topographic hole map, golf ball mounted on steel pin."
-                loading="lazy">
-              <div class="work-img-overlay" aria-hidden="true"></div>
-            </div>
-            <figcaption>Hole-in-one plaque. Burl wood with black epoxy resin and engraved hole topography.</figcaption>
+            <img
+              src="images/scorecard-pencil-station-vancouver-gc.jpg"
+              alt="Wall-mounted scorecard and pencil station in sapele with engraved Vancouver Golf Club crest, scorecards and pencils organized in shelved compartments."
+              loading="lazy">
+            <figcaption>Scorecard and pencil station. Vancouver Golf Club.</figcaption>
           </figure>
         </div>
         <div class="work-tile work-tile-b" id="workTileB">
           <figure>
             <img
-              src="images/course-sign-putting-only-01.JPG"
-              alt="Wooden practice area sign reading Putting Only with engraved putter and ball graphic, mounted on steel stakes beside a putting green."
+              src="images/fairmont-whistler-golf-course-signage-01.webp"
+              alt="Wooden starter station sign with Chateau Whistler 1993 logo, flanked by two A-frame yardage signs on the first tee."
               loading="lazy">
-            <figcaption>Practice area sign. Engraved putter graphic on walnut.</figcaption>
+            <figcaption>Course signage. Fairmont Chateau Whistler Golf Club.</figcaption>
           </figure>
         </div>
-      </div>
-      <div class="work-grid" style="margin-top: 56px;">
         <div class="work-tile work-tile-c" id="workTileC">
           <figure>
             <img
-              src="images/course-sign-chipping-only-01.JPG"
-              alt="Wooden practice area sign reading Chipping Only with engraved wedge and ball graphic, mounted on steel stakes near a practice green."
+              src="images/hole-in-one-plaque-shane-lowry.webp"
+              alt="Burl wood and black epoxy resin hole-in-one plaque with engraved topographic hole map and golf ball mounted on steel pin."
               loading="lazy">
-            <figcaption>Practice area sign. Engraved wedge graphic on walnut.</figcaption>
-          </figure>
-        </div>
-        <div class="work-tile work-tile-d" id="workTileD">
-          <figure>
-            <img
-              src="images/fairmont-whistler-golf-course-signage-01.webp"
-              alt="Handcrafted wooden starter station sign at Fairmont Chateau Whistler Golf Club."
-              loading="lazy">
-            <figcaption>Course signage for Fairmont Chateau Whistler Golf Club.</figcaption>
+            <figcaption>Hole-in-one plaque. Burl wood with black epoxy resin.</figcaption>
           </figure>
         </div>
       </div>
       <div class="work-tail" id="workTail">
-        <a href="/recent-work" class="cta">See all work <span class="arrow">&rarr;</span></a>
+        <a href="/recent-work" class="cta">More projects <span class="arrow">&rarr;</span></a>
       </div>
     </div>
   </section>
@@ -1441,12 +1432,10 @@
     var workTileA = document.getElementById('workTileA');
     var workTileB = document.getElementById('workTileB');
     var workTileC = document.getElementById('workTileC');
-    var workTileD = document.getElementById('workTileD');
     var workTail = document.getElementById('workTail');
     if (workTileA) revealObserver.observe(workTileA);
     if (workTileB) revealObserver.observe(workTileB);
     if (workTileC) revealObserver.observe(workTileC);
-    if (workTileD) revealObserver.observe(workTileD);
     if (workTail) revealObserver.observe(workTail);
 
     // Lookbook form
@@ -1542,7 +1531,7 @@
   var workTailCta = document.querySelector('#workTail .cta');
   if (workTailCta) {
     workTailCta.addEventListener('click', function () {
-      window.gtag('event', 'cta_click', { cta_label: 'see_all_work', cta_location: 'work_section' });
+      window.gtag('event', 'cta_click', { cta_label: 'more_projects', cta_location: 'work_section' });
     });
   }
 
