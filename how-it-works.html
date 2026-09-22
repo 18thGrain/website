@@ -302,6 +302,65 @@
   .cta-section { padding: 88px 0; }
 }
 
+/* ================================================================
+   BTS PHOTOGRAPHY
+   ================================================================ */
+.hiw-opening-photo {
+  width: 100%;
+  height: 480px;
+  overflow: hidden;
+}
+.hiw-opening-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+.step-photo-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 40px;
+}
+.step-photo-pair img {
+  display: block;
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+}
+.custom-photo-pair {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 24px;
+  margin-top: 48px;
+  align-items: start;
+}
+.custom-photo-pair .custom-photo-large img {
+  display: block;
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+.custom-photo-pair .custom-photo-small {
+  margin-top: 100px;
+}
+.custom-photo-pair .custom-photo-small img {
+  display: block;
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+@media (max-width: 800px) {
+  .hiw-opening-photo { height: 300px; }
+  .step-photo-pair { grid-template-columns: 1fr; }
+  .step-photo-pair img { height: 280px; }
+  .custom-photo-pair { grid-template-columns: 1fr; }
+  .custom-photo-pair .custom-photo-small { margin-top: 0; }
+  .custom-photo-pair .custom-photo-large img,
+  .custom-photo-pair .custom-photo-small img { height: 280px; }
+}
+
 </style>
 <!-- Structured Data -->
 <script type="application/ld+json">
@@ -389,6 +448,7 @@
   <a href="/recent-work">Work</a>
   <a href="/collections">Collections</a>
   <a href="/how-it-works">Process</a>
+  <a href="/journal">Journal</a>
   <a href="/about">About</a>
   <a href="/#contact">Contact</a>
 </div>
@@ -401,6 +461,7 @@
       <a href="/recent-work">Work</a>
       <a href="/collections">Collections</a>
       <a href="/how-it-works" class="is-current">Process</a>
+      <a href="/journal">Journal</a>
       <a href="/about">About</a>
       <a href="/#contact">Contact</a>
     </nav>
@@ -423,6 +484,14 @@
       <p class="subline" id="heroSubline">Every commission begins the same way: you tell us about your course, and we design something that belongs there. Here is what the process looks like, what we need from you, and what to expect along the way.</p>
     </div>
   </section>
+
+  <!-- OPENING PHOTO -->
+  <div class="hiw-opening-photo">
+    <img
+      src="images/studio-laser-engraving-tee-marker-smoke.jpg"
+      alt="Laser engraving a tee marker in the studio, smoke rising as the engraving head works across the wood surface."
+      loading="eager">
+  </div>
 
   <!-- PROCESS TIMELINE -->
   <section class="timeline-section">
@@ -455,8 +524,8 @@
               <p class="concept-label">Example concept sheet</p>
               <div class="concept-frame" id="conceptFrame">
                 <img
-                  src="images/concept-range-caddie-example.jpg"
-                  alt="Concept rendering for a range caddie in white oak, showing side view, back view, and top view with dimensions, annotated callouts for construction details, and engraved club logo."
+                  src="images/ledgeview-range-sign-spec-sheet.jpg"
+                  alt="Specification sheet for Ledgeview Range Sign, an A-frame distance marker in solid mahogany showing front, side, and rear views with dimensions, material and finish details, colour options for painted flags, and feature callouts."
                   loading="lazy">
               </div>
             </div>
@@ -467,6 +536,16 @@
           <div>
             <h3>Production</h3>
             <p>Once the design is approved, each piece is CNC-fabricated and hand-finished in our Vancouver studio. We manage quality control throughout production and keep you updated on progress.</p>
+            <div class="step-photo-pair">
+              <img
+                src="images/studio-table-saw-burl-cutting-wide.jpg"
+                alt="Ben feeding a burl wood piece through the table saw in the studio."
+                loading="lazy">
+              <img
+                src="images/studio-finishing-shaughnessy-plaque-detail.jpg"
+                alt="Close detail of a finished plaque for Shaughnessy Golf and Country Club, showing engraved lettering and surface quality."
+                loading="lazy">
+            </div>
           </div>
         </div>
         <div class="timeline-step" id="step5">
@@ -546,6 +625,20 @@
           </dl>
         </div>
       </div>
+      <div class="custom-photo-pair">
+        <div class="custom-photo-large">
+          <img
+            src="images/studio-laser-engraving-rouge-marker.jpg"
+            alt="Laser engraving the Rouge marker, close detail showing the engraving process on a finished tee marker."
+            loading="lazy">
+        </div>
+        <div class="custom-photo-small">
+          <img
+            src="images/studio-sanding-plaque-wide.jpg"
+            alt="Ben sanding a plaque on the studio workbench, orbital sander in hand."
+            loading="lazy">
+        </div>
+      </div>
     </div>
   </section>
 
@@ -574,6 +667,7 @@
         <a href="/recent-work">Work</a>
         <a href="/collections">Collections</a>
         <a href="/how-it-works">Process</a>
+        <a href="/journal">Journal</a>
         <a href="/about">About</a>
         <a href="/#contact">Contact</a>
         <a href="/faq">FAQ</a>

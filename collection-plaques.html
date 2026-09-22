@@ -26,175 +26,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/styles.css">
 <style>
-/* ================================================================
-   PAGE HERO
-   ================================================================ */
-.page-hero {
-  padding: 180px 0 100px;
-  background: var(--ground);
-}
-.page-hero .eyebrow {
-  opacity: 0;
-  transform: translateY(12px);
-  transition: opacity 600ms ease, transform 600ms ease;
-}
-.page-hero .eyebrow.is-in { opacity: 1; transform: translateY(0); }
-.page-hero h1.display {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 700ms cubic-bezier(0.16, 1, 0.3, 1) 100ms, transform 700ms cubic-bezier(0.16, 1, 0.3, 1) 100ms;
-}
-.page-hero h1.display.is-in { opacity: 1; transform: translateY(0); }
-.page-hero .subline {
-  font-family: var(--sans);
-  font-size: 15px;
-  line-height: 1.7;
-  color: var(--cream-dim);
-  max-width: 48ch;
-  margin: 28px 0 0;
-  opacity: 0;
-  transform: translateY(12px);
-  transition: opacity 600ms ease 200ms, transform 600ms ease 200ms;
-}
-.page-hero .subline.is-in { opacity: 1; transform: translateY(0); }
-
-@media (max-width: 800px) {
-  .page-hero { padding: 140px 0 72px; }
-}
-
-/* ================================================================
-   WORK GRID (asymmetric offset — matches main site)
-   ================================================================ */
-.image-section {
-  padding: 0 0 40px;
-  background: var(--ground);
-}
-
-.work-grid {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 40px;
-}
-.work-tile-a { grid-column: 1 / span 7; }
-.work-tile-b {
-  grid-column: 8 / span 5;
-  margin-top: 120px;
-}
-.work-tile figure { margin: 0; }
-.work-tile img {
-  width: 100%;
-  object-fit: cover;
-  background: var(--ground-2);
-  filter: brightness(0.95) saturate(0.9);
-  transition: filter 0.4s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
-  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.4);
-}
-.work-tile img:hover {
-  filter: brightness(1) saturate(1);
-  transform: scale(1.01);
-  box-shadow: 0 32px 100px rgba(0, 0, 0, 0.5);
-}
-.work-tile-full { grid-column: 1 / -1; }
-.work-tile-full img {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  background: var(--ground-2);
-  filter: brightness(0.95) saturate(0.9);
-  transition: filter 0.4s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
-  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.4);
-}
-.work-tile-full img:hover {
-  filter: brightness(1) saturate(1);
-  transform: scale(1.01);
-  box-shadow: 0 32px 100px rgba(0, 0, 0, 0.5);
-}
-.work-tile figcaption {
-  margin-top: 22px;
-  font-family: var(--sans);
-  font-size: 13px;
-  line-height: 1.6;
-  color: var(--cream-dim);
-  max-width: 46ch;
-}
-
-.work-tile {
-  opacity: 0;
-  transform: scale(0.96);
-  transition: opacity 900ms ease, transform 900ms cubic-bezier(0.16, 1, 0.3, 1);
-}
-.work-tile.is-in { opacity: 1; transform: scale(1); }
-.work-tile-b { transition-delay: 200ms; }
-
-.section-note {
-  font-family: var(--sans);
-  font-size: 12px;
-  color: var(--cream-faint);
-  margin: 28px 0 0;
-  letter-spacing: 0.02em;
-  font-style: italic;
-  opacity: 0;
-  transform: translateY(8px);
-  transition: opacity 600ms ease 300ms, transform 600ms ease 300ms;
-}
-.section-note.is-in { opacity: 1; transform: translateY(0); }
-
-@media (max-width: 900px) {
-  .work-grid { grid-template-columns: 1fr; gap: 56px; }
-  .work-tile-a, .work-tile-b { grid-column: 1 / -1; }
-  .work-tile-b { margin-top: 0; transition-delay: 0ms; }
-}
-
-/* ================================================================
-   DESCRIPTION SECTION
-   ================================================================ */
-.desc-section {
-  padding: 80px 0 140px;
-  background: var(--ground);
-  border-top: 1px solid var(--rule);
-}
-.desc-text {
-  font-family: var(--sans);
-  font-size: 15px;
-  line-height: 1.75;
-  color: var(--cream);
-  max-width: 60ch;
-  margin: 0 0 56px;
-  opacity: 0;
-  transform: translateY(16px);
-  transition: opacity 700ms ease, transform 700ms ease;
-}
-.desc-text.is-in { opacity: 1; transform: translateY(0); }
-.desc-text p { margin: 0 0 20px; }
-.desc-text p:last-child { margin-bottom: 0; }
-
-.inline-contact-prompt {
-  font-family: var(--sans);
-  font-size: 14px;
-  color: var(--cream-dim);
-  margin-bottom: 16px;
-}
-.desc-cta {
-  opacity: 0;
-  transform: translateY(12px);
-  transition: opacity 600ms ease 150ms, transform 600ms ease 150ms;
-}
-.desc-cta.is-in { opacity: 1; transform: translateY(0); }
-
-.back-link {
-  display: inline-block;
-  margin-top: 40px;
-  font-family: var(--sans);
-  font-size: 12px;
-  font-weight: 500;
-  color: var(--cream-faint);
-  letter-spacing: 0.04em;
-  transition: color 300ms ease;
-}
-.back-link:hover { color: var(--accent); }
-
+/* Portrait standalone override for Shane Lowry plaque */
+.plaque-portrait img { aspect-ratio: 3 / 4; }
 </style>
-<!-- Structured Data: Product -->
+<!-- Structured Data: Service -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -220,6 +55,7 @@
   <a href="/recent-work">Work</a>
   <a href="/collections">Collections</a>
   <a href="/how-it-works">Process</a>
+  <a href="/journal">Journal</a>
   <a href="/about">About</a>
   <a href="/#contact">Contact</a>
 </div>
@@ -232,6 +68,7 @@
       <a href="/recent-work">Work</a>
       <a href="/collections">Collections</a>
       <a href="/how-it-works">Process</a>
+      <a href="/journal">Journal</a>
       <a href="/about">About</a>
       <a href="/#contact">Contact</a>
     </nav>
@@ -255,89 +92,76 @@
     </div>
   </section>
 
-  <!-- IMAGES — asymmetric offset grid -->
-  <section class="image-section">
+  <!-- LEAD IMAGE -->
+  <section class="collection-lead-section">
     <div class="container">
-      <!-- Commemorative plaque -->
-      <div class="work-tile work-tile-full" id="workTileFull0" style="margin-bottom: 56px;">
-        <figure>
-          <img
-            src="images/plaques-commemorative-walnut.jpg"
-            alt="Walnut commemorative plaque for the Western Canada Golf Tour 2026, with engraved map, course list, player names, and tournament crest."
-            loading="eager"
-            style="aspect-ratio: 4 / 3; object-position: center;">
-        </figure>
-      </div>
-
-      <div class="work-grid">
-        <div class="work-tile work-tile-a" id="workTileA">
-          <figure>
-            <img
-              src="images/hole-in-one-wall-plaque-01.webp"
-              alt="Walnut hole-in-one plaque with engraved topographic contour lines, golf ball on gold tee, mounted on a dark wall beside a bonsai tree."
-              loading="lazy">
-          </figure>
-        </div>
-        <div class="work-tile work-tile-b" id="workTileB">
-          <figure>
-            <img
-              src="images/hole-in-one-wall-plaque-03.webp"
-              alt="Walnut hole-in-one plaque with blue epoxy resin detail, golf ball on gold tee, mounted in a study setting."
-              loading="lazy">
-          </figure>
-        </div>
-      </div>
-
-      <!-- Full-width course map plaques -->
-      <div class="work-tile work-tile-full" id="workTileFull" style="margin-top: 56px;">
-        <figure>
-          <img
-            src="images/wall-plaques-01.webp"
-            alt="Four course map plaques mounted on a wall, including Augusta National, engraved on raw and figured wood."
-            loading="lazy"
-            style="aspect-ratio: 16 / 9; object-position: center;">
-        </figure>
-      </div>
-
-      <div class="work-grid" style="margin-top: 56px;">
-        <div class="work-tile work-tile-a" id="workTileC">
-          <figure>
-            <img
-              src="images/hole-in-one-wall-plaque-04.webp"
-              alt="Close-up of a walnut hole-in-one plaque with engraved topographic contour lines, golf ball on gold tee, light background."
-              loading="lazy">
-          </figure>
-        </div>
-        <div class="work-tile work-tile-b" id="workTileD">
-          <figure>
-            <img
-              src="images/hole-in-one-plaque-sean.webp"
-              alt="Walnut hole-in-one plaque for Sean Parrinder, Furry Creek, with engraved topographic contour lines, golf ball on gold tee."
-              loading="lazy">
-          </figure>
-        </div>
-      </div>
-
-      <div class="work-tile work-tile-full" id="workTileE" style="margin-top: 56px;">
-        <figure>
-          <img
-            src="images/hole-in-one-plaque-shane-lowry.webp"
-            alt="Burl wood and black epoxy resin hole-in-one plaque for Shane Lowry, Augusta National Golf Club, with engraved topographic hole map, golf ball mounted on steel pin."
-            loading="lazy"
-            style="aspect-ratio: 3 / 4; object-position: center;">
-        </figure>
+      <div class="collection-lead" id="collectionLead">
+        <img
+          src="images/wall-plaques-01.webp"
+          alt="Four course map plaques mounted on a wall, including Augusta National, engraved on raw and figured wood."
+          loading="eager">
       </div>
     </div>
   </section>
 
-  <!-- DESCRIPTION -->
+  <!-- EDITORIAL PAIR A: image left, text right -->
+  <section class="editorial-section">
+    <div class="container">
+      <div class="editorial-pair" id="editorialPairA">
+        <div class="editorial-image">
+          <img
+            src="images/hole-in-one-plaque-sean.webp"
+            alt="Walnut hole-in-one plaque for Sean Parrinder, Furry Creek, with engraved topographic contour lines, golf ball on gold tee."
+            loading="lazy"
+            style="object-fit: contain;">
+        </div>
+        <div class="editorial-text">
+          <span class="editorial-label">The commission</span>
+          <h2>Marking significant moments</h2>
+          <p>Commemorative plaques and hole-in-one pieces designed to mark significant moments on your course. Each plaque is a one-of-a-kind commission. The materials, engraving, and presentation are designed specifically for the occasion and the course.</p>
+          <p>Our plaques are crafted from locally sourced hardwoods with options for epoxy resin inlay, metal detailing, and engraved topographic hole maps. Hole-in-one pieces can incorporate the actual ball from the shot, mounted on a metal pin and set into the face of the plaque. Course map plaques reproduce the layout of your property in engraved detail, suited to clubhouse display, member gifts, or tournament awards.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STANDALONE IMAGE (portrait) -->
+  <section class="collection-standalone-section">
+    <div class="container">
+      <div class="collection-standalone plaque-portrait" id="collectionStandaloneA">
+        <img
+          src="images/hole-in-one-plaque-shane-lowry.webp"
+          alt="Burl wood and black epoxy resin hole-in-one plaque for Shane Lowry, Augusta National Golf Club, with engraved topographic hole map, golf ball mounted on steel pin."
+          loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- EDITORIAL PAIR B: text left, image right -->
+  <section class="editorial-section">
+    <div class="container">
+      <div class="editorial-pair editorial-pair--flip" id="editorialPairB">
+        <div class="editorial-image">
+          <img
+            src="images/plaques-commemorative-walnut.jpg"
+            alt="Walnut commemorative plaque for the Western Canada Golf Tour 2026, with engraved map, course list, player names, and tournament crest."
+            loading="lazy"
+            style="object-position: center;">
+        </div>
+        <div class="editorial-text">
+          <span class="editorial-label">Custom to the occasion</span>
+          <h2>For clubs, events, and individual golfers</h2>
+          <p>Each commission is fully custom. Wood selection, dimensions, finish treatment, engraving content, and mounting hardware are all determined in collaboration with the client. Pieces can be designed for wall mounting, tabletop display, or freestanding presentation depending on the intended setting.</p>
+          <p>These pieces are commissioned by private clubs, resort properties, tournament organizers, and individual golfers looking to commemorate an achievement with something built to last. Clubs also commission series of plaques for ongoing hole-in-one programs, with each new piece designed to complement the existing collection while remaining unique to the individual moment.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
   <section class="desc-section">
     <div class="container">
       <div class="desc-text" id="descText">
-        <p>Commemorative plaques and hole-in-one pieces designed to mark significant moments on your course. Each plaque is a one-of-a-kind commission. The materials, engraving, and presentation are designed specifically for the occasion and the course.</p>
-        <p>Our plaques are crafted from locally sourced hardwoods with options for epoxy resin inlay, metal detailing, and engraved topographic hole maps. Hole-in-one pieces can incorporate the actual ball from the shot, mounted on a metal pin and set into the face of the plaque. Course map plaques reproduce the layout of your property in engraved detail, suited to clubhouse display, member gifts, or tournament awards.</p>
-        <p>Each commission is fully custom. Wood selection, dimensions, finish treatment, engraving content, and mounting hardware are all determined in collaboration with the client. Pieces can be designed for wall mounting, tabletop display, or freestanding presentation depending on the intended setting.</p>
-        <p>These pieces are commissioned by private clubs, resort properties, tournament organizers, and individual golfers looking to commemorate an achievement with something built to last. Clubs also commission series of plaques for ongoing hole-in-one programs, with each new piece designed to complement the existing collection while remaining unique to the individual moment.</p>
         <p>The process typically starts with the details of the occasion: the course, the hole, the player, and any specific design references or branding to incorporate. We develop a concept, confirm materials and layout, and move into production. Finished pieces are inspected and shipped ready to mount or display.</p>
         <p>All plaques are designed and built in our Vancouver studio. We ship across North America and internationally.</p>
       </div>
@@ -363,6 +187,7 @@
         <a href="/recent-work">Work</a>
         <a href="/collections">Collections</a>
         <a href="/how-it-works">Process</a>
+        <a href="/journal">Journal</a>
         <a href="/about">About</a>
         <a href="/#contact">Contact</a>
         <a href="/faq">FAQ</a>
@@ -388,13 +213,13 @@
   function initReveal() {
     var revealObserver = window.eighteenGrainReveal;
     if (!revealObserver) {
-      document.querySelectorAll('.eyebrow, h1.display, .subline, .work-tile, .desc-text, .desc-cta').forEach(function (el) {
+      document.querySelectorAll('.eyebrow, h1.display, .subline, .collection-lead, .editorial-pair, .collection-standalone, .desc-text, .desc-cta').forEach(function (el) {
         el.classList.add('is-in');
       });
       return;
     }
 
-    ['heroEyebrow', 'heroHeading', 'heroSubline', 'workTileFull0', 'workTileA', 'workTileB', 'workTileFull', 'workTileC', 'workTileD', 'workTileE', 'descText', 'descCta'].forEach(function (id) {
+    ['heroEyebrow', 'heroHeading', 'heroSubline', 'collectionLead', 'editorialPairA', 'collectionStandaloneA', 'editorialPairB', 'descText', 'descCta'].forEach(function (id) {
       var el = document.getElementById(id);
       if (el) revealObserver.observe(el);
     });

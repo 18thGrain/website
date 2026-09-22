@@ -420,6 +420,44 @@
 }
 
 /* ================================================================
+   SECTION: IN THE STUDIO
+   ================================================================ */
+.studio-section {
+  padding: 140px 0;
+  background: var(--ground);
+  border-top: 1px solid var(--rule);
+}
+.studio-section .section-head {
+  margin-bottom: 56px;
+}
+.studio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.studio-tile {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 700ms ease, transform 700ms ease;
+}
+.studio-tile.is-in { opacity: 1; transform: translateY(0); }
+.studio-tile:nth-child(2) { transition-delay: 120ms; }
+.studio-tile:nth-child(3) { transition-delay: 240ms; }
+.studio-tile img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  filter: brightness(0.95) saturate(0.9);
+  transition: filter 0.4s ease;
+}
+.studio-tile img:hover { filter: brightness(1) saturate(1); }
+@media (max-width: 800px) {
+  .studio-section { padding: 88px 0; }
+  .studio-grid { grid-template-columns: 1fr; gap: 16px; }
+}
+
+/* ================================================================
    SECTION: SELECTED WORK
    ================================================================ */
 .work-section {
@@ -1078,6 +1116,7 @@
   <a href="/recent-work" class="mobile-menu-link">Work</a>
   <a href="/collections" class="mobile-menu-link">Collections</a>
   <a href="/how-it-works" class="mobile-menu-link">Process</a>
+  <a href="/journal" class="mobile-menu-link">Journal</a>
   <a href="/about" class="mobile-menu-link">About</a>
   <a href="#contact" class="mobile-menu-link">Contact</a>
 </div>
@@ -1092,6 +1131,7 @@
       <a href="/recent-work">Work</a>
       <a href="/collections">Collections</a>
       <a href="/how-it-works">Process</a>
+      <a href="/journal">Journal</a>
       <a href="/about">About</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -1157,10 +1197,10 @@
           </a>
         </li>
         <li>
-          <a href="/collection-yardage-markers" style="display:contents;color:inherit;text-decoration:none;">
+          <a href="/collection-course-signs" style="display:contents;color:inherit;text-decoration:none;">
           <span class="num">02 / 05</span>
-          <span class="label">Yardage markers</span>
-          <span class="note">Fairway and tee-side distance markers.</span>
+          <span class="label">Course signage</span>
+          <span class="note">Wayfinding and course identity.</span>
           </a>
         </li>
         <li>
@@ -1171,20 +1211,50 @@
           </a>
         </li>
         <li>
-          <a href="/collection-course-signs" style="display:contents;color:inherit;text-decoration:none;">
-          <span class="num">04 / 05</span>
-          <span class="label">Course signage</span>
-          <span class="note">Wayfinding and course identity.</span>
-          </a>
-        </li>
-        <li>
           <a href="/collection-course-accessories" style="display:contents;color:inherit;text-decoration:none;">
-          <span class="num">05 / 05</span>
+          <span class="num">04 / 05</span>
           <span class="label">Course accessories</span>
           <span class="note">Range baskets, furnishings, and custom pieces.</span>
           </a>
         </li>
+        <li>
+          <a href="/collection-yardage-markers" style="display:contents;color:inherit;text-decoration:none;">
+          <span class="num">05 / 05</span>
+          <span class="label">Yardage markers</span>
+          <span class="note">Fairway and tee-side distance markers.</span>
+          </a>
+        </li>
       </ul>
+    </div>
+  </section>
+
+  <!-- IN THE STUDIO -->
+  <section class="studio-section" id="studio">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">In the studio</span>
+      </div>
+      <div class="studio-grid">
+        <div class="studio-tile" id="studioTileA">
+          <img
+            src="images/studio-portrait-table-saw-closeup.jpg"
+            alt="Ben at the table saw, close detail showing focused craft work in the studio."
+            loading="lazy"
+            style="object-position: center top;">
+        </div>
+        <div class="studio-tile" id="studioTileB">
+          <img
+            src="images/studio-18th-grain-branded-marker-detail.jpg"
+            alt="Close detail of a finished 18th Grain branded tee marker."
+            loading="lazy">
+        </div>
+        <div class="studio-tile" id="studioTileC">
+          <img
+            src="images/studio-sanding-plaques-overhead.jpg"
+            alt="Overhead view of plaques being sanded and finished on the studio workbench."
+            loading="lazy">
+        </div>
+      </div>
     </div>
   </section>
 
@@ -1229,6 +1299,60 @@
       <div class="work-tail" id="workTail">
         <a href="/recent-work" class="cta">More projects <span class="arrow">&rarr;</span></a>
       </div>
+    </div>
+  </section>
+
+  <!-- COURSES WE'VE WORKED WITH -->
+  <section class="courses-section" id="courses">
+    <div class="container">
+      <div class="courses-head" id="coursesHead">
+        <span class="eyebrow">Selected courses</span>
+        <h2 class="display">In the Company Of</h2>
+      </div>
+      <ul class="courses-logo-list" aria-label="Golf courses we've worked with">
+        <li class="courses-logo-item" id="courseLogo1">
+          <div class="courses-logo-item-inner">
+            <img src="/images/logos/shaughnessy_logo.png" alt="Shaughnessy Golf and Country Club" loading="lazy" width="140" height="72">
+            <span class="courses-logo-name">Shaughnessy Golf &amp; Country Club</span>
+          </div>
+        </li>
+        <li class="courses-logo-item" id="courseLogo2">
+          <div class="courses-logo-item-inner">
+            <img src="/images/logos/marine_drive_logo.svg" alt="Marine Drive Golf Club" loading="lazy" width="140" height="72">
+            <span class="courses-logo-name">Marine Drive Golf Club</span>
+          </div>
+        </li>
+        <li class="courses-logo-item" id="courseLogo3">
+          <div class="courses-logo-item-inner">
+            <img src="/images/logos/cedar_brae_logo.png" alt="Cedar Brae Golf and Country Club" loading="lazy" width="140" height="72">
+            <span class="courses-logo-name">Cedar Brae Golf &amp; Country Club</span>
+          </div>
+        </li>
+        <li class="courses-logo-item" id="courseLogo4">
+          <div class="courses-logo-item-inner">
+            <img src="/images/logos/ledgeview_logo.png" alt="Ledgeview Golf Club" loading="lazy" width="140" height="72">
+            <span class="courses-logo-name">Ledgeview Golf Club</span>
+          </div>
+        </li>
+        <li class="courses-logo-item" id="courseLogo5">
+          <div class="courses-logo-item-inner">
+            <img src="/images/logos/vancouver_gc_logo.png" alt="Vancouver Golf Club" loading="lazy" width="140" height="72">
+            <span class="courses-logo-name">Vancouver Golf Club</span>
+          </div>
+        </li>
+        <li class="courses-logo-item" id="courseLogo6">
+          <div class="courses-logo-item-inner">
+            <img src="/images/logos/fairmont_logo.png" alt="Fairmont Chateau Whistler Golf Club" loading="lazy" width="140" height="72">
+            <span class="courses-logo-name">Fairmont Chateau Whistler Golf Club</span>
+          </div>
+        </li>
+        <li class="courses-logo-item" id="courseLogo7">
+          <div class="courses-logo-item-inner">
+            <img src="/images/logos/iron_station_logo.webp" alt="Iron Station Trackman Golf Lounge" loading="lazy" width="140" height="72">
+            <span class="courses-logo-name">Iron Station Trackman Golf Lounge</span>
+          </div>
+        </li>
+      </ul>
     </div>
   </section>
 
@@ -1356,6 +1480,7 @@
         <a href="/recent-work">Work</a>
         <a href="/collections">Collections</a>
         <a href="/how-it-works">Process</a>
+        <a href="/journal">Journal</a>
         <a href="/about">About</a>
         <a href="#contact">Contact</a>
         <a href="/faq">FAQ</a>
@@ -1406,7 +1531,7 @@
   function initReveal() {
     var revealObserver = window.eighteenGrainReveal;
     if (!revealObserver) {
-      document.querySelectorAll('.fact-row li, .numbered-list li, .work-tile, .work-tail, .lookbook-form, .maker-col-a, .maker-col-b, .reveal-line, .closing .sub, .contact-form').forEach(function (el) {
+      document.querySelectorAll('.fact-row li, .numbered-list li, .studio-tile, .work-tile, .work-tail, .courses-head, .courses-logo-item, .lookbook-form, .maker-col-a, .maker-col-b, .reveal-line, .closing .sub, .contact-form').forEach(function (el) {
         el.classList.add('is-in');
       });
       var ph = document.getElementById('productsHeading');
@@ -1428,6 +1553,12 @@
       revealObserver.observe(el);
     });
 
+    // Studio tiles
+    ['studioTileA', 'studioTileB', 'studioTileC'].forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el) revealObserver.observe(el);
+    });
+
     // Work tiles
     var workTileA = document.getElementById('workTileA');
     var workTileB = document.getElementById('workTileB');
@@ -1437,6 +1568,13 @@
     if (workTileB) revealObserver.observe(workTileB);
     if (workTileC) revealObserver.observe(workTileC);
     if (workTail) revealObserver.observe(workTail);
+
+    // Courses section
+    var coursesHead = document.getElementById('coursesHead');
+    if (coursesHead) revealObserver.observe(coursesHead);
+    document.querySelectorAll('.courses-logo-item').forEach(function (el) {
+      revealObserver.observe(el);
+    });
 
     // Lookbook form
     var lookbookForm = document.getElementById('lookbookForm');

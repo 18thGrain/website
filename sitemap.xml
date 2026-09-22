@@ -62,6 +62,18 @@
   </url>
 
   <url>
+    <loc>https://18thgrain.com/journal</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://18thgrain.com/journal/the-design-decision-nobody-makes-on-purpose</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://18thgrain.com/for-architects</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

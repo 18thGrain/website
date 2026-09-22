@@ -15,6 +15,11 @@
       "source": "/work",
       "destination": "/recent-work",
       "permanent": true
+    },
+    {
+      "source": "/blog",
+      "destination": "/journal",
+      "permanent": true
     }
   ],
   "headers": [

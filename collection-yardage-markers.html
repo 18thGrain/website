@@ -25,132 +25,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/styles.css">
-<style>
-/* ================================================================
-   PAGE HERO
-   ================================================================ */
-.page-hero {
-  padding: 180px 0 100px;
-  background: var(--ground);
-}
-.page-hero .eyebrow {
-  opacity: 0;
-  transform: translateY(12px);
-  transition: opacity 600ms ease, transform 600ms ease;
-}
-.page-hero .eyebrow.is-in { opacity: 1; transform: translateY(0); }
-.page-hero h1.display {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 700ms cubic-bezier(0.16, 1, 0.3, 1) 100ms, transform 700ms cubic-bezier(0.16, 1, 0.3, 1) 100ms;
-}
-.page-hero h1.display.is-in { opacity: 1; transform: translateY(0); }
-.page-hero .subline {
-  font-family: var(--sans);
-  font-size: 15px;
-  line-height: 1.7;
-  color: var(--cream-dim);
-  max-width: 48ch;
-  margin: 28px 0 0;
-  opacity: 0;
-  transform: translateY(12px);
-  transition: opacity 600ms ease 200ms, transform 600ms ease 200ms;
-}
-.page-hero .subline.is-in { opacity: 1; transform: translateY(0); }
-
-@media (max-width: 800px) {
-  .page-hero { padding: 140px 0 72px; }
-}
-
-/* ================================================================
-   IMAGE SECTION
-   ================================================================ */
-.image-section {
-  padding: 0 0 80px;
-  background: var(--ground);
-}
-.image-mat {
-  opacity: 0;
-  transform: scale(0.97);
-  transition: opacity 900ms ease, transform 900ms cubic-bezier(0.16, 1, 0.3, 1);
-}
-.image-mat.is-in {
-  opacity: 1;
-  transform: scale(1);
-}
-.image-mat img {
-  width: 100%;
-  object-fit: cover;
-  background: var(--ground-2);
-  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.4);
-  filter: brightness(0.95) saturate(0.9);
-  transition: filter 0.4s ease;
-}
-.image-mat img:hover {
-  filter: brightness(1) saturate(1);
-}
-.image-caption {
-  margin-top: 22px;
-  font-family: var(--sans);
-  font-size: 13px;
-  line-height: 1.6;
-  color: var(--cream-dim);
-  opacity: 0;
-  transform: translateY(8px);
-  transition: opacity 600ms ease 200ms, transform 600ms ease 200ms;
-}
-.image-caption.is-in { opacity: 1; transform: translateY(0); }
-
-/* ================================================================
-   DESCRIPTION SECTION
-   ================================================================ */
-.desc-section {
-  padding: 80px 0 140px;
-  background: var(--ground);
-  border-top: 1px solid var(--rule);
-}
-.desc-text {
-  font-family: var(--sans);
-  font-size: 15px;
-  line-height: 1.75;
-  color: var(--cream);
-  max-width: 60ch;
-  margin: 0 0 56px;
-  opacity: 0;
-  transform: translateY(16px);
-  transition: opacity 700ms ease, transform 700ms ease;
-}
-.desc-text.is-in { opacity: 1; transform: translateY(0); }
-.desc-text p { margin: 0 0 20px; }
-.desc-text p:last-child { margin-bottom: 0; }
-
-.inline-contact-prompt {
-  font-family: var(--sans);
-  font-size: 14px;
-  color: var(--cream-dim);
-  margin-bottom: 16px;
-}
-.desc-cta {
-  opacity: 0;
-  transform: translateY(12px);
-  transition: opacity 600ms ease 150ms, transform 600ms ease 150ms;
-}
-.desc-cta.is-in { opacity: 1; transform: translateY(0); }
-
-.back-link {
-  display: inline-block;
-  margin-top: 40px;
-  font-family: var(--sans);
-  font-size: 12px;
-  font-weight: 500;
-  color: var(--cream-faint);
-  letter-spacing: 0.04em;
-  transition: color 300ms ease;
-}
-.back-link:hover { color: var(--accent); }
-
-</style>
-<!-- Structured Data: Product -->
+<!-- Structured Data: Service -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -176,6 +51,7 @@
   <a href="/recent-work">Work</a>
   <a href="/collections">Collections</a>
   <a href="/how-it-works">Process</a>
+  <a href="/journal">Journal</a>
   <a href="/about">About</a>
   <a href="/#contact">Contact</a>
 </div>
@@ -188,6 +64,7 @@
       <a href="/recent-work">Work</a>
       <a href="/collections">Collections</a>
       <a href="/how-it-works">Process</a>
+      <a href="/journal">Journal</a>
       <a href="/about">About</a>
       <a href="/#contact">Contact</a>
     </nav>
@@ -211,29 +88,44 @@
     </div>
   </section>
 
-  <!-- IMAGE -->
-  <section class="image-section">
+  <!-- LEAD IMAGE -->
+  <section class="collection-lead-section">
     <div class="container">
-      <div class="image-mat" id="imageMain">
+      <div class="collection-lead img-field" id="collectionLead">
         <img
           src="images/yard-marker-50.webp"
           alt="Walnut yardage marker with engraved 50-yard distance, club crest and 1922 date mark, standing on the driving range."
           loading="eager">
       </div>
-      <p class="image-caption" id="imageCaption">Walnut yardage marker with engraved distance, club crest and date mark.</p>
     </div>
   </section>
 
-  <!-- DESCRIPTION -->
+  <!-- EDITORIAL PAIR A: image left, text right -->
+  <section class="editorial-section">
+    <div class="container">
+      <div class="editorial-pair" id="editorialPairA">
+        <div class="editorial-image img-field">
+          <img
+            src="images/yardage-marker-box-ledgeview-01.JPG"
+            alt="Wooden tee-side yardage station box with engraved club name, coloured tee indicators, and yardage distances for each tee position."
+            loading="lazy">
+        </div>
+        <div class="editorial-text">
+          <span class="editorial-label">The commission</span>
+          <h2>Distance markers that match your course</h2>
+          <p>Distance markers designed to match the material language of your course. Our A-frame fairway markers combine timber construction with clear distance indicators. Available as fairway markers, tee-side markers, or both. Each set is designed as part of a complete course commission.</p>
+          <p>Our yardage markers are built from locally sourced hardwoods using CNC fabrication and hand-finishing techniques. The A-frame construction provides stability on the fairway while keeping the profile low and unobtrusive. Finishes range from natural timber tones to charred treatments, with engraved distance numbers and club branding available as standard options.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
   <section class="desc-section">
     <div class="container">
       <div class="desc-text" id="descText">
-        <p>Distance markers designed to match the material language of your course. Our A-frame fairway markers combine handcrafted timber construction with clear distance indicators. Available as fairway markers, tee-side markers, or both. Each set is designed as part of a complete course commission.</p>
-        <p>Our yardage markers are built from locally sourced hardwoods using CNC fabrication and hand-finishing techniques. The A-frame construction provides stability on the fairway while keeping the profile low and unobtrusive. Finishes range from natural timber tones to charred treatments, with engraved distance numbers and club branding available as standard options.</p>
-        <p>Each set is designed to integrate with the visual language of your property. If you are commissioning tee markers or course signage alongside yardage markers, we develop a unified material palette across all pieces. Wood species and finish treatments are coordinated so that every element on the course reads as part of a single, intentional design.</p>
-        <p>Yardage markers are built for courses that take presentation seriously. Private clubs, resort properties, and facilities preparing for events or upgrades find the most value in a commissioned set that reflects their specific brand and grounds standards.</p>
-        <p>The commission process starts with understanding your course layout, distance system, and branding requirements. We develop marker concepts that address both function and aesthetics: clear distance identification for players, durable construction for maintenance teams, and a finished look that elevates the fairway. Sets typically cover standard yardage positions with options for additional markers at custom distances.</p>
-        <p>All markers are finished and inspected in our Vancouver studio before shipping. We deliver across North America and internationally.</p>
+        <p>Each set is designed to integrate with the visual language of your property. If you are commissioning tee markers or course signage alongside yardage markers, we develop a unified material palette across all pieces so that every element on the course reads as part of a single, intentional design.</p>
+        <p>The commission process starts with understanding your course layout, distance system, and branding requirements. We develop marker concepts that address both function and aesthetics, with sets typically covering standard yardage positions and options for custom distances. All markers are finished and inspected in our Vancouver studio before shipping across North America and internationally.</p>
       </div>
       <div class="desc-cta" id="descCta">
         <p class="inline-contact-prompt">Interested in commissioning markers for your course?</p>
@@ -257,6 +149,7 @@
         <a href="/recent-work">Work</a>
         <a href="/collections">Collections</a>
         <a href="/how-it-works">Process</a>
+        <a href="/journal">Journal</a>
         <a href="/about">About</a>
         <a href="/#contact">Contact</a>
         <a href="/faq">FAQ</a>
@@ -282,13 +175,13 @@
   function initReveal() {
     var revealObserver = window.eighteenGrainReveal;
     if (!revealObserver) {
-      document.querySelectorAll('.eyebrow, h1.display, .subline, .image-mat, .image-caption, .desc-text, .desc-cta').forEach(function (el) {
+      document.querySelectorAll('.eyebrow, h1.display, .subline, .collection-lead, .editorial-pair, .desc-text, .desc-cta').forEach(function (el) {
         el.classList.add('is-in');
       });
       return;
     }
 
-    ['heroEyebrow', 'heroHeading', 'heroSubline', 'imageMain', 'imageCaption', 'descText', 'descCta'].forEach(function (id) {
+    ['heroEyebrow', 'heroHeading', 'heroSubline', 'collectionLead', 'editorialPairA', 'descText', 'descCta'].forEach(function (id) {
       var el = document.getElementById(id);
       if (el) revealObserver.observe(el);
     });

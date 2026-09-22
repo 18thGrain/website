@@ -1,0 +1,21 @@
+{
+  "name": "18th Grain",
+  "short_name": "18th Grain",
+  "description": "Custom handcrafted golf course tee markers, plaques, and signs.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#171719",
+  "theme_color": "#171719",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

@@ -8,174 +8,30 @@
 <link rel="stylesheet" href="/js/consent.css">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Custom Golf Course Accessories | Range Baskets, Ball Dispensers & Course Furnishings | 18th Grain | Vancouver, BC</title>
-<meta name="description" content="Custom golf course accessories handcrafted from locally sourced hardwoods. Range baskets, ball dispensers, and course furnishings designed for your property. Made in Vancouver, BC by 18th Grain.">
+<meta name="description" content="Custom golf course accessories designed and made from locally sourced hardwoods. Range baskets, ball dispensers, and course furnishings designed for your property. Made in Vancouver, BC by 18th Grain.">
 <link rel="canonical" href="https://18thgrain.com/collection-course-accessories">
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="18th Grain">
 <meta property="og:url" content="https://18thgrain.com/collection-course-accessories">
 <meta property="og:title" content="Custom Golf Course Accessories | Range Baskets, Ball Dispensers & Course Furnishings | 18th Grain">
-<meta property="og:description" content="Custom golf course accessories handcrafted from locally sourced hardwoods. Range baskets, ball dispensers, and course furnishings designed for your property. Made in Vancouver, BC by 18th Grain.">
+<meta property="og:description" content="Custom golf course accessories designed and made from locally sourced hardwoods. Range baskets, ball dispensers, and course furnishings designed for your property. Made in Vancouver, BC by 18th Grain.">
 <meta property="og:image" content="https://18thgrain.com/images/og-image.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Custom Golf Course Accessories | Range Baskets, Ball Dispensers & Course Furnishings | 18th Grain">
-<meta name="twitter:description" content="Custom golf course accessories handcrafted from locally sourced hardwoods. Range baskets, ball dispensers, and course furnishings designed for your property. Made in Vancouver, BC by 18th Grain.">
+<meta name="twitter:description" content="Custom golf course accessories designed and made from locally sourced hardwoods. Range baskets, ball dispensers, and course furnishings designed for your property. Made in Vancouver, BC by 18th Grain.">
 <meta name="twitter:image" content="https://18thgrain.com/images/og-image.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/styles.css">
-<style>
-/* ================================================================
-   PAGE HERO
-   ================================================================ */
-.page-hero {
-  padding: 180px 0 100px;
-  background: var(--ground);
-}
-.page-hero .eyebrow {
-  opacity: 0;
-  transform: translateY(12px);
-  transition: opacity 600ms ease, transform 600ms ease;
-}
-.page-hero .eyebrow.is-in { opacity: 1; transform: translateY(0); }
-.page-hero h1.display {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 700ms cubic-bezier(0.16, 1, 0.3, 1) 100ms, transform 700ms cubic-bezier(0.16, 1, 0.3, 1) 100ms;
-}
-.page-hero h1.display.is-in { opacity: 1; transform: translateY(0); }
-.page-hero .subline {
-  font-family: var(--sans);
-  font-size: 15px;
-  line-height: 1.7;
-  color: var(--cream-dim);
-  max-width: 48ch;
-  margin: 28px 0 0;
-  opacity: 0;
-  transform: translateY(12px);
-  transition: opacity 600ms ease 200ms, transform 600ms ease 200ms;
-}
-.page-hero .subline.is-in { opacity: 1; transform: translateY(0); }
-
-@media (max-width: 800px) {
-  .page-hero { padding: 140px 0 72px; }
-}
-
-/* ================================================================
-   PRODUCT GRID
-   ================================================================ */
-.product-grid-section {
-  padding: 0 0 80px;
-  background: var(--ground);
-}
-.product-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  align-items: start;
-}
-.product-cell {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 700ms ease, transform 700ms ease;
-}
-.product-cell.is-in {
-  opacity: 1;
-  transform: translateY(0);
-}
-.product-cell--offset {
-  margin-top: 0;
-  transition-delay: 150ms;
-}
-.product-cell .image-mat {
-  opacity: 1;
-  transform: none;
-}
-.product-cell .image-mat img {
-  width: 100%;
-  object-fit: cover;
-  background: var(--ground-2);
-  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.4);
-  filter: brightness(0.95) saturate(0.9);
-  transition: filter 0.4s ease;
-}
-.product-cell .image-mat img:hover {
-  filter: brightness(1) saturate(1);
-}
-.product-cell .image-caption {
-  margin-top: 22px;
-  font-family: var(--sans);
-  font-size: 13px;
-  line-height: 1.6;
-  color: var(--cream-dim);
-}
-@media (max-width: 800px) {
-  .product-grid {
-    grid-template-columns: 1fr;
-    gap: 60px;
-  }
-  .product-cell--offset {
-    margin-top: 0;
-  }
-}
-
-/* ================================================================
-   DESCRIPTION SECTION
-   ================================================================ */
-.desc-section {
-  padding: 80px 0 140px;
-  background: var(--ground);
-  border-top: 1px solid var(--rule);
-}
-.desc-text {
-  font-family: var(--sans);
-  font-size: 15px;
-  line-height: 1.75;
-  color: var(--cream);
-  max-width: 60ch;
-  margin: 0 0 56px;
-  opacity: 0;
-  transform: translateY(16px);
-  transition: opacity 700ms ease, transform 700ms ease;
-}
-.desc-text.is-in { opacity: 1; transform: translateY(0); }
-.desc-text p { margin: 0 0 20px; }
-.desc-text p:last-child { margin-bottom: 0; }
-
-.inline-contact-prompt {
-  font-family: var(--sans);
-  font-size: 14px;
-  color: var(--cream-dim);
-  margin-bottom: 16px;
-}
-.desc-cta {
-  opacity: 0;
-  transform: translateY(12px);
-  transition: opacity 600ms ease 150ms, transform 600ms ease 150ms;
-}
-.desc-cta.is-in { opacity: 1; transform: translateY(0); }
-
-.back-link {
-  display: inline-block;
-  margin-top: 40px;
-  font-family: var(--sans);
-  font-size: 12px;
-  font-weight: 500;
-  color: var(--cream-faint);
-  letter-spacing: 0.04em;
-  transition: color 300ms ease;
-}
-.back-link:hover { color: var(--accent); }
-
-</style>
-<!-- Structured Data: Product -->
+<!-- Structured Data: Service -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Service",
   "name": "Custom Golf Course Accessories",
-  "description": "Custom golf course accessories handcrafted from locally sourced hardwoods. Range baskets, ball crates, and course furnishings designed for your property. Made in Vancouver, BC by 18th Grain.",
+  "description": "Custom golf course accessories designed and made from locally sourced hardwoods. Range baskets, ball crates, and course furnishings designed for your property. Made in Vancouver, BC by 18th Grain.",
   "provider": {
     "@type": "Organization",
     "@id": "https://18thgrain.com/#organization",
@@ -195,6 +51,7 @@
   <a href="/recent-work">Work</a>
   <a href="/collections">Collections</a>
   <a href="/how-it-works">Process</a>
+  <a href="/journal">Journal</a>
   <a href="/about">About</a>
   <a href="/#contact">Contact</a>
 </div>
@@ -207,6 +64,7 @@
       <a href="/recent-work">Work</a>
       <a href="/collections">Collections</a>
       <a href="/how-it-works">Process</a>
+      <a href="/journal">Journal</a>
       <a href="/about">About</a>
       <a href="/#contact">Contact</a>
     </nav>
@@ -230,68 +88,76 @@
     </div>
   </section>
 
-  <!-- PRODUCT GRID -->
-  <section class="product-grid-section">
+  <!-- EDITORIAL PAIR A: dispenser tray image left, text right -->
+  <section class="editorial-section" style="padding-top: 80px;">
     <div class="container">
-      <div class="product-grid">
-
-        <div class="product-cell" id="productCell1">
-          <div class="image-mat">
-            <img
-              src="images/course-accessories-scorecard-box-walnut.jpg"
-              alt="Walnut scorecard box with compartments for tees, ball markers, pencils, and scorecards, engraved with 18th Grain branding."
-              loading="eager">
-          </div>
+      <div class="editorial-pair" id="editorialPairA">
+        <div class="editorial-image img-field">
+          <img
+            src="images/range-ball-dispenser-ledgeview-01.JPG"
+            alt="Rectangular wooden range ball dispenser tray with engraved club logo, filled with golf balls on a driving range tee."
+            loading="eager">
         </div>
-
-        <div class="product-cell product-cell--offset" id="productCell2">
-          <div class="image-mat">
-            <img
-              src="images/course-accessories-range-caddie-maple.jpg"
-              alt="Wooden range caddie club stand with engraved Laurel Hill crest and tee holders."
-              loading="lazy">
-          </div>
+        <div class="editorial-text">
+          <span class="editorial-label">The commission</span>
+          <h2>Accessories that complete the course</h2>
+          <p>Course accessories designed and built to complement your property's identity. From range ball baskets and starter station furnishings to custom storage and display pieces, each accessory is commissioned to match the materials and aesthetic of your course.</p>
+          <p>Our accessories are designed and made from locally sourced hardwoods using the same CNC fabrication and hand-finishing processes we apply to our tee markers and signage. Range ball baskets feature solid timber construction with engraved club branding, built to handle daily use on the driving range. Ball dispensers use a gravity-fed design in hexagonal or rectangular profiles, combining practical function with the same level of finish and detailing found across our full product line.</p>
         </div>
-
-        <div class="product-cell" id="productCell3">
-          <div class="image-mat">
-            <img
-              src="images/golf-range-ball-basket-01.webp"
-              alt="Custom wooden range ball basket with engraved club logo, filled with golf balls on a driving range."
-              loading="lazy">
-          </div>
-        </div>
-
-        <div class="product-cell product-cell--offset" id="productCell4">
-          <div class="image-mat">
-            <img
-              src="images/golf-range-ball-dispenser-01.webp"
-              alt="Hexagonal wood range ball dispenser with gravity-fed dispensing slot, shown from multiple angles on a driving range."
-              loading="lazy">
-          </div>
-        </div>
-
-        <div class="product-cell" id="productCell5">
-          <div class="image-mat">
-            <img
-              src="images/course-accessories-pencil-scorecard-station-01.JPG"
-              alt="Wall-mounted wooden scorecard and pencil station with shelved compartments and engraved club crest, installed at a pro shop entrance."
-              loading="lazy">
-          </div>
-        </div>
-
       </div>
     </div>
   </section>
 
-  <!-- DESCRIPTION -->
+  <!-- IMAGE GRID: range caddie + scorecard station side by side -->
+  <section class="collection-grid-section">
+    <div class="container">
+      <div class="collection-grid-2">
+        <div class="collection-grid-item img-field" id="gridItem1">
+          <img
+            src="images/course-accessories-range-caddie-maple.jpg"
+            alt="Wooden range caddie club stand with engraved Laurel Hill crest and tee holders."
+            loading="lazy">
+        </div>
+        <div class="collection-grid-item img-field" id="gridItem2">
+          <img
+            src="images/course-accessories-pencil-scorecard-station-01.JPG"
+            alt="Wall-mounted wooden scorecard and pencil station with shelved compartments and engraved club crest, installed at a pro shop entrance."
+            loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STANDALONE A: scorecard box -->
+  <section class="collection-standalone-section">
+    <div class="container">
+      <div class="collection-standalone" id="collectionStandaloneA">
+        <img
+          src="images/course-accessories-scorecard-box-walnut.jpg"
+          alt="Walnut scorecard box with compartments for tees, ball markers, pencils, and scorecards, engraved with 18th Grain branding."
+          loading="lazy"
+          style="object-position: center;">
+      </div>
+    </div>
+  </section>
+
+  <!-- STANDALONE B: hexagonal ball dispenser render — full image, no crop -->
+  <section class="collection-standalone-section">
+    <div class="container">
+      <div class="collection-standalone" id="collectionStandaloneB">
+        <img
+          src="images/golf-range-ball-dispenser-01.webp"
+          alt="Hexagonal wood range ball dispenser with gravity-fed dispensing slot, shown from multiple angles on a driving range."
+          loading="lazy"
+          style="object-fit: contain;">
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
   <section class="desc-section">
     <div class="container">
       <div class="desc-text" id="descText">
-        <p>Course accessories designed and built to complement your property's identity. From range ball baskets and starter station furnishings to custom storage and display pieces, each accessory is commissioned to match the materials and aesthetic of your course.</p>
-        <p>Our accessories are crafted from locally sourced hardwoods using the same CNC fabrication and hand-finishing processes we apply to our tee markers and signage. Range ball baskets feature solid timber construction with engraved club branding, built to handle daily use on the driving range. Ball dispensers use a gravity-fed design in hexagonal or rectangular profiles, combining practical function with the same level of finish and detailing found across our full product line.</p>
-        <p>Accessories are designed to complement a broader course commission. When ordered alongside tee markers, yardage markers, or signage, every piece shares a coordinated material palette: matching wood species, finish treatments, and engraving style. Standalone accessory commissions are also available for courses looking to upgrade specific touchpoints without a full-property package.</p>
-        <p>This collection is suited to private clubs, resort courses, and practice facilities where the range and starter area are extensions of the course experience. Well-crafted accessories in these high-traffic areas signal attention to detail and reinforce the quality your members and guests expect.</p>
         <p>The commission process follows the same approach as all our work. We start with a conversation about your needs, develop concepts that balance function with your course aesthetic, and move into production once materials and details are confirmed. Each piece is finished and inspected in our Vancouver studio before shipping.</p>
         <p>We deliver across North America and internationally.</p>
       </div>
@@ -317,6 +183,7 @@
         <a href="/recent-work">Work</a>
         <a href="/collections">Collections</a>
         <a href="/how-it-works">Process</a>
+        <a href="/journal">Journal</a>
         <a href="/about">About</a>
         <a href="/#contact">Contact</a>
         <a href="/faq">FAQ</a>
@@ -342,13 +209,13 @@
   function initReveal() {
     var revealObserver = window.eighteenGrainReveal;
     if (!revealObserver) {
-      document.querySelectorAll('.eyebrow, h1.display, .subline, .product-cell, .desc-text, .desc-cta').forEach(function (el) {
+      document.querySelectorAll('.eyebrow, h1.display, .subline, .editorial-pair, .collection-grid-item, .collection-standalone, .desc-text, .desc-cta').forEach(function (el) {
         el.classList.add('is-in');
       });
       return;
     }
 
-    ['heroEyebrow', 'heroHeading', 'heroSubline', 'productCell1', 'productCell2', 'productCell3', 'productCell4', 'productCell5', 'descText', 'descCta'].forEach(function (id) {
+    ['heroEyebrow', 'heroHeading', 'heroSubline', 'editorialPairA', 'gridItem1', 'gridItem2', 'collectionStandaloneA', 'collectionStandaloneB', 'descText', 'descCta'].forEach(function (id) {
       var el = document.getElementById(id);
       if (el) revealObserver.observe(el);
     });
